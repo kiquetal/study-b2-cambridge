@@ -11,6 +11,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   integrations: [react()],
   output: 'server',
+  server: {
+    port: 4323
+  },
 
   adapter: node({
     mode: 'standalone'
