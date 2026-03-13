@@ -8,7 +8,7 @@ A minimal Astro-based study tracking application for B2 Cambridge exam preparati
 - **Spaced Repetition**: Automatic review scheduling with intervals: 1, 3, 7, 14, 30 days
 - **Browser Notifications**: Get notified when topics are due for review
 - **Statistics Dashboard**: View total sessions, total hours, and current study streak
-- **Local Storage**: All data persists in your browser
+- **SQLite Database**: All data persists in a local SQLite database file (`study.db`)
 
 ## Getting Started
 
@@ -38,6 +38,14 @@ The app will be available at `http://localhost:4321/` (or next available port).
 
 On first visit, the app will request notification permissions. Grant permission to receive review reminders when you open the app.
 
+## Data Storage
+
+All study session data is stored in a local SQLite database file (`study.db`) in the project root. This ensures:
+- Data persists across browser sessions
+- No data loss when clearing browser cache
+- Easy backup (just copy the `study.db` file)
+- Portable data that can be moved between machines
+
 ## Commands
 
 | Command                   | Action                                           |
@@ -49,7 +57,8 @@ On first visit, the app will request notification permissions. Grant permission 
 
 ## Tech Stack
 
-- **Astro**: Static site framework
+- **Astro**: Static site framework with SSR
 - **React**: UI components
-- **Nanostores**: Lightweight state management with localStorage persistence
+- **Nanostores**: Lightweight state management
+- **SQLite (better-sqlite3)**: Local database for persistent storage
 - **TypeScript**: Type safety

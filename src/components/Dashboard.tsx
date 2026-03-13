@@ -1,11 +1,15 @@
 import { useStore } from '@nanostores/react';
-import { sessionsStore, markAsReviewed, getDueSessions, getStats } from '../lib/store';
+import { sessionsStore, markAsReviewed, getDueSessions, getStats, loadSessions } from '../lib/store';
 import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
   const sessions = useStore(sessionsStore);
   const [stats, setStats] = useState({ totalSessions: 0, totalHours: 0, currentStreak: 0 });
   const [dueSessions, setDueSessions] = useState<ReturnType<typeof getDueSessions>>([]);
+
+  useEffect(() => {
+    loadSessions();
+  }, []);
 
   useEffect(() => {
     setStats(getStats());
@@ -28,8 +32,10 @@ export default function Dashboard() {
         }
       }
     };
-    checkNotifications();
-  }, []);
+    if (Object.keys(sessions).length > 0) {
+      checkNotifications();
+    }
+  }, [sessions]);
 
   const recentSessions = Object.values(sessions).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 10);
   const upcomingReviews = Object.values(sessions).sort((a, b) => a.nextReviewDate.localeCompare(b.nextReviewDate)).slice(0, 10);
