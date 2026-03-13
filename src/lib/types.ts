@@ -1,18 +1,24 @@
 export type SkillArea = 'Reading' | 'Writing' | 'Listening' | 'Speaking';
 
-export interface StudySession {
+export interface SessionTemplate {
   id: string;
-  date: string;
   title: string;
-  duration: number;
   skillArea: SkillArea;
   topic: string;
   source: string;
-  notes: string;
-  exerciseCount: number;
-  confidenceLevel: number;
+  createdDate: string;
   nextReviewDate: string;
   reviewCount: number;
+}
+
+export interface StudyLog {
+  id: string;
+  templateId: string;
+  date: string;
+  duration: number;
+  exerciseCount: number;
+  confidenceLevel: number;
+  notes: string;
 }
 
 export interface Stats {

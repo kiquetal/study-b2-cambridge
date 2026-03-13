@@ -1,7 +1,8 @@
 import { atom } from 'nanostores';
-import type { StudySession } from './types';
+import type { SessionTemplate, StudyLog } from './types';
 
-export const sessionsStore = atom<Record<string, StudySession>>({});
+export const templatesStore = atom<Record<string, SessionTemplate>>({});
+export const logsStore = atom<Record<string, StudyLog>>({});
 
 const INTERVALS = [1, 3, 7, 14, 30];
 
@@ -12,43 +13,65 @@ export function getNextReviewDate(currentDate: string, reviewCount: number): str
   return date.toISOString().split('T')[0];
 }
 
-export async function loadSessions() {
-  const res = await fetch('/api/sessions');
-  const sessions = await res.json();
-  const sessionMap = sessions.reduce((acc: Record<string, StudySession>, s: StudySession) => {
-    acc[s.id] = s;
+// Templates
+export async function loadTemplates() {
+  const res = await fetch('/api/templates');
+  const templates = await res.json();
+  const templateMap = templates.reduce((acc: Record<string, SessionTemplate>, t: SessionTemplate) => {
+    acc[t.id] = t;
     return acc;
   }, {});
-  sessionsStore.set(sessionMap);
+  templatesStore.set(templateMap);
 }
 
-export async function addSession(session: Omit<StudySession, 'id' | 'nextReviewDate' | 'reviewCount'>) {
-  const res = await fetch('/api/sessions', {
+export async function addTemplate(template: Omit<SessionTemplate, 'id' | 'createdDate' | 'nextReviewDate' | 'reviewCount'>) {
+  const res = await fetch('/api/templates', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(session),
+    body: JSON.stringify(template),
   });
-  const newSession = await res.json();
-  sessionsStore.set({ ...sessionsStore.get(), [newSession.id]: newSession });
+  const newTemplate = await res.json();
+  templatesStore.set({ ...templatesStore.get(), [newTemplate.id]: newTemplate });
 }
 
 export async function markAsReviewed(id: string) {
-  await fetch(`/api/sessions/${id}`, { method: 'PATCH' });
-  await loadSessions();
+  await fetch(`/api/templates/${id}`, { method: 'PATCH' });
+  await loadTemplates();
 }
 
-export function getDueSessions(): StudySession[] {
-  const sessions = sessionsStore.get();
+export function getDueTemplates(): SessionTemplate[] {
+  const templates = templatesStore.get();
   const today = new Date().toISOString().split('T')[0];
-  return Object.values(sessions).filter(s => s.nextReviewDate <= today);
+  return Object.values(templates).filter(t => t.nextReviewDate <= today);
+}
+
+// Study Logs
+export async function loadLogs() {
+  const res = await fetch('/api/logs');
+  const logs = await res.json();
+  const logMap = logs.reduce((acc: Record<string, StudyLog>, l: StudyLog) => {
+    acc[l.id] = l;
+    return acc;
+  }, {});
+  logsStore.set(logMap);
+}
+
+export async function addLog(log: Omit<StudyLog, 'id'>) {
+  const res = await fetch('/api/logs', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(log),
+  });
+  const newLog = await res.json();
+  logsStore.set({ ...logsStore.get(), [newLog.id]: newLog });
 }
 
 export function getStats() {
-  const sessions = Object.values(sessionsStore.get());
-  const totalSessions = sessions.length;
-  const totalHours = sessions.reduce((sum, s) => sum + s.duration, 0) / 60;
+  const logs = Object.values(logsStore.get());
+  const totalSessions = logs.length;
+  const totalHours = logs.reduce((sum, l) => sum + l.duration, 0) / 60;
   
-  const dates = sessions.map(s => s.date).sort();
+  const dates = logs.map(l => l.date).sort();
   let streak = 0;
   if (dates.length > 0) {
     const today = new Date().toISOString().split('T')[0];
