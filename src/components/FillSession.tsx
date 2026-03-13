@@ -122,7 +122,6 @@ export default function FillSession() {
     setTopicsInput('');
     setSourceInput('');
   };
-    .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <div className="flex gap-6 h-full">
