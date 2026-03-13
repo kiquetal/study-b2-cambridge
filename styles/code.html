@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "neon-yellow": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .file-tree-item:hover {
+            background-color: rgba(236, 91, 19, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ec5b13;
+            border-radius: 10px;
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(236, 91, 19, 0.7);
+        }
+        .terminal-border {
+            border: 1px solid rgba(236, 91, 19, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Top Nav Bar -->
+<header class="flex items-center justify-between border-b border-slate-200 px-6 py-3 bg-white dark:bg-black border-primary/20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-6 flex items-center justify-center text-neon-yellow">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-black uppercase tracking-tighter">NASA <span class="text-neon-yellow neon-glow">Topic Vault</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Grammar</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Vocabulary</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Exam Prep</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden sm:flex flex-col min-w-40 h-9 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden border border-slate-200 dark:border-white/10">
+<div class="text-slate-400 dark:text-slate-500 flex items-center justify-center px-3 bg-slate-50 dark:bg-zinc-900">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="w-full text-sm focus:outline-0 border-none bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-white placeholder:text-slate-500" placeholder="Search archive..." value=""/>
+</div>
+</label>
+<div class="flex items-center gap-2">
+<div class="text-right hidden lg:block">
+<p class="text-[10px] font-bold text-neon-yellow leading-none uppercase">Agent Status</p>
+<p class="text-xs font-medium text-slate-400">Authorized Access</p>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-10 border border-neon-yellow/50" data-alt="User profile avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_MrI_R5__WlwgWCf5msE8NsGyqcRbFVlJnq3YBkslhEAuTSX1kMwPAHIjUGeVLLi3AP5okAUfNj5C9JgKvrdlufFluYQhKqZl2FxS_3tJqZ41d4OW34yHBPmVf_HP3hfCiEFEOqe_aHCyQ_QRsGdZdANfnX2kwZ89MLIps8G7RamjlAQ9dCOsyzSOYsIFyNeb-T1vcCk2JlzM3j3fLWfisf3b_8TkvU0wuDl5nLfiVmVhFcXbn-21bOECdpOhTD9_KWP3V5QJo7w");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation (File Tree) -->
+<aside class="w-72 border-r border-slate-200 dark:border-white/10 flex flex-col bg-white overflow-y-auto custom-scrollbar dark:bg-background-dark/80">
+<div class="p-4 border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-zinc-900/50 dark:bg-primary/5 border-primary/20">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-8 bg-neon-yellow rounded flex items-center justify-center text-black">
+<span class="material-symbols-outlined font-bold">folder_open</span>
+</div>
+<div>
+<h3 class="text-sm font-black uppercase text-slate-900 dark:text-white">B2 Cambridge</h3>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Technical Archive v7.42</p>
+</div>
+</div>
+</div>
+<div class="p-2 flex flex-col gap-1">
+<div class="flex items-center gap-2 px-3 py-2 text-neon-yellow font-bold text-xs uppercase tracking-widest mt-2">
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+<span>Grammar Frameworks</span>
+</div>
+<!-- File Tree Items -->
+<div class="ml-4 space-y-0.5">
+<div class="flex items-center gap-3 px-3 py-1.5 rounded-lg file-tree-item cursor-pointer text-slate-400 hover:text-neon-yellow group">
+<span class="material-symbols-outlined text-lg">article</span>
+<span class="text-sm font-medium">Advanced Conditionals</span>
+<span class="ml-auto text-[10px] opacity-0 group-hover:opacity-100 font-mono">L.7</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-1.5 rounded-lg bg-neon-yellow/10 text-neon-yellow border-l-2 border-neon-yellow">
+<span class="material-symbols-outlined text-lg">description</span>
+<span class="text-sm font-bold">Relative Clauses (Complex)</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-1.5 rounded-lg file-tree-item cursor-pointer text-slate-400 hover:text-neon-yellow">
+<span class="material-symbols-outlined text-lg">article</span>
+<span class="text-sm font-medium">Passive Voice Protocols</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-1.5 rounded-lg file-tree-item cursor-pointer text-slate-400 hover:text-neon-yellow">
+<span class="material-symbols-outlined text-lg">article</span>
+<span class="text-sm font-medium">Gerunds &amp; Infinitives</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 text-slate-500 font-bold text-xs uppercase tracking-widest mt-4">
+<span class="material-symbols-outlined text-sm">keyboard_arrow_right</span>
+<span>Lexical Sets</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 text-slate-500 font-bold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">keyboard_arrow_right</span>
+<span>Orbital Mechanics Terminology</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 text-slate-500 font-bold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">keyboard_arrow_right</span>
+<span>Mission Logs Archive</span>
+</div>
+<div class="mt-auto p-4">
+<div class="rounded-xl bg-primary/10 border border-primary/30 p-4">
+<p class="text-xs font-bold text-primary uppercase mb-1">Exam Countdown</p>
+<p class="text-2xl font-black text-slate-900 dark:text-white tracking-tighter">04:12:00</p>
+<div class="w-full bg-slate-200 dark:bg-zinc-800 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Panel -->
+<main class="flex-1 flex flex-col overflow-hidden bg-white dark:bg-background-dark">
+<!-- Breadcrumbs & Header -->
+<div class="px-8 py-4 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-white dark:bg-black/40 dark:bg-background-dark/50 border-primary/20">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-slate-500">
+<span>Vault</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>Grammar</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-neon-yellow">Linguistic Structure 7.42</span>
+</div>
+<h1 class="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter mt-1">
+                        Detailed Rule <span class="text-neon-yellow">Documentation</span>
+</h1>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 dark:bg-zinc-800 text-xs font-bold uppercase tracking-widest hover:bg-slate-200 dark:hover:bg-zinc-700 transition-colors">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+                        Export PDF
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">edit</span>
+                        Edit Entry
+                    </button>
+</div>
+</div>
+<!-- Content Body -->
+<div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+<div class="max-w-4xl mx-auto space-y-10">
+<!-- Technical Framing Panel -->
+<section class="relative group">
+<div class="absolute -left-4 top-0 bottom-0 w-1 bg-neon-yellow"></div>
+<div class="bg-slate-50 dark:bg-zinc-900/30 p-6 rounded-r-xl border-y border-r border-slate-200 terminal-border">
+<div class="flex items-center gap-2 text-neon-yellow mb-3">
+<span class="material-symbols-outlined">settings_input_component</span>
+<h4 class="text-xs font-black uppercase tracking-[0.2em]">Technical Framing: Clause Integration</h4>
+</div>
+<p class="text-slate-400 leading-relaxed font-medium">
+                                Structure 7.42 dictates the synchronization of <span class="text-slate-900 dark:text-white">Relative Clauses</span> within non-defining frameworks. In B2 Cambridge protocols, these must be isolated via punctuation markers (commas) to prevent semantic overflow into the core mission statement.
+                            </p>
+</div>
+</section>
+<!-- Main Documentation -->
+<section class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+<span class="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Operational Guidelines</span>
+<div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h3 class="text-lg font-black uppercase text-slate-900 dark:text-white border-l-4 border-primary pl-3">Defining Clauses</h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                                    Essential information that identifies which person or thing we are talking about. Removing these would make the sentence incomplete or confusing.
+                                </p>
+<div class="p-4 bg-zinc-100 dark:bg-zinc-900 rounded-lg font-mono text-xs border border-white/5 dark:bg-black border-primary/10">
+<span class="text-neon-yellow">INPUT:</span> "The astronaut who repaired the shuttle is a hero."<br/>
+<span class="text-primary">RESULT:</span> Defining (No commas)
+                                </div>
+</div>
+<div class="space-y-4">
+<h3 class="text-lg font-black uppercase text-slate-900 dark:text-white border-l-4 border-neon-yellow pl-3">Non-Defining Clauses</h3>
+<p class="text-sm text-slate-400 leading-relaxed">
+                                    Provides extra information that is not critical to identifying the subject. Always requires punctuation buffers.
+                                </p>
+<div class="p-4 bg-zinc-100 dark:bg-zinc-900 rounded-lg font-mono text-xs border border-white/5 dark:bg-black border-primary/10">
+<span class="text-neon-yellow">INPUT:</span> "The shuttle, which was built in 1998, is being retired."<br/>
+<span class="text-primary">RESULT:</span> Non-Defining (Comma required)
+                                </div>
+</div>
+</div>
+</section>
+<!-- Technical Constraints Table -->
+<section class="space-y-4">
+<h2 class="text-xl font-black uppercase text-slate-900 dark:text-white">Relative Pronoun <span class="text-primary">Constraints</span></h2>
+<div class="overflow-hidden rounded-xl border border-slate-200 terminal-border">
+<table class="w-full text-left text-sm">
+<thead class="bg-slate-100 dark:bg-zinc-900 text-[10px] font-black uppercase tracking-widest text-slate-500">
+<tr>
+<th class="px-6 py-4">Pronoun</th>
+<th class="px-6 py-4">Function</th>
+<th class="px-6 py-4">Context</th>
+<th class="px-6 py-4 text-neon-yellow">Priority</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-white/5">
+<tr class="hover:bg-neon-yellow/[0.02]">
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Who</td>
+<td class="px-6 py-4 text-slate-500">Subject/Object</td>
+<td class="px-6 py-4 text-slate-500">Human Personal</td>
+<td class="px-6 py-4 font-mono text-xs">High</td>
+</tr>
+<tr class="hover:bg-neon-yellow/[0.02]">
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Which</td>
+<td class="px-6 py-4 text-slate-500">Subject/Object</td>
+<td class="px-6 py-4 text-slate-500">Technical Objects</td>
+<td class="px-6 py-4 font-mono text-xs">High</td>
+</tr>
+<tr class="hover:bg-neon-yellow/[0.02]">
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Whose</td>
+<td class="px-6 py-4 text-slate-500">Possession</td>
+<td class="px-6 py-4 text-slate-500">Ownership/Origin</td>
+<td class="px-6 py-4 font-mono text-xs">Medium</td>
+</tr>
+<tr class="hover:bg-neon-yellow/[0.02]">
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Whom</td>
+<td class="px-6 py-4 text-slate-500">Object</td>
+<td class="px-6 py-4 text-slate-500">Formal Protocols</td>
+<td class="px-6 py-4 font-mono text-xs text-primary">Ultra</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Callout Info -->
+<div class="flex gap-4 p-6 rounded-xl bg-neon-yellow text-black">
+<span class="material-symbols-outlined text-3xl">warning</span>
+<div>
+<h4 class="font-black uppercase text-xs tracking-widest mb-1">Critical Exam Note</h4>
+<p class="text-sm font-bold">In formal B2 Cambridge writing, avoid using "that" in non-defining clauses. Always default to "who" or "which" to maintain structural integrity.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Stats Panel -->
+<aside class="w-64 border-l border-slate-200 dark:border-white/10 bg-white p-6 hidden xl:flex flex-col gap-8 dark:bg-background-dark/80 dark:bg-background-dark/80 border-primary/20">
+<div class="dark:bg-primary/5 border-primary/20">
+<h4 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Mastery Metrics</h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-[10px] font-bold uppercase mb-2">
+<span>Clause Accuracy</span>
+<span class="text-neon-yellow">92%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-neon-yellow" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold uppercase mb-2">
+<span>Vocabulary Range</span>
+<span class="text-primary">78%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 78%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1">
+<h4 class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Related Archives</h4>
+<div class="space-y-3">
+<div class="p-3 rounded-lg border border-slate-200 dark:border-white/5 hover:border-neon-yellow/50 transition-colors cursor-pointer group">
+<p class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-neon-yellow">Relative Pronouns in Space</p>
+<p class="text-[10px] text-slate-500 mt-1 uppercase">Vocabulary • 5m read</p>
+</div>
+<div class="p-3 rounded-lg border border-slate-200 dark:border-white/5 hover:border-neon-yellow/50 transition-colors cursor-pointer group">
+<p class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-neon-yellow">Structural Cohesion 101</p>
+<p class="text-[10px] text-slate-500 mt-1 uppercase">Grammar • 12m read</p>
+</div>
+</div>
+</div>
+<div class="rounded-xl border border-dashed border-slate-300 p-4 text-center terminal-border">
+<span class="material-symbols-outlined text-slate-300 dark:text-zinc-700 text-4xl">science</span>
+<p class="text-[10px] font-bold text-slate-500 uppercase mt-2">Experimental Feature</p>
+<p class="text-xs text-slate-400 mt-1 leading-tight">AI Diagnostic available in next sync cycle.</p>
+</div>
+</aside>
+</div>
+</div>
+</body></html>
