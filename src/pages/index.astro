@@ -1,71 +1,47 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import StudyForm from '../components/StudyForm';
 import Dashboard from '../components/Dashboard';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>B2 Cambridge Study Tracker</title>
-		<style>
-			* {
-				box-sizing: border-box;
-			}
-			body {
-				font-family: system-ui, -apple-system, sans-serif;
-				margin: 0;
-				padding: 20px;
-				background: #f5f5f5;
-			}
-			.container {
-				max-width: 1200px;
-				margin: 0 auto;
-				background: white;
-				padding: 32px;
-				border-radius: 8px;
-				box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-			}
-			h1 {
-				margin: 0 0 32px 0;
-				color: #333;
-			}
-			.layout {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 48px;
-			}
-			@media (max-width: 768px) {
-				.layout {
-					grid-template-columns: 1fr;
-				}
-			}
-			input, select, textarea {
-				width: 100%;
-				padding: 8px;
-				border: 1px solid #ddd;
-				border-radius: 4px;
-				font-size: 14px;
-			}
-			label {
-				display: flex;
-				flex-direction: column;
-				gap: 4px;
-				font-size: 14px;
-				font-weight: 500;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<h1>📚 B2 Cambridge Study Tracker</h1>
-			<div class="layout">
-				<StudyForm client:load />
-				<Dashboard client:load />
-			</div>
-		</div>
-	</body>
-</html>
+<Layout title="B2 Cambridge Study Tracker">
+  <!-- Sidebar -->
+  <aside class="w-80 border-r border-primary/20 flex flex-col bg-white dark:bg-background-dark/80 overflow-y-auto custom-scrollbar">
+    <div class="p-6 border-b border-primary/20 bg-slate-50 dark:bg-zinc-900/50">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="size-10 bg-neon-yellow rounded flex items-center justify-center text-black">
+          <span class="material-symbols-outlined font-bold text-xl">folder_open</span>
+        </div>
+        <div>
+          <h3 class="text-sm font-black uppercase text-slate-900 dark:text-white">B2 Cambridge</h3>
+          <p class="text-[10px] text-slate-500 uppercase tracking-tighter">Study Archive v1.0</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="p-6 flex-1">
+      <StudyForm client:load />
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col overflow-hidden bg-white dark:bg-background-dark">
+    <div class="px-8 py-4 border-b border-primary/20 bg-white dark:bg-black/40">
+      <div class="flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1">
+        <span>Vault</span>
+        <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+        <span class="text-neon-yellow">Study Sessions</span>
+      </div>
+      <h1 class="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+        Session <span class="text-neon-yellow">Dashboard</span>
+      </h1>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+      <div class="max-w-5xl mx-auto">
+        <Dashboard client:load />
+      </div>
+    </div>
+  </main>
+</Layout>
+
