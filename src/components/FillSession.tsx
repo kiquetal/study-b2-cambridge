@@ -19,6 +19,21 @@ export default function FillSession() {
     loadLogs();
   }, []);
 
+  // Auto-load most recent log when session is selected
+  useEffect(() => {
+    if (selectedSession) {
+      const sessionLogs = Object.values(logs)
+        .filter(l => l.sessionId === selectedSession)
+        .sort((a, b) => b.date.localeCompare(a.date));
+      
+      if (sessionLogs.length > 0) {
+        handleEdit(sessionLogs[0].id);
+      } else {
+        handleCancelEdit();
+      }
+    }
+  }, [selectedSession, logs]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -160,9 +175,16 @@ export default function FillSession() {
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 h-full">
             <div>
-              <h2 className="text-2xl font-bold text-slate-100 mb-2">
-                {editingLog ? 'Edit Log' : selectedSessionData?.title}
-              </h2>
+              <div className="flex items-center gap-3 mb-2">
+                <h2 className="text-2xl font-bold text-slate-100">
+                  {selectedSessionData?.title}
+                </h2>
+                {editingLog && logs[editingLog] && (
+                  <span className="text-xs px-2 py-1 rounded bg-primary/20 text-primary font-mono">
+                    Editing: {logs[editingLog].date}
+                  </span>
+                )}
+              </div>
               <div className="p-3 bg-primary/5 border border-primary/20 rounded text-xs text-slate-400">
                 <p><strong className="text-primary">Skill:</strong> {selectedSessionData?.skillArea}</p>
                 <p className="mt-1"><strong className="text-primary">Topics:</strong> {selectedSessionData?.topic}</p>
