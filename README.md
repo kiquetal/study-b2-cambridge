@@ -1,33 +1,44 @@
-# Astro Starter Kit: Minimal
+# B2 Cambridge Study Tracker
+
+A minimal Astro-based study tracking application for B2 Cambridge exam preparation with spaced repetition and browser notifications.
+
+## Features
+
+- **Study Session Logging**: Track date, duration, skill area (Reading/Writing/Listening/Speaking), topic, source, notes, exercise count, and confidence level
+- **Spaced Repetition**: Automatic review scheduling with intervals: 1, 3, 7, 14, 30 days
+- **Browser Notifications**: Get notified when topics are due for review
+- **Statistics Dashboard**: View total sessions, total hours, and current study streak
+- **Local Storage**: All data persists in your browser
+
+## Getting Started
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The app will be available at `http://localhost:4321/` (or next available port).
 
-## 🚀 Project Structure
+## How to Use
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Log a Study Session**: Fill out the form on the left with your study details
+2. **Review Topics**: When topics are due for review, you'll see a notification and they'll appear in the "Due for Review" section
+3. **Mark as Reviewed**: Click "Mark Reviewed" to update the next review date
+4. **Track Progress**: Monitor your stats and streak in the dashboard
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Spaced Repetition Schedule
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- First review: 1 day after study
+- Second review: 3 days after first review
+- Third review: 7 days after second review
+- Fourth review: 14 days after third review
+- Fifth+ review: 30 days after previous review
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Browser Notifications
 
-Any static assets, like images, can be placed in the `public/` directory.
+On first visit, the app will request notification permissions. Grant permission to receive review reminders when you open the app.
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -35,9 +46,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Tech Stack
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Astro**: Static site framework
+- **React**: UI components
+- **Nanostores**: Lightweight state management with localStorage persistence
+- **TypeScript**: Type safety

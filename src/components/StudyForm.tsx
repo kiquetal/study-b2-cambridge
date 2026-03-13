@@ -12,9 +12,9 @@ export default function StudyForm() {
   const [confidenceLevel, setConfidenceLevel] = useState('3');
   const [notes, setNotes] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    addSession({
+    await addSession({
       date: new Date().toISOString().split('T')[0],
       duration: parseInt(duration),
       skillArea,
