@@ -7,8 +7,8 @@ import RecentSessions from '../components/RecentSessions';
 ---
 
 <Layout title="B2 Cambridge Study Tracker">
-  <!-- Left Side: Navigation & Form -->
-  <section class="w-1/2 flex flex-col border-r border-primary/20 bg-black/40 overflow-hidden">
+  <!-- Full Width Container -->
+  <div class="flex-1 flex flex-col overflow-hidden">
     <!-- Tab Navigation -->
     <div class="flex border-b border-primary/20 bg-background-dark/60">
       <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-primary border-b-2 border-primary" data-tab="create">
@@ -30,14 +30,16 @@ import RecentSessions from '../components/RecentSessions';
     </div>
 
     <!-- Tab Content -->
-    <div class="flex-1 overflow-hidden">
+    <div class="flex-1 overflow-hidden bg-black/40">
       <!-- Create Session Tab -->
       <div id="tab-create" class="tab-content h-full overflow-y-auto custom-scrollbar p-8">
-        <div class="mb-6">
-          <h2 class="text-2xl font-bold text-slate-100 mb-2">Create Session</h2>
-          <p class="text-sm text-slate-400">Set up a new study session (just title and source)</p>
+        <div class="max-w-2xl mx-auto">
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold text-slate-100 mb-2">Create Session</h2>
+            <p class="text-sm text-slate-400">Set up a new study session (just title and source)</p>
+          </div>
+          <StudyForm client:load />
         </div>
-        <StudyForm client:load />
       </div>
 
       <!-- Fill Session Tab -->
@@ -47,45 +49,19 @@ import RecentSessions from '../components/RecentSessions';
 
       <!-- Dashboard Tab -->
       <div id="tab-dashboard" class="tab-content hidden h-full overflow-y-auto custom-scrollbar p-8">
-        <Dashboard client:load />
+        <div class="max-w-5xl mx-auto">
+          <Dashboard client:load />
+        </div>
       </div>
 
       <!-- History Tab -->
       <div id="tab-history" class="tab-content hidden h-full overflow-y-auto custom-scrollbar p-8">
-        <RecentSessions client:load />
-      </div>
-    </div>
-  </section>
-
-  <!-- Right Side: Live Preview -->
-  <section class="w-1/2 flex flex-col bg-black relative">
-    <div class="absolute top-4 right-6 z-10">
-      <div class="flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/30 rounded-full">
-        <div class="size-2 bg-primary rounded-full animate-pulse"></div>
-        <span class="text-[10px] font-bold text-primary uppercase tracking-widest font-mono">Live Preview</span>
-      </div>
-    </div>
-
-    <div class="flex-1 p-8 overflow-y-auto custom-scrollbar">
-      <div id="preview-content" class="text-slate-400 text-sm">
-        <p class="mb-4">Create a session, then fill it after studying...</p>
-      </div>
-    </div>
-
-    <!-- Footer Stats -->
-    <div class="h-12 border-t border-primary/20 bg-background-dark/80 flex items-center justify-between px-6">
-      <div class="flex gap-6">
-        <div class="flex items-center gap-2">
-          <span class="text-[10px] font-bold text-primary/40 uppercase tracking-tighter">Sessions</span>
-          <span class="text-xs font-mono text-slate-100" id="session-count">0</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-[10px] font-bold text-primary/40 uppercase tracking-tighter">Hours</span>
-          <span class="text-xs font-mono font-bold text-primary" id="hours-count">0</span>
+        <div class="max-w-5xl mx-auto">
+          <RecentSessions client:load />
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </Layout>
 
 <script>
