@@ -36,29 +36,22 @@ export default function StudyForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <div className="flex items-center gap-3 mb-2">
-        <div className="size-8 bg-neon-yellow rounded flex items-center justify-center text-black">
-          <span className="material-symbols-outlined font-bold">edit_note</span>
-        </div>
-        <h2 className="text-xl font-black uppercase text-slate-900 dark:text-white tracking-tighter">Log Study Session</h2>
-      </div>
-
-      <label className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Title</span>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <label className="flex flex-col gap-2">
+        <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Title</span>
         <input 
           type="text" 
           value={title} 
           onChange={(e) => setTitle(e.target.value)} 
           required 
           placeholder="e.g., Present Perfect"
-          className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-primary" 
+          className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" 
         />
       </label>
       
-      <label className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Skill Area</span>
-        <select value={skillArea} onChange={(e) => setSkillArea(e.target.value as SkillArea)} required className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary">
+      <label className="flex flex-col gap-2">
+        <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Skill Area</span>
+        <select value={skillArea} onChange={(e) => setSkillArea(e.target.value as SkillArea)} required className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 focus:outline-none focus:border-primary transition-colors">
           <option value="Reading">Reading</option>
           <option value="Writing">Writing</option>
           <option value="Listening">Listening</option>
@@ -66,48 +59,47 @@ export default function StudyForm() {
         </select>
       </label>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Topics Covered</span>
+      <label className="flex flex-col gap-2">
+        <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Topics Covered</span>
         <input 
           type="text" 
           value={topic} 
           onChange={(e) => setTopic(e.target.value)} 
           required 
           placeholder="e.g., Usage with 'since' and 'for'"
-          className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-primary" 
+          className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" 
         />
       </label>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Source</span>
-        <input type="text" value={source} onChange={(e) => setSource(e.target.value)} required className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
+      <label className="flex flex-col gap-2">
+        <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Source</span>
+        <input type="text" value={source} onChange={(e) => setSource(e.target.value)} required placeholder="e.g., Cambridge Grammar in Use" className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" />
       </label>
 
-      <div className="grid grid-cols-2 gap-4">
-        <label className="flex flex-col gap-1">
-          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Duration (min)</span>
-          <input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} required min="1" className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
+      <div className="grid grid-cols-3 gap-4">
+        <label className="flex flex-col gap-2">
+          <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Duration</span>
+          <input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} required min="1" placeholder="min" className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" />
         </label>
 
-        <label className="flex flex-col gap-1">
-          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Exercises</span>
-          <input type="number" value={exerciseCount} onChange={(e) => setExerciseCount(e.target.value)} required min="0" className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
+        <label className="flex flex-col gap-2">
+          <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Exercises</span>
+          <input type="number" value={exerciseCount} onChange={(e) => setExerciseCount(e.target.value)} required min="0" placeholder="0" className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" />
+        </label>
+
+        <label className="flex flex-col gap-2">
+          <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Confidence</span>
+          <input type="number" value={confidenceLevel} onChange={(e) => setConfidenceLevel(e.target.value)} required min="1" max="5" placeholder="1-5" className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" />
         </label>
       </div>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Confidence (1-5)</span>
-        <input type="number" value={confidenceLevel} onChange={(e) => setConfidenceLevel(e.target.value)} required min="1" max="5" className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
+      <label className="flex flex-col gap-2">
+        <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Notes</span>
+        <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} placeholder="Additional observations..." className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary resize-none transition-colors" />
       </label>
 
-      <label className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Notes</span>
-        <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary resize-none" />
-      </label>
-
-      <button type="submit" className="flex items-center justify-center gap-2 px-4 py-3 rounded bg-primary text-white text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
-        <span className="material-symbols-outlined text-sm">save</span>
-        Save Session
+      <button type="submit" className="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-6 py-3 rounded hover:opacity-90 transition-opacity mt-2">
+        Commit Session
       </button>
     </form>
   );

@@ -14,39 +14,70 @@ const { title } = Astro.props;
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <title>{title}</title>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
-  <div class="relative flex h-screen w-full flex-col overflow-hidden">
-    <!-- Top Nav Bar -->
-    <header class="flex items-center justify-between border-b border-primary/20 px-6 py-3 bg-white dark:bg-black">
-      <div class="flex items-center gap-8">
-        <div class="flex items-center gap-3 text-primary">
-          <div class="size-6 flex items-center justify-center text-neon-yellow">
-            <span class="material-symbols-outlined text-3xl">rocket_launch</span>
-          </div>
-          <h2 class="text-slate-900 dark:text-white text-lg font-black uppercase tracking-tighter">
-            B2 <span class="text-neon-yellow neon-glow">Study Vault</span>
-          </h2>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased overflow-hidden">
+  <div class="flex h-screen w-full flex-col">
+    <!-- Top Navigation -->
+    <header class="flex items-center justify-between border-b border-primary/20 bg-background-dark px-6 py-3">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 text-primary">
+          <span class="material-symbols-outlined text-2xl font-bold">rocket_launch</span>
+          <h2 class="text-lg font-bold tracking-widest uppercase neon-glow">The Forge</h2>
         </div>
-        <nav class="hidden md:flex items-center gap-6">
-          <a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Sessions</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Reviews</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Stats</a>
-        </nav>
+        <div class="h-4 w-px bg-primary/30 mx-2"></div>
+        <div class="flex flex-col">
+          <span class="text-[10px] uppercase tracking-widest text-primary/60 font-bold">Module</span>
+          <span class="text-xs font-bold text-slate-100 tracking-tight">B2 FIRST CAMBRIDGE / STUDY TRACKER</span>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <div class="text-right hidden lg:block">
-          <p class="text-[10px] font-bold text-neon-yellow leading-none uppercase">Agent Status</p>
-          <p class="text-xs font-medium text-slate-400">Authorized Access</p>
+      <div class="flex items-center gap-6">
+        <div class="flex flex-col items-end">
+          <span class="text-[10px] uppercase tracking-widest text-primary/60 font-bold">Mode</span>
+          <span class="text-xs font-bold tracking-tight uppercase text-primary">High Intensity</span>
+        </div>
+        <div class="h-8 w-8 rounded-full border border-primary/30 flex items-center justify-center bg-primary/10">
+          <span class="material-symbols-outlined text-sm text-primary">bolt</span>
+        </div>
+        <div class="flex gap-2 border-l border-primary/20 pl-6">
+          <button class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-xl">settings</span>
+          </button>
+          <button class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined text-xl">history</span>
+          </button>
         </div>
       </div>
     </header>
 
-    <div class="flex flex-1 overflow-hidden">
+    <!-- Main Content -->
+    <main class="flex flex-1 overflow-hidden border-t border-primary/10">
       <slot />
-    </div>
+    </main>
+
+    <!-- Bottom Status Bar -->
+    <footer class="h-8 bg-background-dark border-t border-primary/20 flex items-center px-4 justify-between">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-xs text-green-500">check_circle</span>
+          <span class="text-[10px] text-primary/60 uppercase font-bold tracking-tight">Sync Status: Secure</span>
+        </div>
+        <div class="h-3 w-px bg-primary/20"></div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-[10px] text-primary/60 uppercase font-bold tracking-tight">Focus Level:</span>
+          <div class="flex gap-0.5">
+            <div class="h-1.5 w-3 bg-primary/80 rounded-sm"></div>
+            <div class="h-1.5 w-3 bg-primary/80 rounded-sm"></div>
+            <div class="h-1.5 w-3 bg-primary/80 rounded-sm"></div>
+            <div class="h-1.5 w-3 bg-primary/20 rounded-sm"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-[10px] font-mono text-primary/40">
+        FORGE_V2.0.4_CAMBRIDGE_EDITION
+      </div>
+    </footer>
   </div>
 </body>
 </html>
