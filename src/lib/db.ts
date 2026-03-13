@@ -13,7 +13,8 @@ db.exec(`CREATE TABLE IF NOT EXISTS sessions (
   source TEXT NOT NULL,
   createdDate TEXT NOT NULL,
   nextReviewDate TEXT NOT NULL,
-  reviewCount INTEGER DEFAULT 0
+  reviewCount INTEGER DEFAULT 0,
+  pdfPath TEXT
 )`);
 
 // Study Logs table
@@ -39,11 +40,12 @@ export function getAllSessions(): Session[] {
 
 export function insertSession(session: Session) {
   db.prepare(
-    `INSERT INTO sessions (id, title, skillArea, topics, source, createdDate, nextReviewDate, reviewCount)
-     VALUES (@id, @title, @skillArea, @topics, @source, @createdDate, @nextReviewDate, @reviewCount)`
+    `INSERT INTO sessions (id, title, skillArea, topics, source, createdDate, nextReviewDate, reviewCount, pdfPath)
+     VALUES (@id, @title, @skillArea, @topics, @source, @createdDate, @nextReviewDate, @reviewCount, @pdfPath)`
   ).run({
     ...session,
-    topics: JSON.stringify(session.topics)
+    topics: JSON.stringify(session.topics),
+    pdfPath: session.pdfPath || null
   });
 }
 
@@ -53,6 +55,15 @@ export function updateSession(id: string, nextReviewDate: string, reviewCount: n
 
 export function updateSessionMetadata(id: string, topics: string[], source: string) {
   db.prepare('UPDATE sessions SET topics = ?, source = ? WHERE id = ?').run(JSON.stringify(topics), source, id);
+}
+
+export function updateSessionPdf(id: string, pdfPath: string) {
+  db.prepare('UPDATE sessions SET pdfPath = ? WHERE id = ?').run(pdfPath, id);
+}
+
+export function deleteSession(id: string) {
+  db.prepare('DELETE FROM study_logs WHERE sessionId = ?').run(id);
+  db.prepare('DELETE FROM sessions WHERE id = ?').run(id);
 }
 
 export function getSessionById(id: string): Session | undefined {

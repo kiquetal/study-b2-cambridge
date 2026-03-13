@@ -11,7 +11,7 @@ export default function RecentSessions() {
     loadLogs();
   }, []);
 
-  const logsList = Object.values(logs).sort((a, b) => b.date.localeCompare(a.date));
+  const logsList = Object.values(logs);
 
   return (
     <div className="flex flex-col gap-6">

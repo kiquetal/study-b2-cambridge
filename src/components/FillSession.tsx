@@ -16,6 +16,7 @@ export default function FillSession() {
   const [notes, setNotes] = useState('');
   const [filter, setFilter] = useState('');
   const [sortBy, setSortBy] = useState<'recent' | 'title'>('recent');
+  const [uploadingPdf, setUploadingPdf] = useState(false);
 
   useEffect(() => {
     loadSessions();
@@ -123,6 +124,39 @@ export default function FillSession() {
     setSourceInput('');
   };
 
+  const handlePdfUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !selectedSession) return;
+
+    setUploadingPdf(true);
+    const formData = new FormData();
+    formData.append('pdf', file);
+    formData.append('sessionId', selectedSession);
+
+    try {
+      await fetch('/api/upload-pdf', { method: 'POST', body: formData });
+      await loadSessions();
+    } catch (error) {
+      alert('Failed to upload PDF');
+    } finally {
+      setUploadingPdf(false);
+    }
+  };
+
+  const handleDeleteSession = async () => {
+    if (!selectedSession || !confirm('Delete this session and all its logs?')) return;
+    
+    await fetch('/api/sessions', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: selectedSession })
+    });
+    
+    setSelectedSession('');
+    await loadSessions();
+    await loadLogs();
+  };
+
   return (
     <div className="flex gap-6 h-full">
       {/* Left: Session List */}
@@ -216,13 +250,22 @@ export default function FillSession() {
                   </span>
                 )}
                 {!editingSessionMeta && (
-                  <button
-                    type="button"
-                    onClick={handleEditSessionMeta}
-                    className="ml-auto text-xs px-3 py-1 bg-slate-700 text-slate-300 rounded hover:bg-slate-600"
-                  >
-                    Edit Session
-                  </button>
+                  <div className="ml-auto flex gap-2">
+                    <button
+                      type="button"
+                      onClick={handleEditSessionMeta}
+                      className="text-xs px-3 py-1 bg-slate-700 text-slate-300 rounded hover:bg-slate-600"
+                    >
+                      Edit Session
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleDeleteSession}
+                      className="text-xs px-3 py-1 bg-red-500/20 text-red-400 rounded hover:bg-red-500/30"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 )}
               </div>
               
@@ -277,6 +320,20 @@ export default function FillSession() {
                     </div>
                   </div>
                   <p className="mt-2"><strong className="text-primary">Source:</strong> {selectedSessionData?.source}</p>
+                  {selectedSessionData?.pdfPath && (
+                    <p className="mt-2">
+                      <strong className="text-primary">PDF:</strong>{' '}
+                      <a href={selectedSessionData.pdfPath} target="_blank" className="text-primary hover:underline">
+                        View PDF
+                      </a>
+                    </p>
+                  )}
+                  <div className="mt-3">
+                    <label className="cursor-pointer inline-block px-3 py-1.5 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30">
+                      {uploadingPdf ? 'Uploading...' : selectedSessionData?.pdfPath ? 'Replace PDF' : 'Upload PDF'}
+                      <input type="file" accept=".pdf" onChange={handlePdfUpload} disabled={uploadingPdf} className="hidden" />
+                    </label>
+                  </div>
                 </div>
               )}
             </div>
