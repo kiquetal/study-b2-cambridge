@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SimpleForm from '../components/SimpleForm';
+import StudyForm from '../components/StudyForm';
+import LogTime from '../components/LogTime';
 import Dashboard from '../components/Dashboard';
 import RecentSessions from '../components/RecentSessions';
 ---
@@ -10,9 +11,13 @@ import RecentSessions from '../components/RecentSessions';
   <section class="w-1/2 flex flex-col border-r border-primary/20 bg-black/40 overflow-hidden">
     <!-- Tab Navigation -->
     <div class="flex border-b border-primary/20 bg-background-dark/60">
-      <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-primary border-b-2 border-primary" data-tab="add">
+      <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-primary border-b-2 border-primary" data-tab="create">
         <span class="material-symbols-outlined text-sm mr-2 inline-block align-middle">add_circle</span>
-        Add Session
+        Create Session
+      </button>
+      <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" data-tab="fill">
+        <span class="material-symbols-outlined text-sm mr-2 inline-block align-middle">edit</span>
+        Fill Session
       </button>
       <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" data-tab="dashboard">
         <span class="material-symbols-outlined text-sm mr-2 inline-block align-middle">dashboard</span>
@@ -26,9 +31,22 @@ import RecentSessions from '../components/RecentSessions';
 
     <!-- Tab Content -->
     <div class="flex-1 overflow-y-auto custom-scrollbar p-8">
-      <!-- Add Session Tab -->
-      <div id="tab-add" class="tab-content">
-        <SimpleForm client:load />
+      <!-- Create Session Tab -->
+      <div id="tab-create" class="tab-content">
+        <div class="mb-6">
+          <h2 class="text-2xl font-bold text-slate-100 mb-2">Create Session</h2>
+          <p class="text-sm text-slate-400">Set up a new study session (just title and source)</p>
+        </div>
+        <StudyForm client:load />
+      </div>
+
+      <!-- Fill Session Tab -->
+      <div id="tab-fill" class="tab-content hidden">
+        <div class="mb-6">
+          <h2 class="text-2xl font-bold text-slate-100 mb-2">Fill Session</h2>
+          <p class="text-sm text-slate-400">After studying, log your time and notes</p>
+        </div>
+        <LogTime client:load />
       </div>
 
       <!-- Dashboard Tab -->
@@ -54,7 +72,7 @@ import RecentSessions from '../components/RecentSessions';
 
     <div class="flex-1 p-8 overflow-y-auto custom-scrollbar">
       <div id="preview-content" class="text-slate-400 text-sm">
-        <p class="mb-4">Fill the form to log your study session...</p>
+        <p class="mb-4">Create a session, then fill it after studying...</p>
       </div>
     </div>
 
