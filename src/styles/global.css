@@ -1,1 +1,32 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&display=swap');
+
+@theme {
+  --color-primary: #ec5b13;
+  --color-neon-yellow: #ec5b13;
+  --color-background-light: #f8f6f6;
+  --color-background-dark: #221610;
+  
+  --font-display: "Public Sans", sans-serif;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px rgba(236, 91, 19, 0.7);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ec5b13;
+  border-radius: 10px;
+}

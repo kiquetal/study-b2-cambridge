@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+  <title>{title}</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+  <div class="relative flex h-screen w-full flex-col overflow-hidden">
+    <!-- Top Nav Bar -->
+    <header class="flex items-center justify-between border-b border-primary/20 px-6 py-3 bg-white dark:bg-black">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3 text-primary">
+          <div class="size-6 flex items-center justify-center text-neon-yellow">
+            <span class="material-symbols-outlined text-3xl">rocket_launch</span>
+          </div>
+          <h2 class="text-slate-900 dark:text-white text-lg font-black uppercase tracking-tighter">
+            B2 <span class="text-neon-yellow neon-glow">Study Vault</span>
+          </h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-6">
+          <a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Sessions</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Reviews</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-neon-yellow text-sm font-bold uppercase tracking-widest transition-colors" href="#">Stats</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="text-right hidden lg:block">
+          <p class="text-[10px] font-bold text-neon-yellow leading-none uppercase">Agent Status</p>
+          <p class="text-xs font-medium text-slate-400">Authorized Access</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden">
+      <slot />
+    </div>
+  </div>
+</body>
+</html>
