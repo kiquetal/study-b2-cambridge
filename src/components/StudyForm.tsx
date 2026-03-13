@@ -33,12 +33,17 @@ export default function StudyForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '500px' }}>
-      <h2>Log Study Session</h2>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="flex items-center gap-3 mb-2">
+        <div className="size-8 bg-neon-yellow rounded flex items-center justify-center text-black">
+          <span className="material-symbols-outlined font-bold">edit_note</span>
+        </div>
+        <h2 className="text-xl font-black uppercase text-slate-900 dark:text-white tracking-tighter">Log Study Session</h2>
+      </div>
       
-      <label>
-        Skill Area:
-        <select value={skillArea} onChange={(e) => setSkillArea(e.target.value as SkillArea)} required>
+      <label className="flex flex-col gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Skill Area</span>
+        <select value={skillArea} onChange={(e) => setSkillArea(e.target.value as SkillArea)} required className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary">
           <option value="Reading">Reading</option>
           <option value="Writing">Writing</option>
           <option value="Listening">Listening</option>
@@ -46,37 +51,40 @@ export default function StudyForm() {
         </select>
       </label>
 
-      <label>
-        Topic:
-        <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} required />
+      <label className="flex flex-col gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Topic</span>
+        <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} required className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
       </label>
 
-      <label>
-        Source:
-        <input type="text" value={source} onChange={(e) => setSource(e.target.value)} required />
+      <label className="flex flex-col gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Source</span>
+        <input type="text" value={source} onChange={(e) => setSource(e.target.value)} required className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
       </label>
 
-      <label>
-        Duration (minutes):
-        <input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} required min="1" />
+      <div className="grid grid-cols-2 gap-4">
+        <label className="flex flex-col gap-1">
+          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Duration (min)</span>
+          <input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} required min="1" className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
+        </label>
+
+        <label className="flex flex-col gap-1">
+          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Exercises</span>
+          <input type="number" value={exerciseCount} onChange={(e) => setExerciseCount(e.target.value)} required min="0" className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
+        </label>
+      </div>
+
+      <label className="flex flex-col gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Confidence (1-5)</span>
+        <input type="number" value={confidenceLevel} onChange={(e) => setConfidenceLevel(e.target.value)} required min="1" max="5" className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
       </label>
 
-      <label>
-        Exercises Completed:
-        <input type="number" value={exerciseCount} onChange={(e) => setExerciseCount(e.target.value)} required min="0" />
+      <label className="flex flex-col gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Notes</span>
+        <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary resize-none" />
       </label>
 
-      <label>
-        Confidence Level (1-5):
-        <input type="number" value={confidenceLevel} onChange={(e) => setConfidenceLevel(e.target.value)} required min="1" max="5" />
-      </label>
-
-      <label>
-        Notes:
-        <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} />
-      </label>
-
-      <button type="submit" style={{ padding: '10px', background: '#0066cc', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+      <button type="submit" className="flex items-center justify-center gap-2 px-4 py-3 rounded bg-primary text-white text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+        <span className="material-symbols-outlined text-sm">save</span>
         Save Session
       </button>
     </form>
