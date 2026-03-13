@@ -1,22 +1,22 @@
 import { useStore } from '@nanostores/react';
-import { templatesStore, logsStore, markAsReviewed, getDueTemplates, getStats, loadTemplates, loadLogs } from '../lib/store';
+import { sessionsStore, logsStore, markAsReviewed, getDueSessions, getStats, loadSessions, loadLogs } from '../lib/store';
 import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
-  const templates = useStore(templatesStore);
+  const sessions = useStore(sessionsStore);
   const logs = useStore(logsStore);
   const [stats, setStats] = useState({ totalSessions: 0, totalHours: 0, currentStreak: 0 });
-  const [dueTemplates, setDueTemplates] = useState<ReturnType<typeof getDueTemplates>>([]);
+  const [dueSessions, setDueSessions] = useState<ReturnType<typeof getDueSessions>>([]);
 
   useEffect(() => {
-    loadTemplates();
+    loadSessions();
     loadLogs();
   }, []);
 
   useEffect(() => {
     setStats(getStats());
-    setDueTemplates(getDueTemplates());
-  }, [templates, logs]);
+    setDueSessions(getDueSessions());
+  }, [sessions, logs]);
 
   useEffect(() => {
     const checkNotifications = async () => {
@@ -25,7 +25,7 @@ export default function Dashboard() {
       }
       
       if (Notification.permission === 'granted') {
-        const due = getDueTemplates();
+        const due = getDueSessions();
         if (due.length > 0) {
           new Notification('B2 Study Tracker', {
             body: `${due.length} session${due.length > 1 ? 's' : ''} due for review!`,
@@ -34,10 +34,10 @@ export default function Dashboard() {
         }
       }
     };
-    if (Object.keys(templates).length > 0) {
+    if (Object.keys(sessions).length > 0) {
       checkNotifications();
     }
-  }, [templates]);
+  }, [sessions]);
 
   return (
     <div className="flex flex-col gap-6">
@@ -58,20 +58,20 @@ export default function Dashboard() {
       </div>
 
       {/* Due for Review */}
-      {dueTemplates.length > 0 && (
+      {dueSessions.length > 0 && (
         <div className="rounded-xl bg-primary/10 border border-primary/30 p-4">
           <div className="flex items-center gap-2 text-primary mb-3">
             <span className="material-symbols-outlined">warning</span>
-            <h3 className="text-xs font-black uppercase tracking-widest">Due for Review ({dueTemplates.length})</h3>
+            <h3 className="text-xs font-black uppercase tracking-widest">Due for Review ({dueSessions.length})</h3>
           </div>
           <div className="space-y-2">
-            {dueTemplates.map(t => (
-              <div key={t.id} className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-zinc-900 border border-slate-200 dark:border-white/5">
+            {dueSessions.map(s => (
+              <div key={s.id} className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-zinc-900 border border-slate-200 dark:border-white/5">
                 <div>
-                  <p className="font-bold text-sm text-slate-900 dark:text-white">{t.title}</p>
-                  <p className="text-xs text-slate-500">{t.skillArea} • {t.topic}</p>
+                  <p className="font-bold text-sm text-slate-900 dark:text-white">{s.title}</p>
+                  <p className="text-xs text-slate-500">{s.skillArea} • {s.topic}</p>
                 </div>
-                <button onClick={() => markAsReviewed(t.id)} className="px-3 py-1.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-widest hover:opacity-90">
+                <button onClick={() => markAsReviewed(s.id)} className="px-3 py-1.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-widest hover:opacity-90">
                   Mark Reviewed
                 </button>
               </div>

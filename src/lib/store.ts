@@ -1,7 +1,7 @@
 import { atom } from 'nanostores';
-import type { SessionTemplate, StudyLog } from './types';
+import type { Session, StudyLog } from './types';
 
-export const templatesStore = atom<Record<string, SessionTemplate>>({});
+export const sessionsStore = atom<Record<string, Session>>({});
 export const logsStore = atom<Record<string, StudyLog>>({});
 
 const INTERVALS = [1, 3, 7, 14, 30];
@@ -13,36 +13,36 @@ export function getNextReviewDate(currentDate: string, reviewCount: number): str
   return date.toISOString().split('T')[0];
 }
 
-// Templates
-export async function loadTemplates() {
-  const res = await fetch('/api/templates');
-  const templates = await res.json();
-  const templateMap = templates.reduce((acc: Record<string, SessionTemplate>, t: SessionTemplate) => {
-    acc[t.id] = t;
+// Sessions
+export async function loadSessions() {
+  const res = await fetch('/api/sessions');
+  const sessions = await res.json();
+  const sessionMap = sessions.reduce((acc: Record<string, Session>, s: Session) => {
+    acc[s.id] = s;
     return acc;
   }, {});
-  templatesStore.set(templateMap);
+  sessionsStore.set(sessionMap);
 }
 
-export async function addTemplate(template: Omit<SessionTemplate, 'id' | 'createdDate' | 'nextReviewDate' | 'reviewCount'>) {
-  const res = await fetch('/api/templates', {
+export async function addSession(session: Omit<Session, 'id' | 'createdDate' | 'nextReviewDate' | 'reviewCount'>) {
+  const res = await fetch('/api/sessions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(template),
+    body: JSON.stringify(session),
   });
-  const newTemplate = await res.json();
-  templatesStore.set({ ...templatesStore.get(), [newTemplate.id]: newTemplate });
+  const newSession = await res.json();
+  sessionsStore.set({ ...sessionsStore.get(), [newSession.id]: newSession });
 }
 
 export async function markAsReviewed(id: string) {
-  await fetch(`/api/templates/${id}`, { method: 'PATCH' });
-  await loadTemplates();
+  await fetch(`/api/sessions/${id}`, { method: 'PATCH' });
+  await loadSessions();
 }
 
-export function getDueTemplates(): SessionTemplate[] {
-  const templates = templatesStore.get();
+export function getDueSessions(): Session[] {
+  const sessions = sessionsStore.get();
   const today = new Date().toISOString().split('T')[0];
-  return Object.values(templates).filter(t => t.nextReviewDate <= today);
+  return Object.values(sessions).filter(s => s.nextReviewDate <= today);
 }
 
 // Study Logs

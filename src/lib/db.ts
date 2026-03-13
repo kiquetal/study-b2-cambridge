@@ -1,11 +1,11 @@
 import Database from 'better-sqlite3';
 import { join } from 'path';
-import type { SessionTemplate, StudyLog } from './types';
+import type { Session, StudyLog } from './types';
 
 const db = new Database(join(process.cwd(), 'study.db'));
 
-// Session Templates table
-db.exec(`CREATE TABLE IF NOT EXISTS session_templates (
+// Sessions table
+db.exec(`CREATE TABLE IF NOT EXISTS sessions (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
   skillArea TEXT NOT NULL,
@@ -19,33 +19,33 @@ db.exec(`CREATE TABLE IF NOT EXISTS session_templates (
 // Study Logs table
 db.exec(`CREATE TABLE IF NOT EXISTS study_logs (
   id TEXT PRIMARY KEY,
-  templateId TEXT NOT NULL,
+  sessionId TEXT NOT NULL,
   date TEXT NOT NULL,
   duration INTEGER NOT NULL,
   exerciseCount INTEGER DEFAULT 0,
   confidenceLevel INTEGER DEFAULT 3,
   notes TEXT DEFAULT '',
-  FOREIGN KEY (templateId) REFERENCES session_templates(id)
+  FOREIGN KEY (sessionId) REFERENCES sessions(id)
 )`);
 
-// Session Templates
-export function getAllTemplates(): SessionTemplate[] {
-  return db.prepare('SELECT * FROM session_templates ORDER BY createdDate DESC').all() as SessionTemplate[];
+// Sessions
+export function getAllSessions(): Session[] {
+  return db.prepare('SELECT * FROM sessions ORDER BY createdDate DESC').all() as Session[];
 }
 
-export function insertTemplate(template: SessionTemplate) {
+export function insertSession(session: Session) {
   db.prepare(
-    `INSERT INTO session_templates (id, title, skillArea, topic, source, createdDate, nextReviewDate, reviewCount)
+    `INSERT INTO sessions (id, title, skillArea, topic, source, createdDate, nextReviewDate, reviewCount)
      VALUES (@id, @title, @skillArea, @topic, @source, @createdDate, @nextReviewDate, @reviewCount)`
-  ).run(template);
+  ).run(session);
 }
 
-export function updateTemplate(id: string, nextReviewDate: string, reviewCount: number) {
-  db.prepare('UPDATE session_templates SET nextReviewDate = ?, reviewCount = ? WHERE id = ?').run(nextReviewDate, reviewCount, id);
+export function updateSession(id: string, nextReviewDate: string, reviewCount: number) {
+  db.prepare('UPDATE sessions SET nextReviewDate = ?, reviewCount = ? WHERE id = ?').run(nextReviewDate, reviewCount, id);
 }
 
-export function getTemplateById(id: string): SessionTemplate | undefined {
-  return db.prepare('SELECT * FROM session_templates WHERE id = ?').get(id) as SessionTemplate | undefined;
+export function getSessionById(id: string): Session | undefined {
+  return db.prepare('SELECT * FROM sessions WHERE id = ?').get(id) as Session | undefined;
 }
 
 // Study Logs
@@ -53,13 +53,13 @@ export function getAllLogs(): StudyLog[] {
   return db.prepare('SELECT * FROM study_logs ORDER BY date DESC').all() as StudyLog[];
 }
 
-export function getLogsByTemplate(templateId: string): StudyLog[] {
-  return db.prepare('SELECT * FROM study_logs WHERE templateId = ? ORDER BY date DESC').all(templateId) as StudyLog[];
+export function getLogsBySession(sessionId: string): StudyLog[] {
+  return db.prepare('SELECT * FROM study_logs WHERE sessionId = ? ORDER BY date DESC').all(sessionId) as StudyLog[];
 }
 
 export function insertLog(log: StudyLog) {
   db.prepare(
-    `INSERT INTO study_logs (id, templateId, date, duration, exerciseCount, confidenceLevel, notes)
-     VALUES (@id, @templateId, @date, @duration, @exerciseCount, @confidenceLevel, @notes)`
+    `INSERT INTO study_logs (id, sessionId, date, duration, exerciseCount, confidenceLevel, notes)
+     VALUES (@id, @sessionId, @date, @duration, @exerciseCount, @confidenceLevel, @notes)`
   ).run(log);
 }

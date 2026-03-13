@@ -1,13 +1,13 @@
 import { useStore } from '@nanostores/react';
-import { templatesStore, logsStore, loadTemplates, loadLogs } from '../lib/store';
+import { sessionsStore, logsStore, loadSessions, loadLogs } from '../lib/store';
 import { useEffect } from 'react';
 
 export default function RecentSessions() {
-  const templates = useStore(templatesStore);
+  const sessions = useStore(sessionsStore);
   const logs = useStore(logsStore);
 
   useEffect(() => {
-    loadTemplates();
+    loadSessions();
     loadLogs();
   }, []);
 
@@ -28,18 +28,18 @@ export default function RecentSessions() {
       ) : (
         <div className="space-y-3">
           {logsList.map(log => {
-            const template = templates[log.templateId];
+            const session = sessions[log.sessionId];
             return (
               <div key={log.id} className="p-5 rounded-lg bg-black/60 border border-primary/20 hover:border-primary/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
                   <div>
                     <p className="font-black text-xl text-slate-100 uppercase tracking-tight mb-1">
-                      {template?.title || 'Unknown Session'}
+                      {session?.title || 'Unknown Session'}
                     </p>
-                    {template && (
+                    {session && (
                       <>
-                        <p className="text-xs text-slate-500">Topics: {template.topic}</p>
-                        <p className="text-xs text-slate-500 mt-1">Skill: {template.skillArea}</p>
+                        <p className="text-xs text-slate-500">Topics: {session.topic}</p>
+                        <p className="text-xs text-slate-500 mt-1">Skill: {session.skillArea}</p>
                       </>
                     )}
                   </div>
@@ -50,7 +50,7 @@ export default function RecentSessions() {
                   <span>{log.exerciseCount} exercises</span>
                   <span>Confidence: {log.confidenceLevel}/5</span>
                 </div>
-                {template && <p className="text-xs text-slate-400">Source: {template.source}</p>}
+                {session && <p className="text-xs text-slate-400">Source: {session.source}</p>}
                 {log.notes && <p className="text-xs text-slate-400 mt-2 italic border-l-2 border-primary/20 pl-3">{log.notes}</p>}
               </div>
             );

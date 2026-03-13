@@ -1,4 +1,4 @@
-import { addTemplate } from '../lib/store';
+import { addSession } from '../lib/store';
 import type { SkillArea } from '../lib/types';
 import { useState } from 'react';
 
@@ -10,7 +10,7 @@ export default function StudyForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await addTemplate({ title, skillArea, topic, source });
+    await addSession({ title, skillArea, topic, source });
     setTitle('');
     setTopic('');
     setSource('');

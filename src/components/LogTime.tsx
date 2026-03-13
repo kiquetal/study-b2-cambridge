@@ -1,25 +1,25 @@
 import { useStore } from '@nanostores/react';
-import { templatesStore, logsStore, loadTemplates, loadLogs, addLog } from '../lib/store';
+import { sessionsStore, logsStore, loadSessions, loadLogs, addLog } from '../lib/store';
 import { useEffect, useState } from 'react';
 
 export default function LogTime() {
-  const templates = useStore(templatesStore);
+  const sessions = useStore(sessionsStore);
   const logs = useStore(logsStore);
-  const [selectedTemplate, setSelectedTemplate] = useState('');
+  const [selectedSession, setSelectedSession] = useState('');
   const [duration, setDuration] = useState('');
   const [exerciseCount, setExerciseCount] = useState('');
   const [confidenceLevel, setConfidenceLevel] = useState('3');
   const [notes, setNotes] = useState('');
 
   useEffect(() => {
-    loadTemplates();
+    loadSessions();
     loadLogs();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await addLog({
-      templateId: selectedTemplate,
+      sessionId: selectedSession,
       date: new Date().toISOString().split('T')[0],
       duration: parseInt(duration),
       exerciseCount: parseInt(exerciseCount),
@@ -32,8 +32,8 @@ export default function LogTime() {
     setNotes('');
   };
 
-  const templateList = Object.values(templates);
-  const selectedTemplateData = templates[selectedTemplate];
+  const sessionList = Object.values(sessions);
+  const selectedSessionData = sessions[selectedSession];
 
   return (
     <div className="flex flex-col gap-6">
@@ -42,7 +42,7 @@ export default function LogTime() {
         <h3 className="text-xs font-bold uppercase tracking-[0.2em]">Log Study Time</h3>
       </div>
 
-      {templateList.length === 0 ? (
+      {sessionList.length === 0 ? (
         <div className="text-center py-8 text-slate-500">
           <p className="text-sm">No sessions created yet. Create a session first!</p>
         </div>
@@ -50,18 +50,18 @@ export default function LogTime() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <label className="flex flex-col gap-2">
             <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Select Session</span>
-            <select value={selectedTemplate} onChange={(e) => setSelectedTemplate(e.target.value)} required className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 focus:outline-none focus:border-primary transition-colors">
+            <select value={selectedSession} onChange={(e) => setSelectedSession(e.target.value)} required className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 focus:outline-none focus:border-primary transition-colors">
               <option value="">Choose a session...</option>
-              {templateList.map(t => (
-                <option key={t.id} value={t.id}>{t.title} ({t.skillArea})</option>
+              {sessionList.map(s => (
+                <option key={s.id} value={s.id}>{s.title} ({s.skillArea})</option>
               ))}
             </select>
           </label>
 
-          {selectedTemplateData && (
+          {selectedSessionData && (
             <div className="p-4 bg-primary/5 border border-primary/20 rounded text-xs text-slate-400">
-              <p><strong className="text-primary">Topics:</strong> {selectedTemplateData.topic}</p>
-              <p className="mt-1"><strong className="text-primary">Source:</strong> {selectedTemplateData.source}</p>
+              <p><strong className="text-primary">Topics:</strong> {selectedSessionData.topic}</p>
+              <p className="mt-1"><strong className="text-primary">Source:</strong> {selectedSessionData.source}</p>
             </div>
           )}
 

@@ -1,6 +1,6 @@
 export type SkillArea = 'Reading' | 'Writing' | 'Listening' | 'Speaking';
 
-export interface SessionTemplate {
+export interface Session {
   id: string;
   title: string;
   skillArea: SkillArea;
@@ -13,7 +13,7 @@ export interface SessionTemplate {
 
 export interface StudyLog {
   id: string;
-  templateId: string;
+  sessionId: string;
   date: string;
   duration: number;
   exerciseCount: number;
