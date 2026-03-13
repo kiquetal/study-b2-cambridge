@@ -29,6 +29,15 @@ db.exec(`CREATE TABLE IF NOT EXISTS study_logs (
   FOREIGN KEY (sessionId) REFERENCES sessions(id)
 )`);
 
+// Phrasal Verbs table
+db.exec(`CREATE TABLE IF NOT EXISTS phrasal_verbs (
+  id TEXT PRIMARY KEY,
+  verb TEXT NOT NULL,
+  meaning TEXT NOT NULL,
+  example TEXT NOT NULL,
+  createdDate TEXT NOT NULL
+)`);
+
 // Sessions
 export function getAllSessions(): Session[] {
   const rows = db.prepare('SELECT * FROM sessions ORDER BY createdDate DESC').all() as any[];
@@ -64,6 +73,22 @@ export function updateSessionPdf(id: string, pdfPath: string) {
 export function deleteSession(id: string) {
   db.prepare('DELETE FROM study_logs WHERE sessionId = ?').run(id);
   db.prepare('DELETE FROM sessions WHERE id = ?').run(id);
+}
+
+// Phrasal Verbs
+export function getAllPhrasalVerbs() {
+  return db.prepare('SELECT * FROM phrasal_verbs ORDER BY createdDate DESC').all();
+}
+
+export function insertPhrasalVerb(verb: any) {
+  db.prepare(
+    `INSERT INTO phrasal_verbs (id, verb, meaning, example, createdDate)
+     VALUES (@id, @verb, @meaning, @example, @createdDate)`
+  ).run(verb);
+}
+
+export function deletePhrasalVerb(id: string) {
+  db.prepare('DELETE FROM phrasal_verbs WHERE id = ?').run(id);
 }
 
 export function getSessionById(id: string): Session | undefined {

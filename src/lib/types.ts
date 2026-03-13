@@ -27,3 +27,11 @@ export interface Stats {
   totalHours: number;
   currentStreak: number;
 }
+
+export interface PhrasalVerb {
+  id: string;
+  verb: string;
+  meaning: string;
+  example: string;
+  createdDate: string;
+}
