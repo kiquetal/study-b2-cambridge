@@ -5,14 +5,15 @@ import { useState } from 'react';
 export default function StudyForm() {
   const [title, setTitle] = useState('');
   const [skillArea, setSkillArea] = useState<SkillArea>('Reading');
-  const [topic, setTopic] = useState('');
+  const [topicsInput, setTopicsInput] = useState('');
   const [source, setSource] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await addSession({ title, skillArea, topic, source });
+    const topics = topicsInput.split(',').map(t => t.trim()).filter(t => t.length > 0);
+    await addSession({ title, skillArea, topics, source });
     setTitle('');
-    setTopic('');
+    setTopicsInput('');
     setSource('');
   };
 
@@ -34,8 +35,8 @@ export default function StudyForm() {
       </label>
 
       <label className="flex flex-col gap-2">
-        <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Topics Covered</span>
-        <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} required placeholder="e.g., since/for, already/yet, just" className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" />
+        <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Topics (comma-separated)</span>
+        <input type="text" value={topicsInput} onChange={(e) => setTopicsInput(e.target.value)} required placeholder="e.g., grammar, present perfect, since/for" className="w-full px-4 py-2.5 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors" />
       </label>
 
       <label className="flex flex-col gap-2">

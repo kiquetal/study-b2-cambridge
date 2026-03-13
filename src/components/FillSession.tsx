@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/react';
-import { sessionsStore, logsStore, loadSessions, loadLogs, addLog, updateLog, deleteLog } from '../lib/store';
+import { sessionsStore, logsStore, loadSessions, loadLogs, addLog, updateLog, deleteLog, updateSessionMetadata } from '../lib/store';
 import { useEffect, useState } from 'react';
 
 export default function FillSession() {
@@ -7,6 +7,9 @@ export default function FillSession() {
   const logs = useStore(logsStore);
   const [selectedSession, setSelectedSession] = useState('');
   const [editingLog, setEditingLog] = useState<string | null>(null);
+  const [editingSessionMeta, setEditingSessionMeta] = useState(false);
+  const [topicsInput, setTopicsInput] = useState('');
+  const [sourceInput, setSourceInput] = useState('');
   const [duration, setDuration] = useState('');
   const [exerciseCount, setExerciseCount] = useState('');
   const [confidenceLevel, setConfidenceLevel] = useState('3');
@@ -89,7 +92,7 @@ export default function FillSession() {
   };
 
   const sessionList = Object.values(sessions)
-    .filter(s => !filter || s.title.toLowerCase().includes(filter.toLowerCase()) || s.topic.toLowerCase().includes(filter.toLowerCase()))
+    .filter(s => !filter || s.title.toLowerCase().includes(filter.toLowerCase()) || s.topics.some(t => t.toLowerCase().includes(filter.toLowerCase())))
     .sort((a, b) => {
       if (sortBy === 'title') return a.title.localeCompare(b.title);
       return b.createdDate.localeCompare(a.createdDate);
@@ -98,6 +101,27 @@ export default function FillSession() {
   const selectedSessionData = sessions[selectedSession];
   const selectedSessionLogs = Object.values(logs)
     .filter(l => l.sessionId === selectedSession)
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  const handleEditSessionMeta = () => {
+    if (selectedSessionData) {
+      setTopicsInput(selectedSessionData.topics.join(', '));
+      setSourceInput(selectedSessionData.source);
+      setEditingSessionMeta(true);
+    }
+  };
+
+  const handleSaveSessionMeta = async () => {
+    const topics = topicsInput.split(',').map(t => t.trim()).filter(t => t.length > 0);
+    await updateSessionMetadata(selectedSession, topics, sourceInput);
+    setEditingSessionMeta(false);
+  };
+
+  const handleCancelSessionMeta = () => {
+    setEditingSessionMeta(false);
+    setTopicsInput('');
+    setSourceInput('');
+  };
     .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
@@ -141,6 +165,7 @@ export default function FillSession() {
                   onClick={() => {
                     setSelectedSession(s.id);
                     handleCancelEdit();
+                    setEditingSessionMeta(false);
                   }}
                   className={`w-full text-left p-3 rounded-lg border transition-colors ${
                     selectedSession === s.id
@@ -154,8 +179,15 @@ export default function FillSession() {
                       <span className="text-xs px-2 py-0.5 rounded bg-primary/20 text-primary">{logCount}</span>
                     )}
                   </div>
-                  <p className="text-xs text-slate-500">{s.skillArea} • {s.topic}</p>
-                  <p className="text-xs text-slate-600 mt-1">{s.createdDate}</p>
+                  <p className="text-xs text-slate-500 mb-1">{s.skillArea}</p>
+                  <div className="flex flex-wrap gap-1 mb-1">
+                    {s.topics.map((topic, i) => (
+                      <span key={i} className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary">
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-xs text-slate-600">{s.createdDate}</p>
                 </button>
               );
             })}
@@ -184,12 +216,70 @@ export default function FillSession() {
                     Editing: {logs[editingLog].date}
                   </span>
                 )}
+                {!editingSessionMeta && (
+                  <button
+                    type="button"
+                    onClick={handleEditSessionMeta}
+                    className="ml-auto text-xs px-3 py-1 bg-slate-700 text-slate-300 rounded hover:bg-slate-600"
+                  >
+                    Edit Session
+                  </button>
+                )}
               </div>
-              <div className="p-3 bg-primary/5 border border-primary/20 rounded text-xs text-slate-400">
-                <p><strong className="text-primary">Skill:</strong> {selectedSessionData?.skillArea}</p>
-                <p className="mt-1"><strong className="text-primary">Topics:</strong> {selectedSessionData?.topic}</p>
-                <p className="mt-1"><strong className="text-primary">Source:</strong> {selectedSessionData?.source}</p>
-              </div>
+              
+              {editingSessionMeta ? (
+                <div className="p-3 bg-primary/5 border border-primary/20 rounded space-y-3">
+                  <label className="flex flex-col gap-1">
+                    <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Topics (comma-separated)</span>
+                    <input
+                      type="text"
+                      value={topicsInput}
+                      onChange={(e) => setTopicsInput(e.target.value)}
+                      className="w-full px-3 py-2 bg-black/60 border border-primary/20 rounded text-xs text-slate-100 focus:outline-none focus:border-primary"
+                    />
+                  </label>
+                  <label className="flex flex-col gap-1">
+                    <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Source</span>
+                    <input
+                      type="text"
+                      value={sourceInput}
+                      onChange={(e) => setSourceInput(e.target.value)}
+                      className="w-full px-3 py-2 bg-black/60 border border-primary/20 rounded text-xs text-slate-100 focus:outline-none focus:border-primary"
+                    />
+                  </label>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={handleSaveSessionMeta}
+                      className="flex-1 px-3 py-1.5 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90"
+                    >
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleCancelSessionMeta}
+                      className="flex-1 px-3 py-1.5 bg-slate-700 text-white rounded text-[10px] font-bold uppercase hover:opacity-90"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-3 bg-primary/5 border border-primary/20 rounded text-xs text-slate-400">
+                  <p><strong className="text-primary">Skill:</strong> {selectedSessionData?.skillArea}</p>
+                  <div className="mt-2">
+                    <strong className="text-primary">Topics:</strong>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {selectedSessionData?.topics.map((topic, i) => (
+                        <span key={i} className="px-2 py-0.5 rounded bg-primary/20 text-primary text-xs">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="mt-2"><strong className="text-primary">Source:</strong> {selectedSessionData?.source}</p>
+                </div>
+              )}
             </div>
 
             <div className="grid grid-cols-3 gap-3">

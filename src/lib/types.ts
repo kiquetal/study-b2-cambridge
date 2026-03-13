@@ -4,7 +4,7 @@ export interface Session {
   id: string;
   title: string;
   skillArea: SkillArea;
-  topic: string;
+  topics: string[];
   source: string;
   createdDate: string;
   nextReviewDate: string;

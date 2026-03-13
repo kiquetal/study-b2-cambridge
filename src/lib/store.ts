@@ -39,6 +39,15 @@ export async function markAsReviewed(id: string) {
   await loadSessions();
 }
 
+export async function updateSessionMetadata(id: string, topics: string[], source: string) {
+  await fetch(`/api/sessions/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ topics, source }),
+  });
+  await loadSessions();
+}
+
 export function getDueSessions(): Session[] {
   const sessions = sessionsStore.get();
   const today = new Date().toISOString().split('T')[0];

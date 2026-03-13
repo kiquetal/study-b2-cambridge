@@ -69,7 +69,14 @@ export default function Dashboard() {
               <div key={s.id} className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-zinc-900 border border-slate-200 dark:border-white/5">
                 <div>
                   <p className="font-bold text-sm text-slate-900 dark:text-white">{s.title}</p>
-                  <p className="text-xs text-slate-500">{s.skillArea} • {s.topic}</p>
+                  <p className="text-xs text-slate-500 mb-1">{s.skillArea}</p>
+                  <div className="flex flex-wrap gap-1">
+                    {s.topics.map((topic, i) => (
+                      <span key={i} className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary">
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <button onClick={() => markAsReviewed(s.id)} className="px-3 py-1.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-widest hover:opacity-90">
                   Mark Reviewed

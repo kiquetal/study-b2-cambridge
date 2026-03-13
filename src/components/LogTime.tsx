@@ -60,8 +60,17 @@ export default function LogTime() {
 
           {selectedSessionData && (
             <div className="p-4 bg-primary/5 border border-primary/20 rounded text-xs text-slate-400">
-              <p><strong className="text-primary">Topics:</strong> {selectedSessionData.topic}</p>
-              <p className="mt-1"><strong className="text-primary">Source:</strong> {selectedSessionData.source}</p>
+              <div>
+                <strong className="text-primary">Topics:</strong>
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {selectedSessionData.topics.map((topic, i) => (
+                    <span key={i} className="px-2 py-0.5 rounded bg-primary/20 text-primary text-xs">
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p className="mt-2"><strong className="text-primary">Source:</strong> {selectedSessionData.source}</p>
             </div>
           )}
 

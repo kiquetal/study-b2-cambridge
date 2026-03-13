@@ -38,8 +38,14 @@ export default function RecentSessions() {
                     </p>
                     {session && (
                       <>
-                        <p className="text-xs text-slate-500">Topics: {session.topic}</p>
-                        <p className="text-xs text-slate-500 mt-1">Skill: {session.skillArea}</p>
+                        <div className="flex flex-wrap gap-1 mb-1">
+                          {session.topics.map((topic, i) => (
+                            <span key={i} className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary">
+                              {topic}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-xs text-slate-500">Skill: {session.skillArea}</p>
                       </>
                     )}
                   </div>

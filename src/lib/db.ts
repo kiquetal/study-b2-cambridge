@@ -9,7 +9,7 @@ db.exec(`CREATE TABLE IF NOT EXISTS sessions (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
   skillArea TEXT NOT NULL,
-  topic TEXT NOT NULL,
+  topics TEXT NOT NULL,
   source TEXT NOT NULL,
   createdDate TEXT NOT NULL,
   nextReviewDate TEXT NOT NULL,
@@ -30,22 +30,38 @@ db.exec(`CREATE TABLE IF NOT EXISTS study_logs (
 
 // Sessions
 export function getAllSessions(): Session[] {
-  return db.prepare('SELECT * FROM sessions ORDER BY createdDate DESC').all() as Session[];
+  const rows = db.prepare('SELECT * FROM sessions ORDER BY createdDate DESC').all() as any[];
+  return rows.map(row => ({
+    ...row,
+    topics: JSON.parse(row.topics)
+  }));
 }
 
 export function insertSession(session: Session) {
   db.prepare(
-    `INSERT INTO sessions (id, title, skillArea, topic, source, createdDate, nextReviewDate, reviewCount)
-     VALUES (@id, @title, @skillArea, @topic, @source, @createdDate, @nextReviewDate, @reviewCount)`
-  ).run(session);
+    `INSERT INTO sessions (id, title, skillArea, topics, source, createdDate, nextReviewDate, reviewCount)
+     VALUES (@id, @title, @skillArea, @topics, @source, @createdDate, @nextReviewDate, @reviewCount)`
+  ).run({
+    ...session,
+    topics: JSON.stringify(session.topics)
+  });
 }
 
 export function updateSession(id: string, nextReviewDate: string, reviewCount: number) {
   db.prepare('UPDATE sessions SET nextReviewDate = ?, reviewCount = ? WHERE id = ?').run(nextReviewDate, reviewCount, id);
 }
 
+export function updateSessionMetadata(id: string, topics: string[], source: string) {
+  db.prepare('UPDATE sessions SET topics = ?, source = ? WHERE id = ?').run(JSON.stringify(topics), source, id);
+}
+
 export function getSessionById(id: string): Session | undefined {
-  return db.prepare('SELECT * FROM sessions WHERE id = ?').get(id) as Session | undefined;
+  const row = db.prepare('SELECT * FROM sessions WHERE id = ?').get(id) as any;
+  if (!row) return undefined;
+  return {
+    ...row,
+    topics: JSON.parse(row.topics)
+  };
 }
 
 // Study Logs
