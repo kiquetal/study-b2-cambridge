@@ -7,6 +7,7 @@ const db = new Database(join(process.cwd(), 'study.db'));
 db.exec(`CREATE TABLE IF NOT EXISTS sessions (
   id TEXT PRIMARY KEY,
   date TEXT NOT NULL,
+  title TEXT NOT NULL,
   duration INTEGER NOT NULL,
   skillArea TEXT NOT NULL,
   topic TEXT NOT NULL,
@@ -24,8 +25,8 @@ export function getAllSessions(): StudySession[] {
 
 export function insertSession(session: StudySession) {
   db.prepare(
-    `INSERT INTO sessions (id, date, duration, skillArea, topic, source, notes, exerciseCount, confidenceLevel, nextReviewDate, reviewCount)
-     VALUES (@id, @date, @duration, @skillArea, @topic, @source, @notes, @exerciseCount, @confidenceLevel, @nextReviewDate, @reviewCount)`
+    `INSERT INTO sessions (id, date, title, duration, skillArea, topic, source, notes, exerciseCount, confidenceLevel, nextReviewDate, reviewCount)
+     VALUES (@id, @date, @title, @duration, @skillArea, @topic, @source, @notes, @exerciseCount, @confidenceLevel, @nextReviewDate, @reviewCount)`
   ).run(session);
 }
 

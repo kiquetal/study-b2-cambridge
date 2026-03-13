@@ -4,6 +4,7 @@ import type { SkillArea } from '../lib/types';
 import { useState } from 'react';
 
 export default function StudyForm() {
+  const [title, setTitle] = useState('');
   const [skillArea, setSkillArea] = useState<SkillArea>('Reading');
   const [topic, setTopic] = useState('');
   const [source, setSource] = useState('');
@@ -16,6 +17,7 @@ export default function StudyForm() {
     e.preventDefault();
     await addSession({
       date: new Date().toISOString().split('T')[0],
+      title,
       duration: parseInt(duration),
       skillArea,
       topic,
@@ -24,6 +26,7 @@ export default function StudyForm() {
       exerciseCount: parseInt(exerciseCount),
       confidenceLevel: parseInt(confidenceLevel),
     });
+    setTitle('');
     setTopic('');
     setSource('');
     setDuration('');
@@ -40,6 +43,18 @@ export default function StudyForm() {
         </div>
         <h2 className="text-xl font-black uppercase text-slate-900 dark:text-white tracking-tighter">Log Study Session</h2>
       </div>
+
+      <label className="flex flex-col gap-1">
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Title</span>
+        <input 
+          type="text" 
+          value={title} 
+          onChange={(e) => setTitle(e.target.value)} 
+          required 
+          placeholder="e.g., Present Perfect"
+          className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-primary" 
+        />
+      </label>
       
       <label className="flex flex-col gap-1">
         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Skill Area</span>
@@ -52,8 +67,15 @@ export default function StudyForm() {
       </label>
 
       <label className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Topic</span>
-        <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} required className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary" />
+        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Topics Covered</span>
+        <input 
+          type="text" 
+          value={topic} 
+          onChange={(e) => setTopic(e.target.value)} 
+          required 
+          placeholder="e.g., Usage with 'since' and 'for'"
+          className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-white/10 rounded text-sm text-slate-900 dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-primary" 
+        />
       </label>
 
       <label className="flex flex-col gap-1">

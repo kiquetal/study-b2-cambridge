@@ -3,6 +3,7 @@ export type SkillArea = 'Reading' | 'Writing' | 'Listening' | 'Speaking';
 export interface StudySession {
   id: string;
   date: string;
+  title: string;
   duration: number;
   skillArea: SkillArea;
   topic: string;
