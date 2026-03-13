@@ -20,8 +20,7 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# database
-study.db
+# database temp files
 study.db-shm
 study.db-wal
 
