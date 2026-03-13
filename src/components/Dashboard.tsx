@@ -37,66 +37,70 @@ export default function Dashboard() {
     }
   }, [sessions]);
 
-  const recentSessions = Object.values(sessions).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 10);
-  const upcomingReviews = Object.values(sessions).sort((a, b) => a.nextReviewDate.localeCompare(b.nextReviewDate)).slice(0, 10);
+  const recentSessions = Object.values(sessions).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      <div style={{ display: 'flex', gap: '16px' }}>
-        <div style={{ padding: '16px', background: '#f0f0f0', borderRadius: '8px', flex: 1 }}>
-          <h3 style={{ margin: '0 0 8px 0' }}>Total Sessions</h3>
-          <p style={{ fontSize: '24px', margin: 0, fontWeight: 'bold' }}>{stats.totalSessions}</p>
+    <div className="flex flex-col gap-6">
+      {/* Stats Cards */}
+      <div className="grid grid-cols-3 gap-4">
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/30 border border-slate-200 dark:border-white/10">
+          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Total Sessions</p>
+          <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{stats.totalSessions}</p>
         </div>
-        <div style={{ padding: '16px', background: '#f0f0f0', borderRadius: '8px', flex: 1 }}>
-          <h3 style={{ margin: '0 0 8px 0' }}>Total Hours</h3>
-          <p style={{ fontSize: '24px', margin: 0, fontWeight: 'bold' }}>{stats.totalHours}</p>
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/30 border border-slate-200 dark:border-white/10">
+          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Total Hours</p>
+          <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{stats.totalHours}</p>
         </div>
-        <div style={{ padding: '16px', background: '#f0f0f0', borderRadius: '8px', flex: 1 }}>
-          <h3 style={{ margin: '0 0 8px 0' }}>Current Streak</h3>
-          <p style={{ fontSize: '24px', margin: 0, fontWeight: 'bold' }}>{stats.currentStreak} days</p>
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-900/30 border border-slate-200 dark:border-white/10">
+          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Streak</p>
+          <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{stats.currentStreak}<span className="text-sm ml-1">days</span></p>
         </div>
       </div>
 
+      {/* Due for Review */}
       {dueSessions.length > 0 && (
-        <div style={{ padding: '16px', background: '#fff3cd', borderRadius: '8px', border: '1px solid #ffc107' }}>
-          <h3>⚠️ Due for Review ({dueSessions.length})</h3>
-          {dueSessions.map(s => (
-            <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid #eee' }}>
-              <div>
-                <strong>{s.topic}</strong> ({s.skillArea}) - {s.source}
+        <div className="rounded-xl bg-primary/10 border border-primary/30 p-4">
+          <div className="flex items-center gap-2 text-primary mb-3">
+            <span className="material-symbols-outlined">warning</span>
+            <h3 className="text-xs font-black uppercase tracking-widest">Due for Review ({dueSessions.length})</h3>
+          </div>
+          <div className="space-y-2">
+            {dueSessions.map(s => (
+              <div key={s.id} className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-zinc-900 border border-slate-200 dark:border-white/5">
+                <div>
+                  <p className="font-bold text-sm text-slate-900 dark:text-white">{s.topic}</p>
+                  <p className="text-xs text-slate-500">{s.skillArea} • {s.source}</p>
+                </div>
+                <button onClick={() => markAsReviewed(s.id)} className="px-3 py-1.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-widest hover:opacity-90">
+                  Mark Reviewed
+                </button>
               </div>
-              <button onClick={() => markAsReviewed(s.id)} style={{ padding: '6px 12px', background: '#28a745', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-                Mark Reviewed
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
 
+      {/* Recent Sessions */}
       <div>
-        <h3>Upcoming Reviews</h3>
-        {upcomingReviews.map(s => (
-          <div key={s.id} style={{ padding: '8px', borderBottom: '1px solid #eee' }}>
-            <strong>{s.topic}</strong> ({s.skillArea}) - Review on: {s.nextReviewDate}
-          </div>
-        ))}
-      </div>
-
-      <div>
-        <h3>Recent Sessions</h3>
-        {recentSessions.map(s => (
-          <div key={s.id} style={{ padding: '12px', marginBottom: '8px', background: '#f9f9f9', borderRadius: '4px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-              <strong>{s.topic}</strong>
-              <span>{s.date}</span>
+        <h3 className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Recent Sessions</h3>
+        <div className="space-y-2">
+          {recentSessions.map(s => (
+            <div key={s.id} className="p-4 rounded-lg bg-slate-50 dark:bg-zinc-900/30 border border-slate-200 dark:border-white/10">
+              <div className="flex justify-between items-start mb-2">
+                <p className="font-bold text-sm text-slate-900 dark:text-white">{s.topic}</p>
+                <span className="text-xs text-slate-500 font-mono">{s.date}</span>
+              </div>
+              <div className="flex items-center gap-3 text-xs text-slate-500">
+                <span className="px-2 py-0.5 rounded bg-primary/10 text-primary font-bold">{s.skillArea}</span>
+                <span>{s.duration}min</span>
+                <span>{s.exerciseCount} exercises</span>
+                <span>Confidence: {s.confidenceLevel}/5</span>
+              </div>
+              <p className="text-xs text-slate-400 mt-2">Source: {s.source}</p>
+              {s.notes && <p className="text-xs text-slate-400 mt-1 italic">{s.notes}</p>}
             </div>
-            <div style={{ fontSize: '14px', color: '#666' }}>
-              {s.skillArea} • {s.duration}min • {s.exerciseCount} exercises • Confidence: {s.confidenceLevel}/5
-            </div>
-            <div style={{ fontSize: '14px', marginTop: '4px' }}>Source: {s.source}</div>
-            {s.notes && <div style={{ fontSize: '14px', marginTop: '4px', fontStyle: 'italic' }}>{s.notes}</div>}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
