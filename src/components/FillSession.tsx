@@ -1,11 +1,12 @@
 import { useStore } from '@nanostores/react';
-import { sessionsStore, logsStore, loadSessions, loadLogs, addLog } from '../lib/store';
+import { sessionsStore, logsStore, loadSessions, loadLogs, addLog, updateLog, deleteLog } from '../lib/store';
 import { useEffect, useState } from 'react';
 
 export default function FillSession() {
   const sessions = useStore(sessionsStore);
   const logs = useStore(logsStore);
   const [selectedSession, setSelectedSession] = useState('');
+  const [editingLog, setEditingLog] = useState<string | null>(null);
   const [duration, setDuration] = useState('');
   const [exerciseCount, setExerciseCount] = useState('');
   const [confidenceLevel, setConfidenceLevel] = useState('3');
@@ -20,19 +21,56 @@ export default function FillSession() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await addLog({
-      sessionId: selectedSession,
-      date: new Date().toISOString().split('T')[0],
-      duration: parseInt(duration),
-      exerciseCount: parseInt(exerciseCount),
-      confidenceLevel: parseInt(confidenceLevel),
-      notes,
-    });
+    
+    if (editingLog) {
+      await updateLog(editingLog, {
+        duration: parseInt(duration),
+        exerciseCount: parseInt(exerciseCount),
+        confidenceLevel: parseInt(confidenceLevel),
+        notes,
+      });
+      setEditingLog(null);
+    } else {
+      await addLog({
+        sessionId: selectedSession,
+        date: new Date().toISOString().split('T')[0],
+        duration: parseInt(duration),
+        exerciseCount: parseInt(exerciseCount),
+        confidenceLevel: parseInt(confidenceLevel),
+        notes,
+      });
+    }
+    
     setDuration('');
     setExerciseCount('');
     setConfidenceLevel('3');
     setNotes('');
     await loadLogs();
+  };
+
+  const handleEdit = (logId: string) => {
+    const log = logs[logId];
+    if (log) {
+      setEditingLog(logId);
+      setDuration(log.duration.toString());
+      setExerciseCount(log.exerciseCount.toString());
+      setConfidenceLevel(log.confidenceLevel.toString());
+      setNotes(log.notes);
+    }
+  };
+
+  const handleDelete = async (logId: string) => {
+    if (confirm('Delete this log?')) {
+      await deleteLog(logId);
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setEditingLog(null);
+    setDuration('');
+    setExerciseCount('');
+    setConfidenceLevel('3');
+    setNotes('');
   };
 
   const sessionList = Object.values(sessions)
@@ -85,7 +123,10 @@ export default function FillSession() {
               return (
                 <button
                   key={s.id}
-                  onClick={() => setSelectedSession(s.id)}
+                  onClick={() => {
+                    setSelectedSession(s.id);
+                    handleCancelEdit();
+                  }}
                   className={`w-full text-left p-3 rounded-lg border transition-colors ${
                     selectedSession === s.id
                       ? 'bg-primary/10 border-primary'
@@ -119,7 +160,9 @@ export default function FillSession() {
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 h-full">
             <div>
-              <h2 className="text-2xl font-bold text-slate-100 mb-2">{selectedSessionData?.title}</h2>
+              <h2 className="text-2xl font-bold text-slate-100 mb-2">
+                {editingLog ? 'Edit Log' : selectedSessionData?.title}
+              </h2>
               <div className="p-3 bg-primary/5 border border-primary/20 rounded text-xs text-slate-400">
                 <p><strong className="text-primary">Skill:</strong> {selectedSessionData?.skillArea}</p>
                 <p className="mt-1"><strong className="text-primary">Topics:</strong> {selectedSessionData?.topic}</p>
@@ -180,12 +223,23 @@ export default function FillSession() {
               />
             </label>
 
-            <button
-              type="submit"
-              className="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded hover:opacity-90 transition-opacity"
-            >
-              Save Study Log
-            </button>
+            <div className="flex gap-2">
+              {editingLog && (
+                <button
+                  type="button"
+                  onClick={handleCancelEdit}
+                  className="flex-1 bg-slate-700 text-white text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded hover:opacity-90 transition-opacity"
+                >
+                  Cancel
+                </button>
+              )}
+              <button
+                type="submit"
+                className="flex-1 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded hover:opacity-90 transition-opacity"
+              >
+                {editingLog ? 'Update Log' : 'Save Study Log'}
+              </button>
+            </div>
           </form>
         )}
       </div>
@@ -208,7 +262,11 @@ export default function FillSession() {
         ) : (
           <div className="flex-1 overflow-y-auto custom-scrollbar space-y-2">
             {selectedSessionLogs.map(log => (
-              <div key={log.id} className="p-3 rounded-lg bg-black/40 border border-primary/20 text-xs">
+              <div key={log.id} className={`p-3 rounded-lg border text-xs ${
+                editingLog === log.id
+                  ? 'bg-primary/10 border-primary'
+                  : 'bg-black/40 border-primary/20'
+              }`}>
                 <div className="flex justify-between items-start mb-2">
                   <span className="font-mono text-primary">{log.date}</span>
                   <span className="font-bold text-slate-100">{log.duration}min</span>
@@ -219,8 +277,22 @@ export default function FillSession() {
                   <span>Conf: {log.confidenceLevel}/5</span>
                 </div>
                 {log.notes && (
-                  <p className="text-slate-400 text-xs italic border-l-2 border-primary/20 pl-2">{log.notes}</p>
+                  <p className="text-slate-400 text-xs italic border-l-2 border-primary/20 pl-2 mb-2">{log.notes}</p>
                 )}
+                <div className="flex gap-1 mt-2">
+                  <button
+                    onClick={() => handleEdit(log.id)}
+                    className="flex-1 px-2 py-1 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(log.id)}
+                    className="flex-1 px-2 py-1 bg-red-500/20 text-red-400 rounded text-[10px] font-bold uppercase hover:bg-red-500/30"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             ))}
           </div>

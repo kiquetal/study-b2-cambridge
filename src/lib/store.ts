@@ -66,6 +66,26 @@ export async function addLog(log: Omit<StudyLog, 'id'>) {
   logsStore.set({ ...logsStore.get(), [newLog.id]: newLog });
 }
 
+export async function updateLog(id: string, updates: Partial<StudyLog>) {
+  await fetch('/api/logs', {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id, ...updates }),
+  });
+  await loadLogs();
+}
+
+export async function deleteLog(id: string) {
+  await fetch('/api/logs', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id }),
+  });
+  const current = logsStore.get();
+  const { [id]: removed, ...rest } = current;
+  logsStore.set(rest);
+}
+
 export function getStats() {
   const logs = Object.values(logsStore.get());
   const totalSessions = logs.length;
