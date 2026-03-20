@@ -17,7 +17,7 @@ export default function FillSession() {
   const [filter, setFilter] = useState('');
   const [sortBy, setSortBy] = useState<'recent' | 'title'>('recent');
   const [uploadingPdf, setUploadingPdf] = useState(false);
-  const [exerciseCount, setExerciseCount] = useState(0);
+  const [sessionExerciseCount, setSessionExerciseCount] = useState(0);
 
   useEffect(() => {
     loadSessions();
@@ -28,9 +28,9 @@ export default function FillSession() {
     if (selectedSession) {
       fetch(`/api/exercises?sessionId=${selectedSession}`)
         .then(r => r.json())
-        .then(data => setExerciseCount(data.length));
+        .then(data => setSessionExerciseCount(data.length));
     } else {
-      setExerciseCount(0);
+      setSessionExerciseCount(0);
     }
   }, [selectedSession]);
 
@@ -175,7 +175,7 @@ export default function FillSession() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ sessionId: selectedSession })
     });
-    setExerciseCount(0);
+    setSessionExerciseCount(0);
   };
 
   const goToExercises = () => {
@@ -359,11 +359,11 @@ export default function FillSession() {
                       {uploadingPdf ? 'Uploading...' : selectedSessionData?.pdfPath ? 'Replace PDF' : 'Upload PDF'}
                       <input type="file" accept=".pdf" onChange={handlePdfUpload} disabled={uploadingPdf} className="hidden" />
                     </label>
-                    {exerciseCount > 0 ? (
+                    {sessionExerciseCount > 0 ? (
                       <>
                         <button type="button" onClick={goToExercises}
                           className="px-3 py-1.5 bg-green-500/20 text-green-400 rounded text-[10px] font-bold uppercase hover:bg-green-500/30">
-                          Exercises ({exerciseCount})
+                          Exercises ({sessionExerciseCount})
                         </button>
                         <button type="button" onClick={handleDeleteExercises}
                           className="px-3 py-1.5 bg-red-500/20 text-red-400 rounded text-[10px] font-bold uppercase hover:bg-red-500/30">
