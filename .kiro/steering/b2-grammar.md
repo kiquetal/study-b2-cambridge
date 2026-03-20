@@ -90,6 +90,15 @@ When reviewing phrasal verbs from the database:
 - Include both formal and informal register examples
 - Reference real sources when possible (podcasts, textbooks)
 
+## Class with Edu (Speaking Practice)
+
+Session ID: `class-with-edu`. When the user says "Class with Edu recap:" followed by notes:
+
+1. Extract corrections Edu made → explain the grammar rule behind each
+2. Extract new vocabulary/phrasal verbs → add to the phrasal_verbs table with proper definitions and examples
+3. Generate 3-5 follow-up exercises based on the corrections
+4. Log the class as a study_log entry under the `class-with-edu` session
+
 ## File Organization
 
 Grammar notes and exercises can be saved to `docs/grammar/` in the project root.
