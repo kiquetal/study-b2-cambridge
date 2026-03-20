@@ -56,17 +56,17 @@ When working on a grammar topic, use these interaction patterns:
 When the user says "Generate exercises from my latest session" or references a specific session:
 
 1. Query the SQLite database (`study.db`) to find the session and its notes
-2. Check if a PDF is attached (`pdfPath` field) — if so, extract text with `pdftotext`
-3. Generate exercises from the actual content. Available exercise types:
-   - **Vocabulary matching** — words from the episode matched to definitions
-   - **Open cloze (Part 2)** — passage from transcript with grammar words removed
-   - **Word formation (Part 3)** — sentences with word roots to transform
-   - **Key word transformations (Part 4)** — rewrite sentences using a given word
-   - **Phrasal verb extraction** — phrasal verbs from the episode with gaps
-   - **Comprehension questions** — recall questions about the content
-   - **Error correction** — sentences with deliberate mistakes to spot
-4. If the user doesn't specify a type, generate a mixed set (vocabulary + open cloze + key word transformations)
-5. After the user answers, correct with explanations and note common pitfalls
+2. Check if a PDF is attached (`pdfPath` field) — if so, extract text with `pdftotext public/<pdfPath> -`
+3. Generate **at least 10 exercises** from the actual content, mixing these types:
+   - `vocabulary` — words from the episode matched to definitions
+   - `open_cloze` — passage from transcript with grammar words removed
+   - `word_formation` — sentences with word roots to transform
+   - `key_word_transformation` — rewrite sentences using a given word
+   - `error_correction` — sentences with deliberate mistakes to spot
+4. For each exercise, include a `grammarLink` URL when applicable (Cambridge Dictionary, British Council grammar pages)
+5. **Save exercises to the database** via POST `/api/exercises` with body: `{ exercises: [{ sessionId, type, question, answer, grammarLink, createdDate }] }`
+6. Exercises appear in the **Exercises tab** in the UI, grouped by type, with show/hide answers and grammar links
+7. After the user answers, correct with explanations and note common pitfalls
 
 ### Phrasal Verb Cleanup
 

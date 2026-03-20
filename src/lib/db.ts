@@ -38,6 +38,18 @@ db.exec(`CREATE TABLE IF NOT EXISTS phrasal_verbs (
   createdDate TEXT NOT NULL
 )`);
 
+// Exercises table
+db.exec(`CREATE TABLE IF NOT EXISTS exercises (
+  id TEXT PRIMARY KEY,
+  sessionId TEXT NOT NULL,
+  type TEXT NOT NULL,
+  question TEXT NOT NULL,
+  answer TEXT NOT NULL,
+  grammarLink TEXT DEFAULT '',
+  createdDate TEXT NOT NULL,
+  FOREIGN KEY (sessionId) REFERENCES sessions(id)
+)`);
+
 // Sessions
 export function getAllSessions(): Session[] {
   const rows = db.prepare('SELECT * FROM sessions ORDER BY createdDate DESC').all() as any[];
@@ -89,6 +101,22 @@ export function insertPhrasalVerb(verb: any) {
 
 export function deletePhrasalVerb(id: string) {
   db.prepare('DELETE FROM phrasal_verbs WHERE id = ?').run(id);
+}
+
+// Exercises
+export function getExercisesBySession(sessionId: string) {
+  return db.prepare('SELECT * FROM exercises WHERE sessionId = ? ORDER BY createdDate DESC').all(sessionId);
+}
+
+export function insertExercise(exercise: any) {
+  db.prepare(
+    `INSERT INTO exercises (id, sessionId, type, question, answer, grammarLink, createdDate)
+     VALUES (@id, @sessionId, @type, @question, @answer, @grammarLink, @createdDate)`
+  ).run(exercise);
+}
+
+export function deleteExercisesBySession(sessionId: string) {
+  db.prepare('DELETE FROM exercises WHERE sessionId = ?').run(sessionId);
 }
 
 export function getSessionById(id: string): Session | undefined {

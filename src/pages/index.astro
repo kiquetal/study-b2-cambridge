@@ -5,6 +5,7 @@ import FillSession from '../components/FillSession';
 import Dashboard from '../components/Dashboard';
 import RecentSessions from '../components/RecentSessions';
 import PhrasalVerbs from '../components/PhrasalVerbs';
+import Exercises from '../components/Exercises';
 ---
 
 <Layout title="B2 Cambridge Study Tracker">
@@ -23,6 +24,10 @@ import PhrasalVerbs from '../components/PhrasalVerbs';
       <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" data-tab="phrasal">
         <span class="material-symbols-outlined text-sm mr-2 inline-block align-middle">book</span>
         Phrasal Verbs
+      </button>
+      <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" data-tab="exercises">
+        <span class="material-symbols-outlined text-sm mr-2 inline-block align-middle">quiz</span>
+        Exercises
       </button>
       <button class="tab-btn flex-1 px-6 py-3 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" data-tab="dashboard">
         <span class="material-symbols-outlined text-sm mr-2 inline-block align-middle">dashboard</span>
@@ -55,6 +60,11 @@ import PhrasalVerbs from '../components/PhrasalVerbs';
       <!-- Phrasal Verbs Tab -->
       <div id="tab-phrasal" class="tab-content hidden h-full overflow-hidden p-8">
         <PhrasalVerbs client:load />
+      </div>
+
+      <!-- Exercises Tab -->
+      <div id="tab-exercises" class="tab-content hidden h-full overflow-hidden p-8">
+        <Exercises client:load />
       </div>
 
       <!-- Dashboard Tab -->

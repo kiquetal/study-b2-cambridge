@@ -35,3 +35,13 @@ export interface PhrasalVerb {
   example: string;
   createdDate: string;
 }
+
+export interface Exercise {
+  id: string;
+  sessionId: string;
+  type: 'vocabulary' | 'open_cloze' | 'word_formation' | 'key_word_transformation' | 'error_correction';
+  question: string;
+  answer: string;
+  grammarLink?: string;
+  createdDate: string;
+}
