@@ -93,13 +93,15 @@ When reviewing phrasal verbs from the database:
 ## Class with Edu (Speaking Practice)
 
 Each class creates a **new session** with the date in the title for unique identification.
+The user creates the session manually in the app UI (e.g., "Class with Edu - 2026-03-20", skill: Speaking, source: Private teacher).
+
 When the user says "Class with Edu recap:" followed by notes:
 
-1. Create a new session: title "Class with Edu - YYYY-MM-DD", skillArea "Speaking", source "Private teacher"
+1. **Find the session** in the DB by matching the title (query sessions table for title LIKE '%Class with Edu%' ordered by createdDate DESC)
 2. Extract corrections Edu made → explain the grammar rule behind each
 3. Extract new vocabulary/phrasal verbs → add to the phrasal_verbs table with proper definitions and examples
-4. Generate 10+ follow-up exercises based on the corrections, save to DB via `/api/exercises`
-5. Log the class as a study_log entry under the new session
+4. Generate 10+ follow-up exercises based on the corrections, save to DB via `/api/exercises` linked to the found session
+5. Log the class as a study_log entry under that session
 
 ## File Organization
 
