@@ -179,6 +179,7 @@ export default function FillSession() {
   };
 
   const goToExercises = () => {
+    window.dispatchEvent(new CustomEvent('select-exercise-session', { detail: selectedSession }));
     const tab = document.querySelector('[data-tab="exercises"]') as HTMLElement;
     tab?.click();
   };

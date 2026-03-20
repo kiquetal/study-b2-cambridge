@@ -23,6 +23,12 @@ export default function Exercises() {
   useEffect(() => { loadSessions(); }, []);
 
   useEffect(() => {
+    const handler = (e: Event) => setSelectedSession((e as CustomEvent).detail);
+    window.addEventListener('select-exercise-session', handler);
+    return () => window.removeEventListener('select-exercise-session', handler);
+  }, []);
+
+  useEffect(() => {
     if (selectedSession) {
       fetch(`/api/exercises?sessionId=${selectedSession}`)
         .then(r => r.json())
