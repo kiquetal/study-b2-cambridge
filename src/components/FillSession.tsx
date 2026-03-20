@@ -17,11 +17,22 @@ export default function FillSession() {
   const [filter, setFilter] = useState('');
   const [sortBy, setSortBy] = useState<'recent' | 'title'>('recent');
   const [uploadingPdf, setUploadingPdf] = useState(false);
+  const [exerciseCount, setExerciseCount] = useState(0);
 
   useEffect(() => {
     loadSessions();
     loadLogs();
   }, []);
+
+  useEffect(() => {
+    if (selectedSession) {
+      fetch(`/api/exercises?sessionId=${selectedSession}`)
+        .then(r => r.json())
+        .then(data => setExerciseCount(data.length));
+    } else {
+      setExerciseCount(0);
+    }
+  }, [selectedSession]);
 
   // Auto-load most recent log when session is selected
   useEffect(() => {
@@ -155,6 +166,21 @@ export default function FillSession() {
     setSelectedSession('');
     await loadSessions();
     await loadLogs();
+  };
+
+  const handleDeleteExercises = async () => {
+    if (!selectedSession || !confirm('Delete all exercises for this session?')) return;
+    await fetch('/api/exercises', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: selectedSession })
+    });
+    setExerciseCount(0);
+  };
+
+  const goToExercises = () => {
+    const tab = document.querySelector('[data-tab="exercises"]') as HTMLElement;
+    tab?.click();
   };
 
   return (
@@ -328,11 +354,25 @@ export default function FillSession() {
                       </a>
                     </p>
                   )}
-                  <div className="mt-3">
+                  <div className="mt-3 flex items-center gap-2">
                     <label className="cursor-pointer inline-block px-3 py-1.5 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30">
                       {uploadingPdf ? 'Uploading...' : selectedSessionData?.pdfPath ? 'Replace PDF' : 'Upload PDF'}
                       <input type="file" accept=".pdf" onChange={handlePdfUpload} disabled={uploadingPdf} className="hidden" />
                     </label>
+                    {exerciseCount > 0 ? (
+                      <>
+                        <button type="button" onClick={goToExercises}
+                          className="px-3 py-1.5 bg-green-500/20 text-green-400 rounded text-[10px] font-bold uppercase hover:bg-green-500/30">
+                          Exercises ({exerciseCount})
+                        </button>
+                        <button type="button" onClick={handleDeleteExercises}
+                          className="px-3 py-1.5 bg-red-500/20 text-red-400 rounded text-[10px] font-bold uppercase hover:bg-red-500/30">
+                          Delete Exercises
+                        </button>
+                      </>
+                    ) : (
+                      <span className="text-[10px] text-slate-600 italic">No exercises — generate via Kiro CLI</span>
+                    )}
                   </div>
                 </div>
               )}
