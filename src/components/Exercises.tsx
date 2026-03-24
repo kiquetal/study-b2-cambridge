@@ -20,6 +20,12 @@ export default function Exercises() {
   const [evaluated, setEvaluated] = useState<Record<string, 'correct' | 'close' | 'wrong'>>({});
   const [filter, setFilter] = useState('');
   const [attemptNumber, setAttemptNumber] = useState(1);
+  const [showStats, setShowStats] = useState(false);
+  const [stats, setStats] = useState<{ byAttempt: any[]; byType: any[] } | null>(null);
+
+  const loadStats = (sid: string) => {
+    fetch(`/api/exercise-stats?sessionId=${sid}`).then(r => r.json()).then(setStats);
+  };
 
   useEffect(() => { loadSessions(); }, []);
 
@@ -57,6 +63,7 @@ export default function Exercises() {
           setShowAnswers({});
           setAttemptNumber(1);
         }
+        loadStats(selectedSession);
       });
     } else {
       setExercises([]);
@@ -64,6 +71,8 @@ export default function Exercises() {
       setUserAnswers({});
       setEvaluated({});
       setAttemptNumber(1);
+      setStats(null);
+      setShowStats(false);
     }
   }, [selectedSession]);
 
@@ -88,7 +97,7 @@ export default function Exercises() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ exerciseId: ex.id, sessionId: selectedSession, userAnswer: user, result }),
-    });
+    }).then(() => loadStats(selectedSession));
   };
 
   const resetLesson = () => {
@@ -202,6 +211,57 @@ export default function Exercises() {
             {totalAnswered === 0 && Object.keys(evaluated).length === 0 && exercises.length > 0 && attemptNumber > 1 && (
               <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-between">
                 <span className="text-xs text-slate-300">Attempt #{attemptNumber} — fresh start!</span>
+              </div>
+            )}
+            {stats && stats.byAttempt.length > 0 && (
+              <div className="rounded-lg border border-primary/20 overflow-hidden">
+                <button onClick={() => setShowStats(p => !p)} className="w-full p-3 bg-black/60 flex items-center justify-between hover:bg-black/80 transition-colors">
+                  <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-sm text-primary">analytics</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-primary">Session Stats</span>
+                  </div>
+                  <span className="material-symbols-outlined text-sm text-slate-400">{showStats ? 'expand_less' : 'expand_more'}</span>
+                </button>
+                {showStats && (
+                  <div className="p-4 bg-black/40 space-y-4">
+                    {/* Progress across attempts */}
+                    <div>
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Progress by Attempt</p>
+                      <div className="flex gap-3">
+                        {stats.byAttempt.map((a: any) => {
+                          const pct = Math.round((a.correct / a.total) * 100);
+                          return (
+                            <div key={a.attemptNumber} className="flex-1 p-3 rounded bg-black/60 border border-primary/10 text-center">
+                              <p className="text-[10px] text-slate-500 mb-1">#{a.attemptNumber}</p>
+                              <p className={`text-lg font-black ${pct >= 80 ? 'text-green-400' : pct >= 50 ? 'text-yellow-400' : 'text-red-400'}`}>{pct}%</p>
+                              <p className="text-[10px] text-slate-500">{a.correct}/{a.total}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    {/* Accuracy by type */}
+                    {stats.byType.length > 0 && (
+                      <div>
+                        <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Accuracy by Type (Latest Attempt)</p>
+                        <div className="space-y-2">
+                          {stats.byType.map((t: any) => {
+                            const pct = Math.round((t.correct / t.total) * 100);
+                            return (
+                              <div key={t.type} className="flex items-center gap-3">
+                                <span className="text-xs text-slate-300 w-44 truncate">{TYPE_LABELS[t.type] || t.type}</span>
+                                <div className="flex-1 h-2 bg-black/60 rounded-full overflow-hidden">
+                                  <div className={`h-full rounded-full ${pct >= 80 ? 'bg-green-500' : pct >= 50 ? 'bg-yellow-500' : 'bg-red-500'}`} style={{ width: `${pct}%` }} />
+                                </div>
+                                <span className="text-xs font-bold text-slate-300 w-16 text-right">{t.correct}/{t.total}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             )}
             {Object.entries(grouped).map(([type, exs]) => (

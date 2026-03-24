@@ -190,3 +190,42 @@ export function getAttemptNumberForExercise(exerciseId: string) {
   ).get(exerciseId) as any;
   return (row?.max || 0) + 1;
 }
+
+export function getExerciseStatsBySession(sessionId: string) {
+  return db.prepare(
+    `SELECT ea.attemptNumber,
+            COUNT(*) as total,
+            SUM(CASE WHEN ea.result = 'correct' THEN 1 ELSE 0 END) as correct,
+            SUM(CASE WHEN ea.result = 'close' THEN 1 ELSE 0 END) as close,
+            SUM(CASE WHEN ea.result = 'wrong' THEN 1 ELSE 0 END) as wrong
+     FROM exercise_attempts ea
+     WHERE ea.sessionId = ?
+     GROUP BY ea.attemptNumber
+     ORDER BY ea.attemptNumber`
+  ).all(sessionId);
+}
+
+export function getExerciseStatsByType(sessionId: string) {
+  return db.prepare(
+    `SELECT e.type,
+            COUNT(*) as total,
+            SUM(CASE WHEN ea.result = 'correct' THEN 1 ELSE 0 END) as correct,
+            SUM(CASE WHEN ea.result = 'wrong' THEN 1 ELSE 0 END) as wrong
+     FROM exercise_attempts ea
+     JOIN exercises e ON ea.exerciseId = e.id
+     INNER JOIN (SELECT exerciseId, MAX(attemptNumber) as maxAttempt FROM exercise_attempts WHERE sessionId = ? GROUP BY exerciseId) latest
+       ON ea.exerciseId = latest.exerciseId AND ea.attemptNumber = latest.maxAttempt
+     WHERE ea.sessionId = ?
+     GROUP BY e.type`
+  ).all(sessionId, sessionId);
+}
+
+export function getOverallExerciseStats() {
+  return db.prepare(
+    `SELECT COUNT(DISTINCT ea.sessionId) as sessionsAttempted,
+            COUNT(*) as totalAttempts,
+            SUM(CASE WHEN ea.result = 'correct' THEN 1 ELSE 0 END) as totalCorrect,
+            ROUND(AVG(CASE WHEN ea.result = 'correct' THEN 100.0 ELSE 0 END), 1) as avgAccuracy
+     FROM exercise_attempts ea`
+  ).get();
+}
