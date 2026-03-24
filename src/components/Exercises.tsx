@@ -72,6 +72,24 @@ export default function Exercises() {
     return { instruction: m[1].trim(), sentence: m[2].trim(), hint: m[3].trim() };
   };
 
+  // Check if a user answer matches the correct answer (handles "X -> Y" error correction format)
+  const isGapCorrect = (userInput: string, correctAnswer: string): boolean => {
+    const u = userInput.trim().toLowerCase().replace(/\s*[→⟶]\s*/g, ' -> ');
+    const c = correctAnswer.toLowerCase();
+    const arrowMatch = c.match(/^(.+?)\s*->\s*(.+)$/);
+    if (arrowMatch) {
+      const wrongWord = arrowMatch[1].trim();
+      const replacement = arrowMatch[2].trim();
+      const userArrow = u.match(/^(.+?)\s*->\s*(.+)$/);
+      return !!(u && (
+        u === c ||
+        (userArrow && userArrow[1].trim() === wrongWord && userArrow[2].trim() === replacement) ||
+        (!userArrow && u.includes(replacement))
+      ));
+    }
+    return !!(u && (c.includes(u) || u.includes(c)));
+  };
+
   useEffect(() => { loadSessions(); }, []);
 
   useEffect(() => {
@@ -148,16 +166,8 @@ export default function Exercises() {
       const total = parsed.gaps.length;
       let correct = 0;
       for (const n of parsed.gaps) {
-        const u = (answers[n] || '').trim().toLowerCase();
-        const c = (parsed.answerMap[n] || '').toLowerCase();
-        // For error correction answers like "from -> of", accept either the shorthand or the replacement word in a full sentence
-        const arrowMatch = c.match(/^(.+?)\s*->\s*(.+)$/);
-        if (arrowMatch) {
-          const replacement = arrowMatch[2].trim();
-          if (u && (u === c || u.includes(replacement) || u.includes(arrowMatch[1].trim() + ' -> ' + replacement))) correct++;
-        } else {
-          if (u && (c.includes(u) || u.includes(c))) correct++;
-        }
+        const u = (answers[n] || '').trim();
+        if (u && isGapCorrect(u, parsed.answerMap[n] || '')) correct++;
       }
       user = parsed.gaps.map(n => `${n}. ${(answers[n] || '').trim()}`).join('  ');
       result = correct === total ? 'correct' : correct >= total * 0.5 ? 'close' : 'wrong';
@@ -373,9 +383,8 @@ export default function Exercises() {
                               if (idx > 0 && parsed.gaps[idx - 1] !== undefined) {
                                 const gapNum = parsed.gaps[idx - 1];
                                 const gapVal = (clozeAnswers[ex.id] || {})[gapNum] || '';
-                                const correctVal = (parsed.answerMap[gapNum] || '').toLowerCase();
-                                const isRight = isChecked && gapVal.trim().toLowerCase() === correctVal;
-                                const isWrong = isChecked && gapVal.trim().toLowerCase() !== correctVal && gapVal.trim() !== '';
+                                const isRight = isChecked && isGapCorrect(gapVal, parsed.answerMap[gapNum] || '');
+                                const isWrong = isChecked && gapVal.trim() !== '' && !isRight;
                                 parts.push(
                                   <span key={`gap-${gapNum}`} className="inline-flex items-center mx-1 align-baseline">
                                     <span className="text-[10px] text-primary font-mono mr-1">({gapNum})</span>
@@ -426,9 +435,8 @@ export default function Exercises() {
                                   const line = lines.find(l => l.match(new RegExp(`^${gapNum}\\.\\s`)));
                                   const sentence = line?.replace(/^\d+\.\s*/, '').trim() || '';
                                   const gapVal = (clozeAnswers[ex.id] || {})[gapNum] || '';
-                                  const correctVal = (parsed.answerMap[gapNum] || '').toLowerCase();
-                                  const isRight = isChecked && gapVal.trim().toLowerCase() === correctVal;
-                                  const isWrong = isChecked && gapVal.trim() !== '' && gapVal.trim().toLowerCase() !== correctVal;
+                                  const isRight = isChecked && isGapCorrect(gapVal, parsed.answerMap[gapNum] || '');
+                                  const isWrong = isChecked && gapVal.trim() !== '' && !isRight;
                                   return (
                                     <div key={gapNum} className="flex items-start gap-2">
                                       <span className="text-[10px] text-primary font-mono mt-2 shrink-0">({gapNum})</span>
