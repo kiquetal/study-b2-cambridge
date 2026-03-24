@@ -28,15 +28,15 @@ export default function Exercises() {
     fetch(`/api/exercise-stats?sessionId=${sid}`).then(r => r.json()).then(setStats);
   };
 
-  // Parse open cloze: detect numbered gaps and extract answer map
-  const parseOpenCloze = (question: string, answer: string) => {
+  // Parse multi-gap exercises: detect numbered gaps and extract answer map
+  const parseMultiGap = (question: string, answer: string) => {
     // Match ___(N)___ or ___N___ patterns
     const gapPattern = /___\(?(\d+)\)?___/g;
     const gaps: number[] = [];
     let match;
     while ((match = gapPattern.exec(question)) !== null) gaps.push(parseInt(match[1]));
 
-    // If no inline gaps, try numbered list format: "1. sentence ___"
+    // If no inline gaps, try numbered list format: "1. sentence ___" or "1. sentence ______"
     if (gaps.length === 0) {
       const linePattern = /^(\d+)\.\s/gm;
       while ((match = linePattern.exec(question)) !== null) gaps.push(parseInt(match[1]));
@@ -54,8 +54,8 @@ export default function Exercises() {
     return { gaps, answerMap };
   };
 
-  const isOpenClozeMultiGap = (ex: Exercise) => {
-    return ex.type === 'open_cloze' && parseOpenCloze(ex.question, ex.answer) !== null;
+  const hasMultiGap = (ex: Exercise) => {
+    return (ex.type === 'open_cloze' || ex.type === 'key_word_transformation') && parseMultiGap(ex.question, ex.answer) !== null;
   };
 
   // Parse key word transformation: "Rewrite using WORD: "sentence" → Stem ..."
@@ -138,7 +138,7 @@ export default function Exercises() {
   const toggleAnswer = (id: string) => setShowAnswers(prev => ({ ...prev, [id]: !prev[id] }));
 
   const evaluate = (ex: Exercise) => {
-    const parsed = isOpenClozeMultiGap(ex) ? parseOpenCloze(ex.question, ex.answer) : null;
+    const parsed = hasMultiGap(ex) ? parseMultiGap(ex.question, ex.answer) : null;
 
     let user: string;
     let result: 'correct' | 'close' | 'wrong';
@@ -350,7 +350,7 @@ export default function Exercises() {
                 </div>
                 <div className="space-y-3">
                   {exs.map((ex, i) => {
-                    const parsed = isOpenClozeMultiGap(ex) ? parseOpenCloze(ex.question, ex.answer) : null;
+                    const parsed = hasMultiGap(ex) ? parseMultiGap(ex.question, ex.answer) : null;
                     const kwt = !parsed && ex.type === 'key_word_transformation' ? parseKWT(ex.question) : null;
                     const ec = !parsed && !kwt && ex.type === 'error_correction' ? parseErrorCorrection(ex.question) : null;
                     const isChecked = !!evaluated[ex.id];
@@ -361,7 +361,7 @@ export default function Exercises() {
                         <>
                           <div className="text-sm text-slate-100 font-medium mb-3 leading-relaxed">
                             <span className="text-primary font-mono mr-2">{i + 1}.</span>
-                            {ex.question.split(/___\(?\d+\)?___|___/).reduce((parts: React.ReactNode[], text, idx) => {
+                            {ex.question.split(/___\(?\d+\)?___|_{3,}/).reduce((parts: React.ReactNode[], text, idx) => {
                               if (idx > 0 && parsed.gaps[idx - 1] !== undefined) {
                                 const gapNum = parsed.gaps[idx - 1];
                                 const gapVal = (clozeAnswers[ex.id] || {})[gapNum] || '';
@@ -379,7 +379,7 @@ export default function Exercises() {
                                         [ex.id]: { ...(prev[ex.id] || {}), [gapNum]: e.target.value }
                                       }))}
                                       disabled={isChecked}
-                                      className={`w-24 px-2 py-0.5 bg-black/60 border rounded text-sm text-center text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-70 ${
+                                      className={`${ex.type === 'key_word_transformation' ? 'w-40' : 'w-24'} px-2 py-0.5 bg-black/60 border rounded text-sm text-center text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-70 ${
                                         isRight ? 'border-green-500 bg-green-500/10' :
                                         isWrong ? 'border-red-500 bg-red-500/10' :
                                         'border-primary/30'
