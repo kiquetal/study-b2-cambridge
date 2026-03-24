@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
 import { sessionsStore, loadSessions } from '../lib/store';
 import { useEffect, useState } from 'react';
-import type { Exercise } from '../lib/types';
+import type { Exercise, ExerciseAttempt } from '../lib/types';
 
 const TYPE_LABELS: Record<string, string> = {
   vocabulary: 'Vocabulary',
@@ -19,6 +19,7 @@ export default function Exercises() {
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [evaluated, setEvaluated] = useState<Record<string, 'correct' | 'close' | 'wrong'>>({});
   const [filter, setFilter] = useState('');
+  const [attemptNumber, setAttemptNumber] = useState(1);
 
   useEffect(() => { loadSessions(); }, []);
 
@@ -30,15 +31,40 @@ export default function Exercises() {
 
   useEffect(() => {
     if (selectedSession) {
-      fetch(`/api/exercises?sessionId=${selectedSession}`)
-        .then(r => r.json())
-        .then(setExercises);
+      Promise.all([
+        fetch(`/api/exercises?sessionId=${selectedSession}`).then(r => r.json()),
+        fetch(`/api/exercise-attempts?sessionId=${selectedSession}`).then(r => r.json()),
+      ]).then(([exs, attempts]: [Exercise[], ExerciseAttempt[]]) => {
+        setExercises(exs);
+        if (attempts.length > 0) {
+          const answers: Record<string, string> = {};
+          const results: Record<string, 'correct' | 'close' | 'wrong'> = {};
+          const shown: Record<string, boolean> = {};
+          let maxAttempt = 1;
+          for (const a of attempts) {
+            answers[a.exerciseId] = a.userAnswer;
+            results[a.exerciseId] = a.result as 'correct' | 'close' | 'wrong';
+            shown[a.exerciseId] = true;
+            if (a.attemptNumber > maxAttempt) maxAttempt = a.attemptNumber;
+          }
+          setUserAnswers(answers);
+          setEvaluated(results);
+          setShowAnswers(shown);
+          setAttemptNumber(maxAttempt);
+        } else {
+          setUserAnswers({});
+          setEvaluated({});
+          setShowAnswers({});
+          setAttemptNumber(1);
+        }
+      });
     } else {
       setExercises([]);
+      setShowAnswers({});
+      setUserAnswers({});
+      setEvaluated({});
+      setAttemptNumber(1);
     }
-    setShowAnswers({});
-    setUserAnswers({});
-    setEvaluated({});
   }, [selectedSession]);
 
   const toggleAnswer = (id: string) => setShowAnswers(prev => ({ ...prev, [id]: !prev[id] }));
@@ -47,15 +73,36 @@ export default function Exercises() {
     const user = (userAnswers[ex.id] || '').trim().toLowerCase();
     const correct = ex.answer.toLowerCase();
     if (!user) return;
+    let result: 'correct' | 'close' | 'wrong';
     if (correct.includes(user) || user.includes(correct.split('(')[0].trim().toLowerCase())) {
-      setEvaluated(prev => ({ ...prev, [ex.id]: 'correct' }));
+      result = 'correct';
     } else {
       const userWords = user.split(/\s+/);
       const correctWords = correct.split(/\s+/);
       const matches = userWords.filter(w => correctWords.some(cw => cw.includes(w) || w.includes(cw)));
-      setEvaluated(prev => ({ ...prev, [ex.id]: matches.length >= correctWords.length * 0.4 ? 'close' : 'wrong' }));
+      result = matches.length >= correctWords.length * 0.4 ? 'close' : 'wrong';
     }
+    setEvaluated(prev => ({ ...prev, [ex.id]: result }));
     setShowAnswers(prev => ({ ...prev, [ex.id]: true }));
+    fetch('/api/exercise-attempts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ exerciseId: ex.id, sessionId: selectedSession, userAnswer: user, result }),
+    });
+  };
+
+  const resetLesson = () => {
+    if (!selectedSession) return;
+    fetch('/api/exercise-attempts', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: selectedSession }),
+    }).then(() => {
+      setUserAnswers({});
+      setEvaluated({});
+      setShowAnswers({});
+      setAttemptNumber(prev => prev + 1);
+    });
   };
 
   const evalColor = (id: string) => {
@@ -140,8 +187,21 @@ export default function Exercises() {
           <>
             {totalAnswered > 0 && (
               <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-between">
-                <span className="text-xs text-slate-300">Score: {totalCorrect}/{totalAnswered} answered</span>
-                <span className="text-xs font-bold text-primary">{Math.round((totalCorrect / totalAnswered) * 100)}%</span>
+                <span className="text-xs text-slate-300">
+                  Score: {totalCorrect}/{totalAnswered} answered
+                  {attemptNumber > 1 && <span className="ml-2 text-primary">· Attempt #{attemptNumber}</span>}
+                </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-bold text-primary">{Math.round((totalCorrect / totalAnswered) * 100)}%</span>
+                  <button onClick={resetLesson} className="px-3 py-1 bg-red-500/20 text-red-400 rounded text-[10px] font-bold uppercase hover:bg-red-500/30">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            )}
+            {totalAnswered === 0 && Object.keys(evaluated).length === 0 && exercises.length > 0 && attemptNumber > 1 && (
+              <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-between">
+                <span className="text-xs text-slate-300">Attempt #{attemptNumber} — fresh start!</span>
               </div>
             )}
             {Object.entries(grouped).map(([type, exs]) => (
