@@ -58,6 +58,20 @@ export default function Exercises() {
     return ex.type === 'open_cloze' && parseOpenCloze(ex.question, ex.answer) !== null;
   };
 
+  // Parse key word transformation: "Rewrite using WORD: "sentence" → Stem ..."
+  const parseKWT = (question: string) => {
+    const m = question.match(/^(.*?)["""](.+?)["""].*?→\s*(.+?)\s*\.\.\.$/s);
+    if (!m) return null;
+    return { instruction: m[1].trim(), original: m[2].trim(), stem: m[3].trim() };
+  };
+
+  // Parse error correction: "Find the error: "sentence""
+  const parseErrorCorrection = (question: string) => {
+    const m = question.match(/^(.*?)["""](.+?)["""]\s*(.*)$/s);
+    if (!m) return null;
+    return { instruction: m[1].trim(), sentence: m[2].trim(), hint: m[3].trim() };
+  };
+
   useEffect(() => { loadSessions(); }, []);
 
   useEffect(() => {
@@ -337,6 +351,9 @@ export default function Exercises() {
                 <div className="space-y-3">
                   {exs.map((ex, i) => {
                     const parsed = isOpenClozeMultiGap(ex) ? parseOpenCloze(ex.question, ex.answer) : null;
+                    const kwt = !parsed && ex.type === 'key_word_transformation' ? parseKWT(ex.question) : null;
+                    const ec = !parsed && !kwt && ex.type === 'error_correction' ? parseErrorCorrection(ex.question) : null;
+                    const isChecked = !!evaluated[ex.id];
                     return (
                     <div key={ex.id} className={`p-4 rounded-lg bg-black/60 border transition-colors ${evalColor(ex.id)}`}>
                       {parsed ? (
@@ -349,7 +366,6 @@ export default function Exercises() {
                                 const gapNum = parsed.gaps[idx - 1];
                                 const gapVal = (clozeAnswers[ex.id] || {})[gapNum] || '';
                                 const correctVal = (parsed.answerMap[gapNum] || '').toLowerCase();
-                                const isChecked = !!evaluated[ex.id];
                                 const isRight = isChecked && gapVal.trim().toLowerCase() === correctVal;
                                 const isWrong = isChecked && gapVal.trim().toLowerCase() !== correctVal && gapVal.trim() !== '';
                                 parts.push(
@@ -374,55 +390,92 @@ export default function Exercises() {
                                   </span>
                                 );
                               }
-                              // Render text, splitting newlines into <br>
                               parts.push(...text.split('\n').flatMap((line, li) =>
                                 li > 0 ? [<br key={`br-${idx}-${li}`} />, line] : [line]
                               ));
                               return parts;
                             }, [])}
                           </div>
-                          {!evaluated[ex.id] && (
-                            <button
-                              onClick={() => evaluate(ex)}
-                              className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90"
-                            >
-                              Check All
-                            </button>
+                          {!isChecked && (
+                            <button onClick={() => evaluate(ex)} className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90">Check All</button>
                           )}
                         </>
-                      ) : (
-                        /* Standard single-answer exercise */
+                      ) : kwt ? (
+                        /* Key Word Transformation — instruction + original + stem with inline input */
                         <>
-                      <p className="text-sm text-slate-100 font-medium mb-3">
-                        <span className="text-primary font-mono mr-2">{i + 1}.</span>
-                        {ex.question}
-                      </p>
-                      <div className="flex gap-2 items-center">
-                        <input
-                          type="text"
-                          value={userAnswers[ex.id] || ''}
-                          onChange={(e) => setUserAnswers(prev => ({ ...prev, [ex.id]: e.target.value }))}
-                          onKeyDown={(e) => e.key === 'Enter' && evaluate(ex)}
-                          placeholder="Type your answer..."
-                          disabled={!!evaluated[ex.id]}
-                          className="flex-1 px-3 py-2 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-50"
-                        />
-                        {!evaluated[ex.id] ? (
-                          <button
-                            onClick={() => evaluate(ex)}
-                            className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90"
-                          >
-                            Check
-                          </button>
-                        ) : (
-                          <button
-                            onClick={() => toggleAnswer(ex.id)}
-                            className="px-3 py-2 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30"
-                          >
-                            {showAnswers[ex.id] ? 'Hide' : 'Answer'}
-                          </button>
-                        )}
-                      </div>
+                          <p className="text-sm text-slate-100 font-medium mb-1">
+                            <span className="text-primary font-mono mr-2">{i + 1}.</span>
+                            {kwt.instruction}
+                          </p>
+                          <p className="text-sm text-slate-400 italic mb-3">"{kwt.original}"</p>
+                          <div className="flex items-center gap-1 flex-wrap">
+                            <span className="text-sm text-slate-300">→ {kwt.stem}</span>
+                            <input
+                              type="text"
+                              value={userAnswers[ex.id] || ''}
+                              onChange={(e) => setUserAnswers(prev => ({ ...prev, [ex.id]: e.target.value }))}
+                              onKeyDown={(e) => e.key === 'Enter' && evaluate(ex)}
+                              placeholder="complete the sentence..."
+                              disabled={isChecked}
+                              className="flex-1 min-w-[200px] px-3 py-1.5 bg-black/60 border border-primary/30 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-50"
+                            />
+                            {!isChecked ? (
+                              <button onClick={() => evaluate(ex)} className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90">Check</button>
+                            ) : (
+                              <button onClick={() => toggleAnswer(ex.id)} className="px-3 py-2 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30">{showAnswers[ex.id] ? 'Hide' : 'Answer'}</button>
+                            )}
+                          </div>
+                        </>
+                      ) : ec ? (
+                        /* Error Correction — erroneous sentence + input for corrected version */
+                        <>
+                          <p className="text-sm text-slate-100 font-medium mb-1">
+                            <span className="text-primary font-mono mr-2">{i + 1}.</span>
+                            {ec.instruction}
+                          </p>
+                          <p className="text-sm text-red-400/80 line-through mb-1">"{ec.sentence}"</p>
+                          {ec.hint && <p className="text-[10px] text-slate-500 mb-3">{ec.hint}</p>}
+                          <div className="flex gap-2 items-center">
+                            <span className="text-sm text-slate-400">→</span>
+                            <input
+                              type="text"
+                              value={userAnswers[ex.id] || ''}
+                              onChange={(e) => setUserAnswers(prev => ({ ...prev, [ex.id]: e.target.value }))}
+                              onKeyDown={(e) => e.key === 'Enter' && evaluate(ex)}
+                              placeholder="Write the corrected sentence..."
+                              disabled={isChecked}
+                              className="flex-1 px-3 py-1.5 bg-black/60 border border-primary/30 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-50"
+                            />
+                            {!isChecked ? (
+                              <button onClick={() => evaluate(ex)} className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90">Check</button>
+                            ) : (
+                              <button onClick={() => toggleAnswer(ex.id)} className="px-3 py-2 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30">{showAnswers[ex.id] ? 'Hide' : 'Answer'}</button>
+                            )}
+                          </div>
+                        </>
+                      ) : (
+                        /* Standard single-answer exercise (vocabulary, word formation, single-gap cloze) */
+                        <>
+                          <p className="text-sm text-slate-100 font-medium mb-3">
+                            <span className="text-primary font-mono mr-2">{i + 1}.</span>
+                            {ex.question}
+                          </p>
+                          <div className="flex gap-2 items-center">
+                            <input
+                              type="text"
+                              value={userAnswers[ex.id] || ''}
+                              onChange={(e) => setUserAnswers(prev => ({ ...prev, [ex.id]: e.target.value }))}
+                              onKeyDown={(e) => e.key === 'Enter' && evaluate(ex)}
+                              placeholder="Type your answer..."
+                              disabled={isChecked}
+                              className="flex-1 px-3 py-2 bg-black/60 border border-primary/20 rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-50"
+                            />
+                            {!isChecked ? (
+                              <button onClick={() => evaluate(ex)} className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90">Check</button>
+                            ) : (
+                              <button onClick={() => toggleAnswer(ex.id)} className="px-3 py-2 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30">{showAnswers[ex.id] ? 'Hide' : 'Answer'}</button>
+                            )}
+                          </div>
                         </>
                       )}
                       {evaluated[ex.id] && (
