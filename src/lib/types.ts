@@ -45,3 +45,13 @@ export interface Exercise {
   grammarLink?: string;
   createdDate: string;
 }
+
+export interface ExerciseAttempt {
+  id: string;
+  exerciseId: string;
+  sessionId: string;
+  userAnswer: string;
+  result: 'correct' | 'close' | 'wrong';
+  attemptDate: string;
+  attemptNumber: number;
+}

@@ -50,6 +50,19 @@ db.exec(`CREATE TABLE IF NOT EXISTS exercises (
   FOREIGN KEY (sessionId) REFERENCES sessions(id)
 )`);
 
+// Exercise Attempts table
+db.exec(`CREATE TABLE IF NOT EXISTS exercise_attempts (
+  id TEXT PRIMARY KEY,
+  exerciseId TEXT NOT NULL,
+  sessionId TEXT NOT NULL,
+  userAnswer TEXT NOT NULL,
+  result TEXT NOT NULL,
+  attemptDate TEXT NOT NULL,
+  attemptNumber INTEGER DEFAULT 1,
+  FOREIGN KEY (exerciseId) REFERENCES exercises(id),
+  FOREIGN KEY (sessionId) REFERENCES sessions(id)
+)`);
+
 // Sessions
 export function getAllSessions(): Session[] {
   const rows = db.prepare('SELECT * FROM sessions ORDER BY createdDate DESC').all() as any[];
@@ -142,4 +155,38 @@ export function insertLog(log: StudyLog) {
     `INSERT INTO study_logs (id, sessionId, date, duration, exerciseCount, confidenceLevel, notes)
      VALUES (@id, @sessionId, @date, @duration, @exerciseCount, @confidenceLevel, @notes)`
   ).run(log);
+}
+
+// Exercise Attempts
+export function getAttemptsBySession(sessionId: string) {
+  return db.prepare(
+    'SELECT * FROM exercise_attempts WHERE sessionId = ? ORDER BY attemptNumber DESC, attemptDate DESC'
+  ).all(sessionId);
+}
+
+export function getLatestAttemptsBySession(sessionId: string) {
+  return db.prepare(
+    `SELECT ea.* FROM exercise_attempts ea
+     INNER JOIN (SELECT exerciseId, MAX(attemptNumber) as maxAttempt FROM exercise_attempts WHERE sessionId = ? GROUP BY exerciseId) latest
+     ON ea.exerciseId = latest.exerciseId AND ea.attemptNumber = latest.maxAttempt
+     WHERE ea.sessionId = ?`
+  ).all(sessionId, sessionId);
+}
+
+export function insertAttempt(attempt: any) {
+  db.prepare(
+    `INSERT INTO exercise_attempts (id, exerciseId, sessionId, userAnswer, result, attemptDate, attemptNumber)
+     VALUES (@id, @exerciseId, @sessionId, @userAnswer, @result, @attemptDate, @attemptNumber)`
+  ).run(attempt);
+}
+
+export function resetAttemptsBySession(sessionId: string) {
+  return db.prepare('DELETE FROM exercise_attempts WHERE sessionId = ?').run(sessionId);
+}
+
+export function getAttemptNumberForExercise(exerciseId: string) {
+  const row = db.prepare(
+    'SELECT MAX(attemptNumber) as max FROM exercise_attempts WHERE exerciseId = ?'
+  ).get(exerciseId) as any;
+  return (row?.max || 0) + 1;
 }
