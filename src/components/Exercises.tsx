@@ -55,7 +55,7 @@ export default function Exercises() {
   };
 
   const hasMultiGap = (ex: Exercise) => {
-    return (ex.type === 'open_cloze' || ex.type === 'key_word_transformation') && parseMultiGap(ex.question, ex.answer) !== null;
+    return parseMultiGap(ex.question, ex.answer) !== null;
   };
 
   // Parse key word transformation: "Rewrite using WORD: "sentence" → Stem ..."
@@ -354,10 +354,11 @@ export default function Exercises() {
                     const kwt = !parsed && ex.type === 'key_word_transformation' ? parseKWT(ex.question) : null;
                     const ec = !parsed && !kwt && ex.type === 'error_correction' ? parseErrorCorrection(ex.question) : null;
                     const isChecked = !!evaluated[ex.id];
+                    const hasInlineGaps = parsed && /_{3,}/.test(ex.question);
                     return (
                     <div key={ex.id} className={`p-4 rounded-lg bg-black/60 border transition-colors ${evalColor(ex.id)}`}>
-                      {parsed ? (
-                        /* Open Cloze with inline gap inputs */
+                      {parsed && hasInlineGaps ? (
+                        /* Multi-gap with inline blanks (open cloze, word formation, KWT with ______) */
                         <>
                           <div className="text-sm text-slate-100 font-medium mb-3 leading-relaxed">
                             <span className="text-primary font-mono mr-2">{i + 1}.</span>
@@ -379,7 +380,7 @@ export default function Exercises() {
                                         [ex.id]: { ...(prev[ex.id] || {}), [gapNum]: e.target.value }
                                       }))}
                                       disabled={isChecked}
-                                      className={`${ex.type === 'key_word_transformation' ? 'w-40' : 'w-24'} px-2 py-0.5 bg-black/60 border rounded text-sm text-center text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-70 ${
+                                      className={`${ex.type === 'open_cloze' ? 'w-24' : 'w-40'} px-2 py-0.5 bg-black/60 border rounded text-sm text-center text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-70 ${
                                         isRight ? 'border-green-500 bg-green-500/10' :
                                         isWrong ? 'border-red-500 bg-red-500/10' :
                                         'border-primary/30'
@@ -398,6 +399,60 @@ export default function Exercises() {
                           </div>
                           {!isChecked && (
                             <button onClick={() => evaluate(ex)} className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90">Check All</button>
+                          )}
+                        </>
+                      ) : parsed && !hasInlineGaps ? (
+                        /* Multi-gap without blanks — numbered lines with input next to each (error correction) */
+                        <>
+                          {(() => {
+                            const lines = ex.question.split('\n');
+                            const header = lines.filter(l => !/^\d+\.\s/.test(l)).join(' ').trim();
+                            return (
+                              <div className="space-y-3">
+                                {header && (
+                                  <p className="text-sm text-slate-100 font-medium">
+                                    <span className="text-primary font-mono mr-2">{i + 1}.</span>
+                                    {header}
+                                  </p>
+                                )}
+                                {parsed.gaps.map(gapNum => {
+                                  const line = lines.find(l => l.match(new RegExp(`^${gapNum}\\.\\s`)));
+                                  const sentence = line?.replace(/^\d+\.\s*/, '').trim() || '';
+                                  const gapVal = (clozeAnswers[ex.id] || {})[gapNum] || '';
+                                  const correctVal = (parsed.answerMap[gapNum] || '').toLowerCase();
+                                  const isRight = isChecked && gapVal.trim().toLowerCase() === correctVal;
+                                  const isWrong = isChecked && gapVal.trim() !== '' && gapVal.trim().toLowerCase() !== correctVal;
+                                  return (
+                                    <div key={gapNum} className="flex items-start gap-2">
+                                      <span className="text-[10px] text-primary font-mono mt-2 shrink-0">({gapNum})</span>
+                                      <div className="flex-1">
+                                        <p className={`text-sm mb-1 ${ex.type === 'error_correction' ? 'text-red-400/80' : 'text-slate-300'}`}>{sentence}</p>
+                                        <input
+                                          type="text"
+                                          value={gapVal}
+                                          onChange={(e) => setClozeAnswers(prev => ({
+                                            ...prev,
+                                            [ex.id]: { ...(prev[ex.id] || {}), [gapNum]: e.target.value }
+                                          }))}
+                                          disabled={isChecked}
+                                          placeholder={ex.type === 'error_correction' ? 'Correction...' : 'Your answer...'}
+                                          className={`w-full px-3 py-1.5 bg-black/60 border rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-70 ${
+                                            isRight ? 'border-green-500 bg-green-500/10' :
+                                            isWrong ? 'border-red-500 bg-red-500/10' :
+                                            'border-primary/20'
+                                          }`}
+                                        />
+                                        {isWrong && <p className="text-[10px] text-green-400 mt-1">{parsed.answerMap[gapNum]}</p>}
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            );
+                          })()}
+                          {!isChecked && (
+                            <button onClick={() => evaluate(ex)} className="mt-3 px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90">Check All</button>
+                          )}
                           )}
                         </>
                       ) : kwt ? (
