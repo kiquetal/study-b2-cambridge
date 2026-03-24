@@ -453,7 +453,6 @@ export default function Exercises() {
                           {!isChecked && (
                             <button onClick={() => evaluate(ex)} className="mt-3 px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90">Check All</button>
                           )}
-                          )}
                         </>
                       ) : kwt ? (
                         /* Key Word Transformation — instruction + original + stem with inline input */
