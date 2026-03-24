@@ -22,9 +22,40 @@ export default function Exercises() {
   const [attemptNumber, setAttemptNumber] = useState(1);
   const [showStats, setShowStats] = useState(false);
   const [stats, setStats] = useState<{ byAttempt: any[]; byType: any[] } | null>(null);
+  const [clozeAnswers, setClozeAnswers] = useState<Record<string, Record<number, string>>>({});
 
   const loadStats = (sid: string) => {
     fetch(`/api/exercise-stats?sessionId=${sid}`).then(r => r.json()).then(setStats);
+  };
+
+  // Parse open cloze: detect numbered gaps and extract answer map
+  const parseOpenCloze = (question: string, answer: string) => {
+    // Match ___(N)___ or ___N___ patterns
+    const gapPattern = /___\(?(\d+)\)?___/g;
+    const gaps: number[] = [];
+    let match;
+    while ((match = gapPattern.exec(question)) !== null) gaps.push(parseInt(match[1]));
+
+    // If no inline gaps, try numbered list format: "1. sentence ___"
+    if (gaps.length === 0) {
+      const linePattern = /^(\d+)\.\s/gm;
+      while ((match = linePattern.exec(question)) !== null) gaps.push(parseInt(match[1]));
+    }
+
+    if (gaps.length === 0) return null;
+
+    // Parse answers: "1. word  2. word" or "1. word\n2. word"
+    const answerMap: Record<number, string> = {};
+    const ansPattern = /(\d+)\.\s*([^\d]+?)(?=\s*\d+\.|$)/g;
+    while ((match = ansPattern.exec(answer)) !== null) {
+      answerMap[parseInt(match[1])] = match[2].trim().split(/\s*[(/]/)[0].trim();
+    }
+
+    return { gaps, answerMap };
+  };
+
+  const isOpenClozeMultiGap = (ex: Exercise) => {
+    return ex.type === 'open_cloze' && parseOpenCloze(ex.question, ex.answer) !== null;
   };
 
   useEffect(() => { loadSessions(); }, []);
@@ -46,16 +77,29 @@ export default function Exercises() {
           const answers: Record<string, string> = {};
           const results: Record<string, 'correct' | 'close' | 'wrong'> = {};
           const shown: Record<string, boolean> = {};
+          const restoredCloze: Record<string, Record<number, string>> = {};
           let maxAttempt = 1;
           for (const a of attempts) {
             answers[a.exerciseId] = a.userAnswer;
             results[a.exerciseId] = a.result as 'correct' | 'close' | 'wrong';
             shown[a.exerciseId] = true;
             if (a.attemptNumber > maxAttempt) maxAttempt = a.attemptNumber;
+            // Restore cloze gap answers from "1. word  2. word" format
+            const clozeMatch = a.userAnswer.match(/(\d+)\.\s/);
+            if (clozeMatch) {
+              const gapAnswers: Record<number, string> = {};
+              const pat = /(\d+)\.\s*([^\d]+?)(?=\s*\d+\.|$)/g;
+              let m;
+              while ((m = pat.exec(a.userAnswer)) !== null) {
+                gapAnswers[parseInt(m[1])] = m[2].trim();
+              }
+              restoredCloze[a.exerciseId] = gapAnswers;
+            }
           }
           setUserAnswers(answers);
           setEvaluated(results);
           setShowAnswers(shown);
+          setClozeAnswers(restoredCloze);
           setAttemptNumber(maxAttempt);
         } else {
           setUserAnswers({});
@@ -70,6 +114,7 @@ export default function Exercises() {
       setShowAnswers({});
       setUserAnswers({});
       setEvaluated({});
+      setClozeAnswers({});
       setAttemptNumber(1);
       setStats(null);
       setShowStats(false);
@@ -79,18 +124,36 @@ export default function Exercises() {
   const toggleAnswer = (id: string) => setShowAnswers(prev => ({ ...prev, [id]: !prev[id] }));
 
   const evaluate = (ex: Exercise) => {
-    const user = (userAnswers[ex.id] || '').trim().toLowerCase();
-    const correct = ex.answer.toLowerCase();
-    if (!user) return;
+    const parsed = isOpenClozeMultiGap(ex) ? parseOpenCloze(ex.question, ex.answer) : null;
+
+    let user: string;
     let result: 'correct' | 'close' | 'wrong';
-    if (correct.includes(user) || user.includes(correct.split('(')[0].trim().toLowerCase())) {
-      result = 'correct';
+
+    if (parsed) {
+      const answers = clozeAnswers[ex.id] || {};
+      const total = parsed.gaps.length;
+      let correct = 0;
+      for (const n of parsed.gaps) {
+        const u = (answers[n] || '').trim().toLowerCase();
+        const c = (parsed.answerMap[n] || '').toLowerCase();
+        if (u && (c.includes(u) || u.includes(c))) correct++;
+      }
+      user = parsed.gaps.map(n => `${n}. ${(answers[n] || '').trim()}`).join('  ');
+      result = correct === total ? 'correct' : correct >= total * 0.5 ? 'close' : 'wrong';
     } else {
-      const userWords = user.split(/\s+/);
-      const correctWords = correct.split(/\s+/);
-      const matches = userWords.filter(w => correctWords.some(cw => cw.includes(w) || w.includes(cw)));
-      result = matches.length >= correctWords.length * 0.4 ? 'close' : 'wrong';
+      user = (userAnswers[ex.id] || '').trim().toLowerCase();
+      const correct = ex.answer.toLowerCase();
+      if (!user) return;
+      if (correct.includes(user) || user.includes(correct.split('(')[0].trim().toLowerCase())) {
+        result = 'correct';
+      } else {
+        const userWords = user.split(/\s+/);
+        const correctWords = correct.split(/\s+/);
+        const matches = userWords.filter(w => correctWords.some(cw => cw.includes(w) || w.includes(cw)));
+        result = matches.length >= correctWords.length * 0.4 ? 'close' : 'wrong';
+      }
     }
+
     setEvaluated(prev => ({ ...prev, [ex.id]: result }));
     setShowAnswers(prev => ({ ...prev, [ex.id]: true }));
     fetch('/api/exercise-attempts', {
@@ -110,6 +173,7 @@ export default function Exercises() {
       setUserAnswers({});
       setEvaluated({});
       setShowAnswers({});
+      setClozeAnswers({});
       setAttemptNumber(prev => prev + 1);
     });
   };
@@ -271,8 +335,64 @@ export default function Exercises() {
                   <h3 className="text-xs font-bold uppercase tracking-[0.2em]">{TYPE_LABELS[type] || type} ({exs.length})</h3>
                 </div>
                 <div className="space-y-3">
-                  {exs.map((ex, i) => (
+                  {exs.map((ex, i) => {
+                    const parsed = isOpenClozeMultiGap(ex) ? parseOpenCloze(ex.question, ex.answer) : null;
+                    return (
                     <div key={ex.id} className={`p-4 rounded-lg bg-black/60 border transition-colors ${evalColor(ex.id)}`}>
+                      {parsed ? (
+                        /* Open Cloze with inline gap inputs */
+                        <>
+                          <div className="text-sm text-slate-100 font-medium mb-3 leading-relaxed">
+                            <span className="text-primary font-mono mr-2">{i + 1}.</span>
+                            {ex.question.split(/___\(?\d+\)?___|___/).reduce((parts: React.ReactNode[], text, idx) => {
+                              if (idx > 0 && parsed.gaps[idx - 1] !== undefined) {
+                                const gapNum = parsed.gaps[idx - 1];
+                                const gapVal = (clozeAnswers[ex.id] || {})[gapNum] || '';
+                                const correctVal = (parsed.answerMap[gapNum] || '').toLowerCase();
+                                const isChecked = !!evaluated[ex.id];
+                                const isRight = isChecked && gapVal.trim().toLowerCase() === correctVal;
+                                const isWrong = isChecked && gapVal.trim().toLowerCase() !== correctVal && gapVal.trim() !== '';
+                                parts.push(
+                                  <span key={`gap-${gapNum}`} className="inline-flex items-center mx-1 align-baseline">
+                                    <span className="text-[10px] text-primary font-mono mr-1">({gapNum})</span>
+                                    <input
+                                      type="text"
+                                      value={gapVal}
+                                      onChange={(e) => setClozeAnswers(prev => ({
+                                        ...prev,
+                                        [ex.id]: { ...(prev[ex.id] || {}), [gapNum]: e.target.value }
+                                      }))}
+                                      disabled={isChecked}
+                                      className={`w-24 px-2 py-0.5 bg-black/60 border rounded text-sm text-center text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-70 ${
+                                        isRight ? 'border-green-500 bg-green-500/10' :
+                                        isWrong ? 'border-red-500 bg-red-500/10' :
+                                        'border-primary/30'
+                                      }`}
+                                      placeholder="..."
+                                    />
+                                    {isWrong && <span className="text-[10px] text-green-400 ml-1">{parsed.answerMap[gapNum]}</span>}
+                                  </span>
+                                );
+                              }
+                              // Render text, splitting newlines into <br>
+                              parts.push(...text.split('\n').flatMap((line, li) =>
+                                li > 0 ? [<br key={`br-${idx}-${li}`} />, line] : [line]
+                              ));
+                              return parts;
+                            }, [])}
+                          </div>
+                          {!evaluated[ex.id] && (
+                            <button
+                              onClick={() => evaluate(ex)}
+                              className="px-4 py-2 bg-primary text-white rounded text-[10px] font-bold uppercase hover:opacity-90"
+                            >
+                              Check All
+                            </button>
+                          )}
+                        </>
+                      ) : (
+                        /* Standard single-answer exercise */
+                        <>
                       <p className="text-sm text-slate-100 font-medium mb-3">
                         <span className="text-primary font-mono mr-2">{i + 1}.</span>
                         {ex.question}
@@ -303,6 +423,8 @@ export default function Exercises() {
                           </button>
                         )}
                       </div>
+                        </>
+                      )}
                       {evaluated[ex.id] && (
                         <p className={`text-xs mt-2 font-bold ${
                           evaluated[ex.id] === 'correct' ? 'text-green-400' :
@@ -322,7 +444,8 @@ export default function Exercises() {
                         </div>
                       )}
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}
