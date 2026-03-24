@@ -150,7 +150,14 @@ export default function Exercises() {
       for (const n of parsed.gaps) {
         const u = (answers[n] || '').trim().toLowerCase();
         const c = (parsed.answerMap[n] || '').toLowerCase();
-        if (u && (c.includes(u) || u.includes(c))) correct++;
+        // For error correction answers like "from -> of", accept either the shorthand or the replacement word in a full sentence
+        const arrowMatch = c.match(/^(.+?)\s*->\s*(.+)$/);
+        if (arrowMatch) {
+          const replacement = arrowMatch[2].trim();
+          if (u && (u === c || u.includes(replacement) || u.includes(arrowMatch[1].trim() + ' -> ' + replacement))) correct++;
+        } else {
+          if (u && (c.includes(u) || u.includes(c))) correct++;
+        }
       }
       user = parsed.gaps.map(n => `${n}. ${(answers[n] || '').trim()}`).join('  ');
       result = correct === total ? 'correct' : correct >= total * 0.5 ? 'close' : 'wrong';
@@ -435,7 +442,7 @@ export default function Exercises() {
                                             [ex.id]: { ...(prev[ex.id] || {}), [gapNum]: e.target.value }
                                           }))}
                                           disabled={isChecked}
-                                          placeholder={ex.type === 'error_correction' ? 'Correction...' : 'Your answer...'}
+                                          placeholder={ex.type === 'error_correction' ? 'e.g. from -> of  or  full corrected sentence' : 'Your answer...'}
                                           className={`w-full px-3 py-1.5 bg-black/60 border rounded text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-primary disabled:opacity-70 ${
                                             isRight ? 'border-green-500 bg-green-500/10' :
                                             isWrong ? 'border-red-500 bg-red-500/10' :
