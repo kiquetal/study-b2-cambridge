@@ -17,7 +17,7 @@ npm install
 npm run dev
 ```
 
-The app will be available at `http://localhost:4321/` (or next available port).
+The app will be available at `http://localhost:4323/`.
 
 ## How to Use
 
@@ -51,7 +51,7 @@ All study session data is stored in a local SQLite database file (`study.db`) in
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run dev`             | Starts local dev server at `localhost:4323`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
