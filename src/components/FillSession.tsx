@@ -18,10 +18,12 @@ export default function FillSession() {
   const [sortBy, setSortBy] = useState<'recent' | 'title'>('recent');
   const [uploadingPdf, setUploadingPdf] = useState(false);
   const [sessionExerciseCount, setSessionExerciseCount] = useState(0);
+  const [notesFiles, setNotesFiles] = useState<string[]>([]);
 
   useEffect(() => {
     loadSessions();
     loadLogs();
+    fetch('/api/notes').then(r => r.json()).then(setNotesFiles).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -152,6 +154,26 @@ export default function FillSession() {
     } finally {
       setUploadingPdf(false);
     }
+  };
+
+  const handleNotesChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const notesPath = e.target.value;
+    await fetch('/api/notes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: selectedSession, notesPath: notesPath || null }),
+    });
+    await loadSessions();
+  };
+
+  const handleRemovePdf = async () => {
+    if (!selectedSession) return;
+    await fetch('/api/upload-pdf', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sessionId: selectedSession }),
+    });
+    await loadSessions();
   };
 
   const handleDeleteSession = async () => {
@@ -353,13 +375,32 @@ export default function FillSession() {
                       <a href={selectedSessionData.pdfPath} target="_blank" className="text-primary hover:underline">
                         View PDF
                       </a>
+                      <button type="button" onClick={handleRemovePdf} className="ml-2 text-red-400 hover:text-red-300 text-xs">✕ Remove</button>
                     </p>
                   )}
-                  <div className="mt-3 flex items-center gap-2">
+                  {selectedSessionData?.notesPath && (
+                    <p className="mt-2">
+                      <strong className="text-primary">Notes:</strong>{' '}
+                      <span className="text-slate-300">{selectedSessionData.notesPath}</span>
+                    </p>
+                  )}
+                  <div className="mt-3 flex items-center gap-2 flex-wrap">
                     <label className="cursor-pointer inline-block px-3 py-1.5 bg-primary/20 text-primary rounded text-[10px] font-bold uppercase hover:bg-primary/30">
                       {uploadingPdf ? 'Uploading...' : selectedSessionData?.pdfPath ? 'Replace PDF' : 'Upload PDF'}
                       <input type="file" accept=".pdf" onChange={handlePdfUpload} disabled={uploadingPdf} className="hidden" />
                     </label>
+                    {notesFiles.length > 0 && (
+                      <select
+                        value={selectedSessionData?.notesPath || ''}
+                        onChange={handleNotesChange}
+                        className="px-3 py-1.5 bg-black/60 border border-primary/20 rounded text-[10px] text-slate-100 focus:outline-none focus:border-primary"
+                      >
+                        <option value="">— Link notes file —</option>
+                        {notesFiles.map(f => (
+                          <option key={f} value={f}>{f}</option>
+                        ))}
+                      </select>
+                    )}
                     {sessionExerciseCount > 0 ? (
                       <>
                         <button type="button" onClick={goToExercises}
