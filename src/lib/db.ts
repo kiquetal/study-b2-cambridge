@@ -14,8 +14,15 @@ db.exec(`CREATE TABLE IF NOT EXISTS sessions (
   createdDate TEXT NOT NULL,
   nextReviewDate TEXT NOT NULL,
   reviewCount INTEGER DEFAULT 0,
-  pdfPath TEXT
+  pdfPath TEXT,
+  notesPath TEXT
 )`);
+
+// Migration: add notesPath if missing
+const cols = db.prepare("PRAGMA table_info(sessions)").all() as any[];
+if (!cols.some((c: any) => c.name === 'notesPath')) {
+  db.exec("ALTER TABLE sessions ADD COLUMN notesPath TEXT");
+}
 
 // Study Logs table
 db.exec(`CREATE TABLE IF NOT EXISTS study_logs (
@@ -64,22 +71,32 @@ db.exec(`CREATE TABLE IF NOT EXISTS exercise_attempts (
 )`);
 
 // Sessions
+function parseTopics(raw: string): string[] {
+  try {
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [raw];
+  } catch {
+    return raw.split(',').map((s: string) => s.trim()).filter(Boolean);
+  }
+}
+
 export function getAllSessions(): Session[] {
   const rows = db.prepare('SELECT * FROM sessions ORDER BY createdDate DESC').all() as any[];
   return rows.map(row => ({
     ...row,
-    topics: JSON.parse(row.topics)
+    topics: parseTopics(row.topics)
   }));
 }
 
 export function insertSession(session: Session) {
   db.prepare(
-    `INSERT INTO sessions (id, title, skillArea, topics, source, createdDate, nextReviewDate, reviewCount, pdfPath)
-     VALUES (@id, @title, @skillArea, @topics, @source, @createdDate, @nextReviewDate, @reviewCount, @pdfPath)`
+    `INSERT INTO sessions (id, title, skillArea, topics, source, createdDate, nextReviewDate, reviewCount, pdfPath, notesPath)
+     VALUES (@id, @title, @skillArea, @topics, @source, @createdDate, @nextReviewDate, @reviewCount, @pdfPath, @notesPath)`
   ).run({
     ...session,
     topics: JSON.stringify(session.topics),
-    pdfPath: session.pdfPath || null
+    pdfPath: session.pdfPath || null,
+    notesPath: session.notesPath || null
   });
 }
 
@@ -93,6 +110,10 @@ export function updateSessionMetadata(id: string, topics: string[], source: stri
 
 export function updateSessionPdf(id: string, pdfPath: string) {
   db.prepare('UPDATE sessions SET pdfPath = ? WHERE id = ?').run(pdfPath, id);
+}
+
+export function updateSessionNotes(id: string, notesPath: string | null) {
+  db.prepare('UPDATE sessions SET notesPath = ? WHERE id = ?').run(notesPath, id);
 }
 
 export function deleteSession(id: string) {
@@ -137,7 +158,7 @@ export function getSessionById(id: string): Session | undefined {
   if (!row) return undefined;
   return {
     ...row,
-    topics: JSON.parse(row.topics)
+    topics: parseTopics(row.topics)
   };
 }
 
