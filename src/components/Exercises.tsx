@@ -74,20 +74,22 @@ export default function Exercises() {
 
   // Check if a user answer matches the correct answer (handles "X -> Y" error correction format)
   const isGapCorrect = (userInput: string, correctAnswer: string): boolean => {
-    const u = userInput.trim().toLowerCase().replace(/\s*[→⟶]\s*/g, ' -> ');
-    const c = correctAnswer.toLowerCase();
+    const normalize = (s: string) => s.trim().toLowerCase().replace(/\*\*/g, '').replace(/\s+([?.!,;:])/g, '$1').replace(/[.?!]+$/, '').replace(/\s+/g, ' ').trim();
+    const u = normalize(userInput.replace(/\s*[→⟶]\s*/g, ' -> '));
+    const c = normalize(correctAnswer);
+    if (!u) return false;
     const arrowMatch = c.match(/^(.+?)\s*->\s*(.+)$/);
     if (arrowMatch) {
       const wrongWord = arrowMatch[1].trim();
       const replacement = arrowMatch[2].trim();
       const userArrow = u.match(/^(.+?)\s*->\s*(.+)$/);
-      return !!(u && (
+      return !!(
         u === c ||
         (userArrow && userArrow[1].trim() === wrongWord && userArrow[2].trim() === replacement) ||
         (!userArrow && u.includes(replacement))
-      ));
+      );
     }
-    return !!(u && (c.includes(u) || u.includes(c)));
+    return c.includes(u) || u.includes(c);
   };
 
   useEffect(() => { loadSessions(); }, []);
@@ -173,7 +175,7 @@ export default function Exercises() {
       result = correct === total ? 'correct' : correct >= total * 0.5 ? 'close' : 'wrong';
     } else {
       user = (userAnswers[ex.id] || '').trim().toLowerCase();
-      const correct = ex.answer.toLowerCase();
+      const correct = ex.answer.toLowerCase().replace(/\*\*/g, '');
       if (!user) return;
       if (correct.includes(user) || user.includes(correct.split('(')[0].trim().toLowerCase())) {
         result = 'correct';
