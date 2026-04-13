@@ -57,7 +57,8 @@ When the user says "Generate exercises from my latest session" or references a s
 
 1. Query the SQLite database (`study.db`) to find the session and its notes
 2. Check if a PDF is attached (`pdfPath` field) — if so, extract text with `pdftotext public/<pdfPath> -`
-3. Generate **at least 10 exercises** from the actual content, mixing these types:
+3. Check if a notes file is attached (`notesPath` field) — if so, read content via GET `/api/notes-content?file=<notesPath>` or directly from `rumbling-notes/<notesPath>`
+4. Generate **at least 10 exercises** from the actual content (PDF, notes, or both), mixing these types:
    - `vocabulary` — words from the episode matched to definitions
    - `open_cloze` — passage from transcript with grammar words removed
    - `word_formation` — sentences with word roots to transform
@@ -81,6 +82,14 @@ When reviewing phrasal verbs from the database:
 - PDFs are stored in `public/pdfs/` and linked to sessions via `pdfPath`
 - Use `pdftotext <path> -` to extract text
 - Session-PDF mapping is in the `sessions` table
+
+### Notes File Access
+
+- Markdown notes are stored in `rumbling-notes/` and linked to sessions via `notesPath`
+- Read content via GET `/api/notes-content?file=<filename>`
+- List available files via GET `/api/notes`
+- Link a file to a session via POST `/api/notes` with body: `{ sessionId, notesPath }`
+- A session can have both a `pdfPath` (podcast transcript) and a `notesPath` (book notes)
 
 ## Content Guidelines
 

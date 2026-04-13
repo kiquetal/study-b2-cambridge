@@ -10,6 +10,7 @@ export interface Session {
   nextReviewDate: string;
   reviewCount: number;
   pdfPath?: string;
+  notesPath?: string;
 }
 
 export interface StudyLog {
