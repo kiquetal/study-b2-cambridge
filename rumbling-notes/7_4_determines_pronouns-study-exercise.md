@@ -232,3 +232,77 @@ Choose the best word to complete each sentence: **one, ones, each, every, both, 
 10. The twins look exactly alike, but __________ has a different personality. (Meaning: referring to each twin individually)
 
 Please provide your answers for Exercise 5.
+
+---
+
+### Exercise 5: Evaluation
+
+Here are your answers:
+1.  **each**
+2.  **Every**
+3.  **neither**
+4.  **the one**
+5.  **each**
+6.  **each**
+7.  **either**
+8.  **one**
+9.  **each**
+10. **each**
+
+Let's go through them one by one.
+
+1.  **We have two cars, and **each** is perfect for long trips. (Meaning: speaking of the two individually, both are suitable)**
+    *   **Your Answer:** each
+    *   **Correction/Explanation:** Correct! "Each" correctly emphasizes the individual suitability of the two cars for long trips.
+
+2.  **Every** **country has its own unique customs. (Meaning: referring to all countries in the world, as a collective)**
+    *   **Your Answer:** Every
+    *   **Correction/Explanation:** Correct! "Every" is perfect here to refer to all countries as a collective, and it's followed by a singular noun.
+
+3.  **I asked two friends for help, but **neither** of them was available. (Meaning: not one and not the other)**
+    *   **Your Answer:** neither
+    *   **Correction/Explanation:** Correct! "Neither" correctly conveys that not one nor the other of the two friends was available.
+
+4.  **There are several interesting books here. Take **one** you like. (Meaning: any single book)**
+    *   **Your Answer:** the one
+    *   **Correction/Explanation:** Incorrect. The meaning specifies "any single book" from "several interesting books." "The one" implies a specific, identified book. When you want to convey "any single item" from a group where the choice is open, you usually use simply "**one**" or "any one". If the choice is truly open and unspecified, **one** is the most direct.
+        *   **Corrected Sentence:** There are several interesting books here. Take **one** you like.
+
+5.  **My parents gave me two gifts, and I love **both** of them very much. (Meaning: I love them jointly)**
+    *   **Your Answer:** each
+    *   **Correction/Explanation:** Incorrect. The meaning specifies "I love them jointly" or "as a pair." "Each" would emphasize loving them individually. For loving them jointly as a pair, **both** is the correct word.
+        *   **Corrected Sentence:** My parents gave me two gifts, and I love **both** of them very much.
+
+6.  **The customer had two complaints, and the manager addressed **each** of them promptly. (Meaning: addressing each complaint separately)**
+    *   **Your Answer:** each
+    *   **Correction/Explanation:** Correct! "Each" is perfect here as it emphasizes the individual attention given to every single complaint.
+
+7.  **She didn't want coffee or tea; she chose **neither** of the hot beverages. (Meaning: implying a negative choice, no preference for either)**
+    *   **Your Answer:** either
+    *   **Correction/Explanation:** Incorrect. The sentence implies she chose *none* of them, as she "didn't want coffee or tea." If she *chose* none, then **neither** is the appropriate word, meaning "not one or the other." "Either" is used for "one or the other" (often with a positive choice or possibility).
+        *   **Corrected Sentence:** She didn't want coffee or tea; she chose **neither** of the hot beverages.
+
+8.  **I have many pens, but the blue **one** is my favorite.**
+    *   **Your Answer:** one
+    *   **Correction/Explanation:** Correct! "One" correctly replaces the singular noun "pen" after the adjective "blue."
+
+9.  **He read **every** word of the contract before signing it. (Meaning: not missing a single word)**
+    *   **Your Answer:** each
+    *   **Correction/Explanation:** Incorrect. When referring to "not missing a single word" of a document, implying every single item without exception, **every** is typically used with "word". While "each word" is not entirely wrong, "every word" is a stronger and more common collocation for this meaning. The nuance is that "every" covers *all* words collectively, while "each" might imply taking them one by one in sequence. Given "not missing a single word," "every" is better.
+        *   **Corrected Sentence:** He read **every** word of the contract before signing it.
+
+10. **The twins look exactly alike, but **each** has a different personality. (Meaning: referring to each twin individually)**
+    *   **Your Answer:** each
+    *   **Correction/Explanation:** Correct! "Each" perfectly highlights the individual personality difference between the twins.
+
+---
+
+### Summary of Performance:
+
+You got 5 out of 10 correct answers for Exercise 5.
+
+**Areas for Continued Improvement:**
+
+*   **`One` vs. `The one` for open choices:** Remember to use just "one" when implying "any single item" from a general group, rather than a specific "the one."
+*   **`Both` vs. `Each` for joint vs. individual actions:** Pay close attention to whether the context implies a joint action/feeling for two items (`both`) or an individual action/feeling for each of them (`each`).
+*   **`Either` vs. `Neither` for choices:** "Either" means "one or the other (positive choice)," while "neither" means "not one and not the other (negative choice/absence)."
