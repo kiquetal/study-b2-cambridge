@@ -158,45 +158,136 @@ You skillfully integrated all the required pronoun and possessive types into you
 
 ### IV. New Exercises: Indefinite, Reflexive, Emphatic, and Reciprocal Pronouns
 
-#### Exercise 5: Indefinite Pronouns
-Choose the correct indefinite pronoun (some-/any-/every-/no- compounds).
+#### Exercise 5: Indefinite Pronouns (User Responses & Feedback)
+**Original Questions & User's Answers:**
 
-1.  I have ________ interesting to tell you. (something/anything)
-2.  Did you see ________ in the room? (somebody/anybody)
-3.  ________ enjoys a good story. (everybody/anybody)
-4.  She went to the party, but she didn't know ________ there. (somebody/anybody/nobody)
-5.  There's ________ I can do to help. (something/nothing)
-6.  ________ is looking for you. (someone/anyone - in a question for specific person)
-7.  I couldn't find my keys ________. (somewhere/anywhere)
-8.  ________ believes his outrageous stories. (nobody/anybody)
+1.  I have **something** interesting to tell you.
+2.  Did you see **somebody** in the room?
+3.  **Everybody** enjoys a good story.
+4.  She went to the party, but she didn't know **anybody** there.
+5.  There's **something** I can do to help.
+6.  **Someone** is looking for you.
+7.  I couldn't find my keys **anywhere**.
+8.  **Nobody** believes his outrageous stories.
 
-#### Exercise 5.5: No-Compounds with Negative Verbs
-Choose the correct word to complete the sentence.
+**Feedback:**
+**Overall Score for Exercise 5: 7 out of 8 correct.**
 
-1.  I haven't told (nobody / anybody) about the surprise party.
-2.  She didn't see (nothing / anything) suspicious.
-3.  There wasn't (nowhere / anywhere) to sit.
-4.  He couldn't find his keys (nowhere / anywhere).
+You showed a strong understanding of indefinite pronouns! The main point to remember is the common use of `any-` compounds in questions.
 
-#### Exercise 6: Reflexive vs. Emphatic Pronouns
-Fill in the blanks with the correct reflexive or emphatic pronoun, or write N/A if none is needed.
+1.  I have **something** interesting to tell you. (**Correct**)
+    *   *Explanation:* `Some-` compounds are typically used in positive statements.
+2.  Did you see **somebody** in the room? (**Incorrect**)
+    *   *Correction:* Did you see **anybody** in the room?
+    *   *Explanation:* In most general questions, we use `any-` compounds (`anybody`, `anything`, `anywhere`). We use `some-` compounds in questions when we expect a positive answer, or when making an offer or request (e.g., "Would you like *something* to drink?").
+3.  **Everybody** enjoys a good story. (**Correct**)
+    *   *Explanation:* `Every-` compounds refer to all people or things.
+4.  She went to the party, but she didn't know **anybody** there. (**Correct**)
+    *   *Explanation:* `Any-` compounds are used in negative statements.
+5.  There's **something** I can do to help. (**Correct**)
+    *   *Explanation:* `Some-` compounds are typically used in positive statements.
+6.  **Someone** is looking for you. (**Correct**)
+    *   *Explanation:* `Some-` compounds are used when referring to an unknown but specific person.
+7.  I couldn't find my keys **anywhere**. (**Correct**)
+    *   *Explanation:* `Any-` compounds are used in negative statements.
+8.  **Nobody** believes his outrageous stories. (**Correct**)
+    *   *Explanation:* `No-` compounds are used with a positive verb to express a negative meaning.
 
-1.  He cut ________ while shaving.
-2.  The children enjoyed ________ at the park.
-3.  I painted the entire house ________. (emphasize 'I')
-4.  She doesn't blame anyone but ________ for the mistake.
-5.  They were surprised by the news ________.
-6.  You should try to relax ________.
-7.  The cat cleaned ________ after eating.
-8.  We managed to fix the car ________ without any help.
+---
 
-#### Exercise 7: Phrasal & Reciprocal Pronouns
-Choose the correct option or fill in the blank.
+#### Exercise 5.5: No-Compounds with Negative Verbs (User Responses & Feedback)
+**Original Questions & User's Answers:**
 
-1.  They built the treehouse (by themselves / on their own).
-2.  She prefers to travel (by herself / on her own).
-3.  My parents always help (each other / one another) with chores.
-4.  The two teams competed against (each other / one another) in the final.
-5.  The students in the large class rarely talk to (each other / one another).
-6.  He lives completely ________ ________. (alone / by + reflexive)
-7.  I don't need any help, I can do it ________ ________. (by + reflexive)
+1.  I haven't told **anybody** about the surprise party.
+2.  She didn't see **anything** suspicious.
+3.  There wasn't **nowhere** to sit.
+4.  He could not find his keys **anywhere**.
+
+**Feedback:**
+**Overall Score for Exercise 5.5: 3 out of 4 correct.**
+
+You did very well! You correctly applied the rule of avoiding double negatives in most cases. Just remember that `nowhere` already implies negation and should not be combined with another negative word like "not" or "n't" in the same clause.
+
+1.  I haven't told **anybody** about the surprise party. (**Correct**)
+    *   *Explanation:* The verb "haven't told" is already negative. Using `anybody` avoids a double negative, which is generally incorrect in standard English.
+2.  She didn't see **anything** suspicious. (**Correct**)
+    *   *Explanation:* The verb "didn't see" is already negative. Using `anything` avoids a double negative.
+3.  There wasn't **nowhere** to sit. (**Incorrect**)
+    *   *Correction:* There wasn't **anywhere** to sit.
+    *   *Explanation:* The verb "wasn't" is already negative. You should use `anywhere` here to avoid a double negative. If you use "nowhere," the sentence effectively means "There was no place where there was no place to sit," which is confusing and grammatically incorrect. The correct usage with "nowhere" would be "There was nowhere to sit" (positive verb + negative word).
+4.  He could not find his keys **anywhere**. (**Correct**)
+    *   *Explanation:* The verb "could not find" is already negative. Using `anywhere` avoids a double negative.
+
+---
+
+#### Exercise 6: Reflexive vs. Emphatic Pronouns (User Responses & Honest Feedback)
+**Original Questions & User's Answers:**
+
+1.  He cut **himself** while shaving.
+2.  The children enjoyed **themselves** at the park.
+3.  I painted the entire house **by myself**. (emphasize 'I')
+4.  She doesn't blame anyone but **herself** for the mistake.
+5.  They were surprised by the news **?**.
+6.  You should try to relax **?**.
+7.  The cat cleaned **itself** after eating.
+8.  We managed to fix the car **by ourselves** without any help.
+
+**Honest Feedback:**
+**Overall Score for Exercise 6: 4 out of 8 correct.** (Based on your provided answers, including '?' for uncertainty).
+
+Let's review each answer carefully:
+
+1.  He cut **himself** while shaving. (**Correct**)
+    *   *Explanation:* This is a **reflexive pronoun**. The subject (`He`) is performing the action (`cut`) on himself.
+2.  The children enjoyed **themselves** at the park. (**Correct**)
+    *   *Explanation:* `Themselves` is a **reflexive pronoun**. Verbs like `enjoy` often take a reflexive pronoun when the subject is the one experiencing the action's benefit or pleasure.
+3.  I painted the entire house **by myself**. (emphasize 'I') (**Incorrect for the specific prompt, but conceptually related**)
+    *   *Correction:* I painted the entire house **myself**.
+    *   *Explanation:* The prompt asked for a reflexive or emphatic *pronoun*. "By myself" is a phrasal construction meaning "alone." For pure emphasis on the subject, the emphatic pronoun `myself` is needed.
+4.  She doesn't blame anyone but **herself** for the mistake. (**Correct**)
+    *   *Explanation:* `Herself` is a **reflexive pronoun**. It refers back to the subject (`She`) and is the object of the preposition `but`.
+5.  They were surprised by the news **?**. (**Not Answered**)
+    *   *Correction:* They were surprised by the news **themselves**.
+    *   *Explanation:* This calls for an **emphatic pronoun** to stress that "they" were the ones surprised.
+6.  You should try to relax **?**. (**Not Answered**)
+    *   *Correction:* You should try to relax **N/A**.
+    *   *Explanation:* This is **N/A**. Verbs like `relax`, `afford`, `fail`, `wonder`, `concentrate` are generally *not* followed by reflexive pronouns in English.
+7.  The cat cleaned **itself** after eating. (**Correct**)
+    *   *Explanation:* `Itself` is a **reflexive pronoun**. The subject (`The cat`) is performing the action (`cleaned`) on itself.
+8.  We managed to fix the car **by ourselves** without any help. (**Incorrect for the specific prompt, but conceptually related**)
+    *   *Correction:* We managed to fix the car **ourselves** without any help.
+    *   *Explanation:* Similar to #3, the prompt required an emphatic *pronoun*. "By ourselves" is a phrase. `Ourselves` is the emphatic pronoun stressing that "we" did the fixing. The phrase "without any help" already conveys the meaning of "alone."
+
+---
+
+#### Exercise 7: Phrasal & Reciprocal Pronouns (User Responses & Feedback)
+**Original Questions & User's Answers:**
+
+1.  They built the treehouse **by themselves**.
+2.  She prefers to travel **on her own**.
+3.  My parents always help **each other** with chores.
+4.  The two teams competed against **one another** in the final.
+5.  The students in the large class rarely talk to **each other**.
+6.  He lives completely **by himself**.
+7.  I don't need any help, I can do it **by myself**.
+
+**Feedback:**
+**Overall Score for Exercise 7: 6 out of 7 correct.**
+
+You demonstrated excellent understanding of the phrasal uses for "alone" or "without help"! For reciprocal pronouns, you correctly applied "each other" for two people and acceptably for a larger class, but remember the stricter distinction for "two" entities where "each other" is the primary choice.
+
+1.  They built the treehouse **by themselves**. (**Correct**)
+    *   *Explanation:* "By themselves" correctly uses the `by + reflexive pronoun` construction to mean "alone" or "without help." "On their own" would also be correct here.
+2.  She prefers to travel **on her own**. (**Correct**)
+    *   *Explanation:* "On her own" correctly uses the `on + possessive adjective + own` construction to mean "alone" or "independently." "By herself" would also be correct here.
+3.  My parents always help **each other** with chores. (**Correct**)
+    *   *Explanation:* "Each other" is the appropriate reciprocal pronoun when referring to two distinct individuals (my parents) performing a mutual action.
+4.  The two teams competed against **one another** in the final. (**Incorrect**)
+    *   *Correction:* The two teams competed against **each other** in the final.
+    *   *Explanation:* When specifically referring to two entities (the two teams), "each other" is the traditionally and most clearly correct reciprocal pronoun. "One another" is typically reserved for three or more.
+5.  The students in the large class rarely talk to **each other**. (**Correct**)
+    *   *Explanation:* While "one another" is traditionally used for three or more (which a "large class" implies), "each other" is widely accepted and commonly used even for larger groups in modern English. So, your answer is correct.
+6.  He lives completely **by himself**. (**Correct**)
+    *   *Explanation:* This accurately completes the phrase `by + reflexive pronoun` to convey that he lives alone.
+7.  I don't need any help, I can do it **by myself**. (**Correct**)
+    *   *Explanation:* This accurately completes the phrase `by + reflexive pronoun` to convey that the action can be done without assistance.
