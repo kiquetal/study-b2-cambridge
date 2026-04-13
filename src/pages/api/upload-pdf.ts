@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
-import { writeFile, mkdir } from 'fs/promises';
+import { writeFile, mkdir, unlink } from 'fs/promises';
 import { join } from 'path';
-import { updateSessionPdf } from '../../lib/db';
+import { updateSessionPdf, getSessionById } from '../../lib/db';
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
@@ -24,4 +24,14 @@ export const POST: APIRoute = async ({ request }) => {
   updateSessionPdf(sessionId, pdfPath);
 
   return new Response(JSON.stringify({ pdfPath }), { status: 200 });
+};
+
+export const DELETE: APIRoute = async ({ request }) => {
+  const { sessionId } = await request.json();
+  const session = getSessionById(sessionId);
+  if (session?.pdfPath) {
+    try { await unlink(join(process.cwd(), 'public', session.pdfPath)); } catch {}
+  }
+  updateSessionPdf(sessionId, null as any);
+  return new Response(null, { status: 204 });
 };
