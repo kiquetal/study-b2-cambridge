@@ -49,9 +49,26 @@ This is a common point of confusion. The little word "a" completely changes the 
     *   `**Few** politicians are trusted these days.` (Meaning almost no politicians are trusted).
     *   `She has **few** friends.` (This is a sad, negative statement).
 
-**Quick Test for Small Quantities:**
-1.  **Is the meaning positive?** Are you happy with the small amount? → Use **`a little`** (uncountable) or **`a few`** (countable).
-2.  **Is the meaning negative?** Are you complaining or pointing out a lack of something? → Use **`little`** (uncountable) or **`few`** (countable).
+**Structures with `few` and `a few`:**
+1.  `few / a few` + **Plural Noun**
+    *   `I bought **a few books**.`
+2.  `few / a few` + **of** + **Determiner** + **Plural Noun**
+    *   `**A few of my books** are on the table.`
+3.  `few / a few` + **of** + **Pronoun**
+    *   `He showed me many photos, but I had only seen **a few of them** before.`
+
+---
+
+### Quick Reminder: Determiners and Pronouns
+
+When you see the structure `... of + determiner + noun` or `... of + pronoun`, here’s a quick guide to what those words are.
+
+| Type | Examples | Use in a Sentence with a Quantifier |
+| :--- | :--- | :--- |
+| **Determiner: Possessive** | `my`, `your`, `his`, `her`, `its`, `our`, `their` | `**A few of my** friends came to the party.` |
+| **Determiner: Demonstrative**| `this`, `that`, `these`, `those` | `You can take **a few of these** apples.` |
+| **Determiner: Article** | `the` | `Only **a few of the** students passed the exam.` |
+| **Object Pronoun** | `me`, `you`, `him`, `her`, `it`, `us`, `them` | `He invited all of us, but only **a few of us** could go.`|
 
 ---
 
@@ -70,9 +87,9 @@ This is a common point of confusion. The little word "a" completely changes the 
 
 ---
 
-### 5. Using "of the/my/his..."
+### 5. Using "of the/my/his..." with Other Quantifiers
 
-We often add `of the`, `of my`, `of these`, etc., after quantifiers like `some`, `many`, `most`, `all`, `none`, `each`. We do this when we are talking about a **specific, known group**.
+The rule you learned for `a few of...` also applies to many other quantifiers. We add `of` before a determiner (`the`, `my`, `these`, etc.) when we are talking about a **specific, known group**.
 
 *   `**Some** people like jazz.` (People in general)
 *   `**Some of the** people in my class like jazz.` (A specific group: the people in my class).

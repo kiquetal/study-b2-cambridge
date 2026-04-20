@@ -106,7 +106,25 @@ Here, "plane" starts with a 'p' sound, which is a consonant. Therefore, we use *
 
 ---
 
-### V. Formatted Exercises
+### V. `other` vs. `others`
+
+This is a common point of confusion. The key is to remember whether you are describing a noun or replacing it.
+
+-   **`other` (Adjective)**: Use `other` to **describe a noun** that is present in the sentence. It needs a noun after it.
+    -   *Structure*: `other + noun`
+    -   *Example*: "They weren't keen on any of my **other ideas**." (Here, `other` describes `ideas`).
+    -   *Example*: "Do you have any **other questions**?"
+
+-   **`others` (Pronoun)**: Use `others` to **replace a noun**. It stands alone and cannot be followed by a noun it describes. `Others` means "other people" or "other things."
+    -   *Structure*: `others` (stands alone)
+    -   *Example*: "Some people left, but **others** decided to stay." (`others` = other people).
+    -   *Example*: "She didn't like that idea, so she asked for **others**." (`others` = other ideas).
+
+**Simple Rule:** If the noun (e.g., `ideas`, `books`) is written in the sentence, use **`other`**. If the noun has been removed and you are replacing it, use **`others`**.
+
+---
+
+### VI. Formatted Exercises
 
 #### Exercise 5
 - **id**: "ex_7_4_5"
@@ -114,6 +132,14 @@ Here, "plane" starts with a 'p' sound, which is a consonant. Therefore, we use *
 - **type**: "open_cloze"
 - **question**: "She has been waiting for over ______ hour. It was ______ unique opportunity that he couldn't miss."
 - **answer**: "an, a"
+- **createdDate**: "2026-04-19"
+
+#### Exercise 6
+- **id**: "ex_7_4_6"
+- **sessionId**: "session_7_4"
+- **type**: "open_cloze"
+- **question**: "I've finished my task, but some of the ______ are still working on theirs. Are there any ______ topics you'd like to discuss?"
+- **answer**: "others, other"
 - **createdDate**: "2026-04-19"
 
 
