@@ -22,8 +22,27 @@ This is the most important rule for quantifiers.
 | **A lot of / Lots of** | Both | Positive | Informal | `She has **a lot of** friends.` / `There was **lots of** food.` |
 | **Plenty of** | Both | Positive | Normal | `Don't rush, we have **plenty of** time.` (Suggests you have more than enough) |
 
+#### A Note on `A lot of` vs. `Lots of`
+
+This is a common point of confusion. The rule is very simple:
+*   **They mean exactly the same thing.**
+*   **They can both be used with countable and uncountable nouns.**
+*   **`Lots of` is generally considered slightly more informal than `a lot of`.**
+
+In everyday conversation, you can use them interchangeably.
+
+**Examples:**
+
+*   **With Countable Nouns:**
+    *   `There were **a lot of** people at the concert.` (Informal)
+    *   `There were **lots of** people at the concert.` (Slightly more informal)
+
+*   **With Uncountable Nouns:**
+    *   `I need **a lot of** coffee to wake up.` (Informal)
+    *   `I need **lots of** coffee to wake up.` (Slightly more informal)
+
 **Quick Test for Large Quantities:**
-1.  **Is the sentence positive?** → Use `a lot of` / `lots of` (more informal) or `plenty of` (if it means *more than enough*).
+1.  **Is the sentence positive?** → Use `a lot of` or `lots of` (more informal).
 2.  **Is it a question or negative sentence?** → Use `many` for countable nouns (`many tickets`) and `much` for uncountable nouns (`much money`).
     *   *Note:* In modern, informal English, `a lot of` is also very common in questions and negative sentences: *"Were there a lot of people?"*
 
@@ -39,7 +58,6 @@ This is a common point of confusion. The little word "a" completely changes the 
     *   `I have **a little** money left, so we can buy a coffee.` (This is a good thing).
 *   **Little** (Negative meaning - "almost none"): It focuses on what you **don't** have. It often sounds formal or literary.
     *   `I have **little** money left, so we can't afford a coffee.` (This is a bad thing).
-    *   `There is **little** hope of success.`
 
 #### With Countable Nouns: `a few` vs. `few`
 
@@ -47,7 +65,6 @@ This is a common point of confusion. The little word "a" completely changes the 
     *   `I have **a few** friends who live in London.` (I'm happy about this).
 *   **Few** (Negative meaning - "almost none"): It focuses on what you **don't** have. It also sounds more formal.
     *   `**Few** politicians are trusted these days.` (Meaning almost no politicians are trusted).
-    *   `She has **few** friends.` (This is a sad, negative statement).
 
 **Structures with `few` and `a few`:**
 1.  `few / a few` + **Plural Noun**
@@ -74,25 +91,20 @@ When you see the structure `... of + determiner + noun` or `... of + pronoun`, h
 
 ### 4. Quantifiers for Zero Quantity: `No` vs. `None`
 
-*   **No** (Determiner): Use it directly before a noun. It's like saying "not a" or "not any".
+*   **No** (Determiner): Use it directly before a noun.
     *   `There is **no** milk in the fridge.`
-    *   `I have **no** idea what you're talking about.`
-*   **None** (Pronoun): Use it to replace a noun. It stands alone. It often answers the question "How much/many?".
+*   **None** (Pronoun): Use it to replace a noun. It stands alone.
     *   "How much money do you have?" → "**None**."
-    *   `**None of** my friends called me.` (Here "none" is the subject).
-
-**Quick Test for Zero Quantity:**
-1.  **Is there a noun directly after the word?** → Use **`no`**.
-2.  **Is the word standing alone or used with "of"?** → Use **`none`**.
+    *   `**None of** my friends called me.`
 
 ---
 
 ### 5. Using "of the/my/his..." with Other Quantifiers
 
-The rule you learned for `a few of...` also applies to many other quantifiers. We add `of` before a determiner (`the`, `my`, `these`, etc.) when we are talking about a **specific, known group**.
+We add `of` before a determiner (`the`, `my`, `these`, etc.) when we are talking about a **specific, known group**.
 
 *   `**Some** people like jazz.` (People in general)
-*   `**Some of the** people in my class like jazz.` (A specific group: the people in my class).
+*   `**Some of the** people in my class like jazz.` (A specific group).
 
 *   `**Most** cars are reliable now.` (Cars in general)
-*   `**Most of the** cars I've owned were reliable.` (A specific group: the cars I have owned).
+*   `**Most of the** cars I've owned were reliable.` (A specific group).
