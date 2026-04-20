@@ -73,11 +73,49 @@ The following exercises are structured for direct use in your application's data
 - **answer**: "ones, one"
 - **createdDate**: "2026-04-13"
 
+
 ---
 
-### III. Previous Work & Evaluation (for reference)
+### IV. Indefinite Articles: `a` and `an`
 
-This section contains the original exercises and feedback from the previous session.
+The articles **a** and **an** are used when we refer to a singular, countable noun for the first time, or when we are speaking about one of many things. The choice between them depends entirely on the **initial sound** of the word that follows.
+
+-   **Use `a`** before a word that starts with a **consonant sound**.
+    -   *Examples*: `a book`, `a car`, `a lamp`.
+    -   This also applies to words that start with a vowel letter but are pronounced with a consonant sound.
+    -   *Examples*:
+        -   `a university` (starts with a 'y' sound)
+        -   `a European` (starts with a 'y' sound)
+        -   `a one-way street` (starts with a 'w' sound)
+
+-   **Use `an`** before a word that starts with a **vowel sound** (a, e, i, o, u).
+    -   *Examples*: `an apple`, `an elephant`, `an interesting story`.
+    -   This also applies to words that start with a silent consonant, most commonly 'h'.
+    -   *Examples*:
+        -   `an hour` (the 'h' is silent)
+        -   `an honest person` (the 'h' is silent)
+        -   `an heir` (the 'h' is silent)
+    -   However, if the 'h' is pronounced, you use `a`.
+    -   *Example*: `a historic event`, `a hotel`.
+
+**Example from your question:**
+
+> She went to the airport and caught **a** plane.
+
+Here, "plane" starts with a 'p' sound, which is a consonant. Therefore, we use **a**.
+
+---
+
+### V. Formatted Exercises
+
+#### Exercise 5
+- **id**: "ex_7_4_5"
+- **sessionId**: "session_7_4"
+- **type**: "open_cloze"
+- **question**: "She has been waiting for over ______ hour. It was ______ unique opportunity that he couldn't miss."
+- **answer**: "an, a"
+- **createdDate**: "2026-04-19"
+
 
 **(All of the content from the original "Exercise 3", "Exercise 4", "Exercise 5" and their evaluations is preserved below this line for your records.)**
 
