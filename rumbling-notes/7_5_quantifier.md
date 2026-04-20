@@ -90,22 +90,91 @@ When you see the structure `... of + determiner + noun` or `... of + pronoun`, h
 
 ---
 
-### 4. Quantifiers for Zero Quantity: `No` vs. `None`
+### 4. Quantifiers for Zero Quantity: `Any`, `No`, and `None`
 
-*   **No** (Determiner): Use it directly before a noun.
-    *   `There is **no** milk in the fridge.`
-*   **None** (Pronoun): Use it to replace a noun. It stands alone.
-    *   "How much money do you have?" → "**None**."
+These words are all used to talk about a zero quantity, but they are used in different types of sentences and have different grammatical roles.
+
+#### Any (Used in Negative Sentences & Questions)
+
+`Any` is used with a negative verb or in a question. It cannot be used to make a sentence negative by itself.
+
+*   **Grammar:** Determiner (used before a noun)
+*   **Use:** With negative verbs (`don't`, `aren't`, `haven't`) and in questions.
+*   **Examples:**
+    *   `I **don't** have **any** money.`
+    *   `There **aren't** **any** seats left.`
+    *   `Do you have **any** questions?`
+
+*A special use for `any` in a positive sentence is when it means "it doesn't matter which one." e.g., "You can call me **any** time."*
+
+#### No (Used to make a sentence negative)
+
+`No` is a strong determiner that means the same as `not a` or `not any`. It is used with a positive verb to create a negative sentence.
+
+*   **Grammar:** Determiner (used directly before a noun)
+*   **Use:** With a positive verb.
+*   **Examples:**
+    *   `I have **no** money.` (Means the same as: "I don't have any money.")
+    *   `There are **no** seats left.` (Means the same as: "There aren't any seats left.")
+
+**Important:** Avoid double negatives. Do not use `no` with a negative verb.
+*Incorrect:* `I don't have no money.`
+
+#### None (Replaces the noun)
+
+`None` is a pronoun, meaning it stands alone and replaces the noun itself.
+
+*   **Grammar:** Pronoun
+*   **Use:** On its own, or with `of` + a specific group (`the`, `my`, `these`, `us`).
+*   **Examples:**
+    *   "How many tickets did you buy?" → "**None**."
     *   `**None of** my friends called me.`
+    *   `**None of the** equipment works.`
 
 ---
 
-### 5. Using "of the/my/his..." with Other Quantifiers
+### Quick Comparison
 
-We add `of` before a determiner (`the`, `my`, `these`, etc.) when we are talking about a **specific, known group**.
+| If the verb is... | Use... | Example |
+| :--- | :--- | :--- |
+| **Negative** | `any` | `I **don't** have **any** time.` |
+| **Positive** | `no` | `I have **no** time.` |
+| **Answering a Question** | `none` | `"How much time do you have?" "**None**."` |
 
-*   `**Some** people like jazz.` (People in general)
-*   `**Some of the** people in my class like jazz.` (A specific group).
+---
 
-*   `**Most** cars are reliable now.` (Cars in general)
-*   `**Most of the** cars I've owned were reliable.` (A specific group).
+### 5. Using 'Most' and 'Some': General vs. Specific Groups
+
+A common point of confusion is when to use `of the` after quantifiers like `most` or `some`. The rule depends on whether you are speaking generally or about a specific, defined group.
+
+#### General Statements (e.g., "most people")
+
+When you are making a general statement about all things of a certain type (e.g., people in general, cars in general), you **do not** use `of`.
+
+*   **Structure:** `most` / `some` + `[noun]`
+*   `**Most people** want to be happy.` (People in general, all over the world)
+*   `**Some** cars are more reliable than others.` (Cars in general)
+
+For this reason, the phrase "**most of people**" is grammatically **incorrect**. Because you are speaking about people in general, you must not use "of".
+
+#### Specific Groups (e.g., "most of the people")
+
+When you are talking about a specific, defined group, you **must** use `of` and a determiner (`the`, `my`, `these`, etc.). The determiner identifies *which* group you mean.
+
+*   **Structure:** `most` / `some` + `of` + `the/my/these` + `[noun]`
+*   `**Most of the people** in my class are friendly.` (A specific group: only the people in my class)
+*   `**Some of my** friends live abroad.` (A specific group: only my friends)
+
+---
+
+### 6. A Common Mistake: 'In most cases' vs. 'The most...'
+
+This follows the same logic. "In most cases" is a general statement. However, learners often confuse it with the superlative structure, which uses "the most".
+
+*   **Correct (General):** "**In most cases**, the train arrives on time."
+*   **Incorrect:** "~~In the most cases...~~" or "~~In the most of cases...~~"
+
+The phrase "the most" is used in superlatives, where it must be followed by an adjective to describe something as being the highest degree of that quality.
+
+*   **Correct (Superlative):** "She handled the situation in **the most professional** way."
+*   **Correct (Superlative):** "This is **the most interesting** book I have ever read."
