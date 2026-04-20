@@ -13,12 +13,13 @@ This is the most important rule for quantifiers.
 
 ---
 
-### 2. Quantifiers for Large Quantities
+### 2. Quantifiers for Medium to Large Quantities
 
 | Quantifier | Used with | Type of Sentence | Formality | Example |
 | :--- | :--- | :--- | :--- | :--- |
 | **Many** | Countable | Questions & Negative | Normal | `Were there **many** people at the party?` |
 | **Much** | Uncountable | Questions & Negative | Normal | `I don't have **much** time.` |
+| **Several** | Countable | Positive | Normal | `**Several** people complained.` (More than a few, less than many) |
 | **A lot of / Lots of** | Both | Positive | Informal | `She has **a lot of** friends.` / `There was **lots of** food.` |
 | **Plenty of** | Both | Positive | Normal | `Don't rush, we have **plenty of** time.` (Suggests you have more than enough) |
 
