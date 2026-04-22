@@ -60,6 +60,23 @@ This is a common point of confusion. The little word "a" completely changes the 
 *   **Little** (Negative meaning - "almost none"): It focuses on what you **don't** have. It often sounds formal or literary.
     *   `I have **little** money left, so we can't afford a coffee.` (This is a bad thing).
 
+#### A Note on "Little of"
+
+While less common, you can use "little of" to emphasize a small, insufficient amount of a *specific* uncountable noun. It is a more formal structure.
+
+The rule is: `little of` + **Determiner/Pronoun** + **Uncountable Noun**
+
+*   **Determiner:** `the`, `my`, `his`, `her`
+*   **Pronoun:** `it`, `that`
+
+**Examples:**
+
+*   **General:** "The city has **little** money for new projects."
+*   **Specific:** "The city spent most of its budget, so **little of the money** was left for new projects." (Referring to the specific budget money).
+
+*   **General:** "I have **little** patience for delays."
+*   **Specific:** "After waiting for three hours, **little of my patience** remained." (Referring to the specific patience *I* had).
+
 #### With Countable Nouns: `a few` vs. `few`
 
 *   **A few** (Positive meaning - "some, but not a lot"): It focuses on what you **do** have.
