@@ -177,4 +177,104 @@ This follows the same logic. "In most cases" is a general statement. However, le
 The phrase "the most" is used in superlatives, where it must be followed by an adjective to describe something as being the highest degree of that quality.
 
 *   **Correct (Superlative):** "She handled the situation in **the most professional** way."
-*   **Correct (Superlative):** "This is **the most interesting** book I have ever read."
+---
+
+## Exercise: Choose the Correct Quantifier
+
+**Instructions:** Choose the best quantifier from the options provided to complete each sentence. In some cases, more than one answer may be possible; choose the most appropriate one based on the context (formal/informal, positive/negative).
+
+1.  Could you lend me ________ money? I'm afraid I don't have ________ to pay for the bus ticket.
+    *   (a) a little / any
+    *   (b) little / no
+    *   (c) a few / some
+
+2.  Unfortunately, there are ________ solutions to this problem, so the committee had ________ ideas to discuss.
+    *   (a) a few / few
+    *   (b) few / few
+    *   (c) little / a little
+
+3.  "How many people were at the meeting?"
+    "________. It was cancelled."
+    *   (a) No
+    *   (b) Any
+    *   (c) None
+
+4.  I have to go to the supermarket. There is ________ milk left, and we need ________ of it for the breakfast tomorrow.
+    *   (a) little / plenty
+    *   (b) a little / a lot
+    *   (c) few / much
+
+5.  ________ people in my office have been working here for over a decade. In fact, ________ of the employees are veterans.
+    *   (a) Most / most
+    *   (b) Most of / most
+    *   (c) The most of / most
+
+6.  In ________ cases, this medicine works well, but ________ patients have reported side effects.
+    *   (a) the most / a few
+    *   (b) most / a few
+    *   (c) most of / few
+
+7.  She doesn't have ________ patience for long meetings, but she has ________ good ideas when she's focused.
+    *   (a) much / a lot of
+    *   (b) many / plenty of
+    *   (c) a lot of / a few
+
+8.  "Do you have any experience with this software?"
+    "I have ________, but I'm willing to learn more."
+    *   (a) a little
+    *   (b) little
+    *   (c) none
+
+9.  ________ my friends knew about the surprise party, but thankfully, ________ of them said anything to me.
+    *   (a) Some of / none
+    *   (b) Some / no one
+    *   (c) Any of / none
+
+10. We don't have ________ information about the incident yet, but we have ________ witnesses who are willing to talk.
+    *   (a) much / several
+    *   (b) many / a lot of
+    *   (c) any / few
+
+---
+
+## Exercise Review & Key
+
+Here is the key for the exercise above, along with tips based on common mistakes.
+
+### Answer Key
+
+| Question | Correct Answer | Correct Sentence |
+| :--- | :--- | :--- |
+| 1 | (a) a little / any | Could you lend me **a little** money? I'm afraid I don't have **any** to pay for the bus ticket. |
+| 2 | (b) few / few | Unfortunately, there are **few** solutions to this problem, so the committee had **few** ideas to discuss. |
+| 3 | (c) None | "How many people were at the meeting?" "**None**. It was cancelled." |
+| 4 | (a) little / plenty | I have to go to the supermarket. There is **little** milk left, and we need **plenty** of it for breakfast tomorrow. |
+| 5 | (a) Most / most | **Most** people in my office have been working here for over a decade. In fact, **most** of the employees are veterans. |
+| 6 | (b) most / a few | In **most** cases, this medicine works well, but **a few** patients have reported side effects. |
+| 7 | (a) much / a lot of | She doesn't have **much** patience for long meetings, but she has **a lot of** good ideas when she's focused. |
+| 8 | (a) a little | "I have **a little**, but I'm willing to learn more." |
+| 9 | (a) Some of / none | **Some of** my friends knew about the surprise party, but thankfully, **none** of them said anything to me. |
+| 10 | (a) much / several | We don't have **much** information about the incident yet, but we have **several** witnesses who are willing to talk. |
+
+### Common Pitfalls & Tips
+
+Here are some tips to avoid the errors made in this exercise.
+
+1.  **`Some` vs. `Any` (Question 1):**
+    *   **Rule:** Use `some` for positive sentences. Use `any` for negative sentences (with `don't`, `isn't`, etc.) and for most questions.
+    *   **Tip:** When you see a negative like "I **don't** have...", your default choice should be `any`.
+    *   *Example:* "I don't have **any** money."
+
+2.  **`Little` vs. `A Little` (Question 4):**
+    *   **Rule:** `little` means "almost none" and has a negative feeling. `a little` means "a small amount" and has a neutral or positive feeling.
+    *   **Tip:** Look for context clues. "I have to go to the supermarket" implies a problem—the amount of milk is not enough. This points to the negative feeling of `little`.
+
+3.  **Using `None` (Question 8):**
+    *   **Rule:** `None` is a pronoun that stands alone. It replaces a noun phrase. It cannot be used like `have none [noun]`.
+    *   **Tip:** To answer a "How much...?" question with "zero", you can say "**None**." as a complete answer. If you are forming a sentence, you must say "I have **no** experience" or "I **don't have any** experience."
+    *   *Incorrect:* "I have none experience."
+
+4.  **`Most` vs. `Most of` for Specific Groups (Question 5):**
+    *   **Rule:** This is a very tricky point. For specific groups, `most of the [group]` is the full, formal structure. However, `most [group]` is also very common and grammatically correct.
+    *   **Tip:** Watch out for "trap" answers. The option `Most of people...` was incorrect because it was missing `the`. If an option is grammatically broken, it can't be the right answer. In this case, `Most people in my office...` was the correct and natural-sounding choice.
+    *   *Always check:* `most of` must be followed by a determiner like `the`, `my`, `our`, `these`. If not, it's wrong.
