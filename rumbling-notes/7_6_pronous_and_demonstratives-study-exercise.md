@@ -1,39 +1,47 @@
-# 7.6 Impersonal Pronouns and Demonstratives: Exercises
+# Exercises: 7.6 Impersonal Pronouns and Demonstratives
 
-**Instructions:** Complete the following exercises to practice the usage of `it`, `there`, and the demonstratives `this`, `that`, `these`, and `those`.
+## Exercise 1: Choose between `it` and `there`.
 
----
+Fill in the blanks with the correct word.
 
-### Exercise 1: `It` vs. `There`
+1.  \_\_\_\_\_ is a good restaurant near here.
+2.  \_\_\_\_\_ 's a shame that you can't come to the party.
+3.  How far is \_\_\_\_\_ to the station?
+4.  \_\_\_\_\_ was a long queue at the post office.
+5.  I find \_\_\_\_\_ difficult to understand his accent.
+6.  Look! \_\_\_\_\_ 's a rainbow!
+7.  \_\_\_\_\_ must be a mistake in the bill.
+8.  \_\_\_\_\_ is important to book in advance.
 
-**Instructions:** Fill in the blanks with the correct word, `it` or `there`.
+## Exercise 2: Using `worth`, `no point`, `no use`
 
-1.  ________ is a good reason why the project was cancelled.
-2.  ________ is important to double-check your work before submitting it.
-3.  ________ seems to be a mistake in the calculation.
-4.  ________ was raining yesterday, so we couldn't go to the park.
-5.  Why is ________ so cold in this room?
-6.  ________ are too many people in here; I can't breathe!
-7.  I heard a noise. I think ________ might be a mouse in the kitchen.
-8.  ________ is a shame that you have to leave so early.
+Rewrite the second sentence using the word in brackets so that it has a similar meaning.
 
----
+1.  You won't gain anything by complaining. (no use)
+    \-> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2.  I think you should see this film. (worth)
+    \-> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+3.  It's not sensible to wait for him. (no point)
+    \-> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+4.  Why are we trying to convince her? It's pointless. (what's the use)
+    \-> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_?
 
-### Exercise 2: Sentence Patterns with "It"
+## Answer Key
 
-**Instructions:** Rewrite the sentences using the pattern in parentheses.
+### Exercise 1
 
-1.  To learn a new language is difficult. (`it + be + adjective + to-infinitive`)
-    → __________________________________________________
-2.  You should finish your homework before you go out. It is essential. (`it + be + adjective + that...`)
-    → __________________________________________________
-3.  I think that speaking in front of a large audience is stressful. (`find it + adjective`)
-    → __________________________________________________
-4.  She can't solve this puzzle. It's impossible for her. (`it + be + adjective + for someone + to-infinitive`)
-    → __________________________________________________
+1.  **There** is a good restaurant near here.
+2.  **It**'s a shame that you can't come to the party.
+3.  How far is **it** to the station?
+4.  **There** was a long queue at the post office.
+5.  I find **it** difficult to understand his accent.
+6.  Look! **There**'s a rainbow!
+7.  **There** must be a mistake in the bill.
+8.  **It** is important to book in advance.
 
----
+### Exercise 2
 
+<<<<<<< HEAD
 ### Exercise 3: Demonstratives (`this`, `that`, `these`, `those`)
 
 **Instructions:** Choose the correct demonstrative to complete each sentence.
@@ -87,3 +95,9 @@ These two patterns express the same idea but use different grammar.
 | **Example** | "I **have difficulty** remembering names." | "I **find it difficult** to remember names." |
 
 **Key takeaway:** If the verb is `have`, use the noun `difficulty`. If the verb is `find`, use the adjective `difficult`.
+=======
+1.  It's **no use complaining**.
+2.  The film is **worth seeing**. / It's **worth seeing** this film.
+3.  There's **no point in waiting** for him.
+4.  **What's the use of trying** to convince her?
+>>>>>>> b1cdc10 (feat: add exercises for pronouns and demonstratives)
