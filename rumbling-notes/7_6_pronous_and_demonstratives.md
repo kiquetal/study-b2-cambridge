@@ -223,4 +223,19 @@ These expressions mean that an action has no purpose or will not be effective.
 
 *   **Nice to Know:** "For what it's worth..." is an idiom used to offer an opinion or piece of information that you are not sure is useful.
     *   "**For what it's worth**, I think you made the right decision."
-			
+
+***
+
+### Mind Trick for Questions
+
+Here’s a simple way to remember how to form questions with these phrases.
+
+1.  **For `worth` -> Think "Value?"**
+    *   The question is about the **value** or benefit of something. The structure is `Is it worth + -ing?`
+    *   *Mind Trick:* Imagine holding an item and asking, "**Is it worth** buying?" You are asking about its value.
+    *   Example: "**Is it worth visiting** the museum?" (Are we going to get value from this visit?)
+
+2.  **For `point` / `use` -> Think "Purpose?"**
+    *   The question challenges the **purpose** or logic of an action. The structure is often `What's the point/use of + -ing?`
+    *   *Mind Trick:* Imagine someone doing something illogical, like trying to fill a leaky bucket. You would ask, "**What's the point of** doing that?" You are asking about the (lack of) purpose.
+    *   Example: "**What's the use of complaining**?" (What purpose does complaining serve? None.)
