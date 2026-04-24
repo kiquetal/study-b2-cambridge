@@ -75,3 +75,15 @@ This is a subtle but important difference that often causes confusion.
     *   **Correct:** "**It seems** strange."
 
 **Quick Tip:** If the sentence is introducing the existence of a noun, use `There`. If the sentence is giving an opinion on a whole situation, use `It`.
+
+### "have difficulty" (noun) vs. "find it difficult" (adjective)
+
+These two patterns express the same idea but use different grammar.
+
+| | `difficulty` (Noun) | `difficult` (Adjective) |
+| :--- | :--- | :--- |
+| **Pattern** | `to have difficulty doing` | `to find it difficult to do` |
+| **Explanation**| `difficulty` is the noun (the thing you *have*). It is followed by a gerund (`-ing`). | `difficult` is the adjective describing the action. It is used in the `find it + adj + to-infinitive` structure. |
+| **Example** | "I **have difficulty** remembering names." | "I **find it difficult** to remember names." |
+
+**Key takeaway:** If the verb is `have`, use the noun `difficulty`. If the verb is `find`, use the adjective `difficult`.

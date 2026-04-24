@@ -91,6 +91,30 @@ The structure `It + be + [emphasized part] + that/who...` is used to emphasize a
 
 ***
 
+## Quick Tip: Choosing Between 'It' and 'There'
+
+Here is a practical trick to help you decide when to use `it` versus `there`.
+
+**Look at what comes *after* the verb.**
+
+1.  **If you are introducing a *new noun* whose existence is being stated (often with `a`, `some`, `any`, a number), use `There`.**
+    *   "**There** is **a cat** in the garden."
+    *   "Robert feared that **there** could be **some bad news**."
+
+2.  **If you are describing a whole *situation* (often with an adjective) or referring to weather or time, use `It`.**
+    *   "**It** is **important** to be on time."
+    *   "**It** could be **a problem**." (Here, "a problem" describes the situation).
+
+### The "Look Ahead" Test
+
+Apply this test to a confusing sentence: "Robert feared that \_\_\_\_\_\_ could be some bad news..."
+
+1.  **Look ahead:** What comes after the verb `be`? → "...**some bad news**."
+2.  **Ask:** Is "some bad news" a new noun whose existence is being introduced? → **Yes**.
+3.  **Conclusion:** The correct word is **There**.
+
+***
+
 ## 3. Demonstratives (this, that, these, those)
 
 Demonstratives point to specific people or things based on **number** and **distance**.
