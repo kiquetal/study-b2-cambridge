@@ -154,3 +154,73 @@ Demonstratives point to specific people or things based on **number** and **dist
     *   `that` / `those`: Past or finished period.
         *   "I was on holiday **that week**."
         *   "Ah, 1999... **those were the days**!"
+
+***
+
+## 4. Expressing Value and Pointlessness (Worth, No Point, etc.)
+
+This section covers common structures used to say whether an action is useful, sensible, or has a purpose.
+
+---
+
+### A. Using `worth`
+
+The most common structure is `be + worth + -ing`.
+
+1.  **`be + worth + -ing`**
+    *   "Is this film **worth seeing**?"
+    *   "The exhibition was definitely **worth visiting**."
+    *   *Meaning:* The action has value; you will get a benefit from it.
+
+2.  **`be + worth + it`**
+    *   You can use `it` to refer to a previously mentioned activity.
+    *   "The climb was difficult, but the view from the top was **worth it**."
+
+---
+
+### B. Using `no point`, `no use`, `no good`
+
+These expressions mean that an action has no purpose or will not be effective.
+
+1.  **`There's no point in + -ing`**
+    *   This is very common for saying an action is not sensible.
+    *   "**There's no point in waiting** any longer. They're not coming."
+    *   "I feel **there is no point in** trying again."
+
+2.  **`It's no use / It's no good / It's pointless / It's useless + -ing`**
+    *   This pattern emphasizes that an action will not achieve the desired result.
+    *   "**It's no use complaining**; nobody will do anything about it."
+    *   "**It's no good talking** to him because he never listens."
+    *   "**It's pointless arguing** with them; they won't change their minds."
+    *   "**It's useless trying** to fix it. We need a new one."
+
+---
+
+### C. Other Similar Expressions
+
+1.  **`There's no harm in + -ing`**
+    *   Used to suggest an action is safe or low-risk.
+    *   "**There's no harm in asking** for a discount. The worst they can say is no."
+
+2.  **`What's the use of + -ing?`**
+    *   A rhetorical question that means the same as "It's no use...".
+    *   "**What's the use of worrying** about things you can't change?"
+
+3.  **`(It) makes no sense to + infinitive`**
+    *   "It **makes no sense to hire** more staff when we don't have enough work."
+    *   *Note:* This structure uses the `to-infinitive`, not the `-ing` form.
+
+***
+
+### Quick Tip & Nice to Know
+
+*   **Tip:** `worth` is followed by the `-ing` form, not the infinitive.
+    *   *Correct:* "It's worth **visiting**."
+    *   *Incorrect:* "It's worth ~~to visit~~."
+
+*   **Nice to Know:** The expression `It goes without saying that...` is used to introduce something that is obviously true.
+    *   "**It goes without saying that** you'll need to work hard to pass the exam."
+
+*   **Nice to Know:** "For what it's worth..." is an idiom used to offer an opinion or piece of information that you are not sure is useful.
+    *   "**For what it's worth**, I think you made the right decision."
+			
