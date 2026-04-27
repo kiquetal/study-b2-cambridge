@@ -4,11 +4,14 @@
 
 **Instructions:** Rewrite the sentences using the structure "It is pointless + to-infinitive / gerund".
 
-1.  There's no use trying to fix that old watch.
-2.  Worrying about things you can't change is a waste of time.
-3.  Why bother arguing with them? They never listen.
-4.  It doesn't make sense to buy a ticket now; the show is sold out.
-5.  There was no reason to wait for him; he was clearly not coming.
+1. There's no use trying to fix that old watch.
+   *Answer: It is pointless fixing that old watch. (or "It is pointless to fix that old watch.")*
+2. Worrying about things you can't change is a waste of time.
+   *Answer: It is pointless worrying about things you can't change.*
+3. Why bother arguing with them? They never listen.
+   *Answer: It is useless arguing with them; they never listen.*
+4. It doesn't make sense to buy a ticket now; the show is sold out.
+5. There was no reason to wait for him; he was clearly not coming.
 
 ---
 
@@ -16,10 +19,16 @@
 
 **Instructions:** Combine the sentences using a suitable relative pronoun. Decide whether the clause should be defining or non-defining and use commas where necessary.
 
-1.  A man answered the phone. He told me you were out.
-2.  I recently went back to my hometown. I was born there.
-3.  My brother is a doctor. He lives in London.
-4.  The dress was beautiful. She wore it to the party.
-5.  That's the student. I was telling you about her.
+1. A man answered the phone. He told me you were out.
+   *Answer: A man who answered the phone told me you were out.*
+2. I recently went back to my hometown. I was born there.
+   *Answer: I recently went back to my hometown, where I was born.*
+3. My brother is a doctor. He lives in London.
+   *Answer: My brother, who lives in London, is a doctor.*
+   *Answer: My brother, who lives in London, is a doctor.*
+4. The dress was beautiful. She wore it to the party.
+   *Answer: The dress which/that she wore to the party was beautiful.*
+5. That's the student. I was telling you about her.
+   *Answer: That's the student who/whom I was telling you about.*
 
 ---
