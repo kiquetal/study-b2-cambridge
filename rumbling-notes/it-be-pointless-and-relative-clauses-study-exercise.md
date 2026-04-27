@@ -1,0 +1,25 @@
+# Exercises: It + BE + Pointless & Relative Clauses
+
+## Exercise 1: "It + BE + Pointless"
+
+**Instructions:** Rewrite the sentences using the structure "It is pointless + to-infinitive / gerund".
+
+1.  There's no use trying to fix that old watch.
+2.  Worrying about things you can't change is a waste of time.
+3.  Why bother arguing with them? They never listen.
+4.  It doesn't make sense to buy a ticket now; the show is sold out.
+5.  There was no reason to wait for him; he was clearly not coming.
+
+---
+
+## Exercise 2: Defining vs. Non-Defining Relative Clauses
+
+**Instructions:** Combine the sentences using a suitable relative pronoun. Decide whether the clause should be defining or non-defining and use commas where necessary.
+
+1.  A man answered the phone. He told me you were out.
+2.  I recently went back to my hometown. I was born there.
+3.  My brother is a doctor. He lives in London.
+4.  The dress was beautiful. She wore it to the party.
+5.  That's the student. I was telling you about her.
+
+---
