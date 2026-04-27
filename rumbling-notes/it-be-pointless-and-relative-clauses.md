@@ -17,14 +17,18 @@ The negative `not` can be added to talk about the futility of *not* doing someth
 
 Relative clauses add extra information to a sentence by defining or modifying a noun. They are introduced by relative pronouns (`who`, `whom`, `whose`, `which`, `that`) or relative adverbs (`where`, `when`, `why`).
 
-### Defining vs. Non-Defining Relative Clauses
+### The "Golden Rule": Don't Double Up
+When you use a relative pronoun (`who`, `which`, `that`), it **already acts** as the object or subject. You must remove the original pronoun/object (`it`, `him`, `her`) from the clause.
 
-- **Defining Relative Clauses:** Provide essential information that identifies the noun. They are not separated by commas.
-  - *The book **that I'm reading** is fascinating.* (The clause specifies which book.)
-  - *He is the man **who fixed my car**.*
+*   **Wrong:** The book, **which** I bought **it** yesterday, is expensive.
+*   **Correct:** The book, **which** I bought yesterday, is expensive.
 
-- **Non-Defining Relative Clauses:** Provide extra, non-essential information. They are separated by commas.
-  - *My car, **which is five years old**, is very reliable.* (The clause adds extra information about the car.)
-  - *Mr. Smith, **who is a retired teacher**, lives next door.*
+### When can you omit the Relative Pronoun?
+In **Defining Relative Clauses** (no commas), you can omit the pronoun `that` or `which` **only if it is the OBJECT** of the clause.
+
+*   **Object (Can omit):** The book **(that)** I bought yesterday is expensive.
+    *   *Test:* "I" am doing the buying. The book is the thing being bought.
+*   **Subject (Never omit):** The man **who** lives next door is a singer.
+    *   *Test:* The man is doing the living. He is the subject. You cannot omit "who."
 
 ---
