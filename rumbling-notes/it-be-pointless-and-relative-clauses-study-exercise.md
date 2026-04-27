@@ -28,7 +28,9 @@
    *Answer: My brother, who lives in London, is a doctor.*
 4. The dress was beautiful. She wore it to the party.
    *Answer: The dress which/that she wore to the party was beautiful.*
+   *Answer: The dress which/that she wore to the party was beautiful.*
 5. That's the student. I was telling you about her.
+   *Answer: That's the student who/whom I was telling you about.*
    *Answer: That's the student who/whom I was telling you about.*
 
 ---
