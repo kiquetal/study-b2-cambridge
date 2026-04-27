@@ -32,3 +32,18 @@ In **Defining Relative Clauses** (no commas), you can omit the pronoun `that` or
     *   *Test:* The man is doing the living. He is the subject. You cannot omit "who."
 
 ---
+
+### Quick Reference: Golden Rules for Relative Clauses
+
+1. **Subject vs. Object Rule:**
+   - If the relative pronoun is the **subject** of the clause (e.g., *The man **who** lives here...*), you **MUST keep** the pronoun.
+   - If the relative pronoun is the **object** of the clause (e.g., *The dog **(that)** I saw...*), you **CAN omit** the pronoun if it is a defining clause.
+
+2. **Comma Rule (Defining vs. Non-Defining):**
+   - **Defining (No commas):** Essential information. *The book I bought is great.* (Omission allowed).
+   - **Non-defining (Use commas):** Extra, non-essential information. *The book, which I bought yesterday, is great.* (**Omission NEVER allowed**).
+
+3. **The "Double Object" Trap:**
+   - Never repeat the pronoun or object inside the clause. 
+   - **Wrong:** *The book, which I bought **it**...*
+   - **Correct:** *The book, which I bought...*
