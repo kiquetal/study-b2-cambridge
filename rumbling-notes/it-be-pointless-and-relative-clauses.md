@@ -47,3 +47,33 @@ In **Defining Relative Clauses** (no commas), you can omit the pronoun `that` or
    - Never repeat the pronoun or object inside the clause. 
    - **Wrong:** *The book, which I bought **it**...*
    - **Correct:** *The book, which I bought...*
+
+---
+
+## "No" vs "Not" with Worth, Point, Harm, Use, and Good
+
+This is a very common trap in B2 English! The confusion happens because "no" and "not" both make a sentence negative, but they have different grammatical rules. 
+
+*   **"No"** is a determiner. It must go immediately before a **Noun**.
+*   **"Not"** is an adverb. It goes with **Verbs** (like *is*, *are*, *do*) and **Adjectives**.
+
+### 1. Worth (Adjective) ➡️ Use "NOT"
+Because "worth" is an adjective, it is paired with the verb *to be* (is/are). Therefore, you must use **not**.
+*   ✅ It is **not worth** repairing this old car.
+*   ❌ *It is no worth repairing this old car.*
+
+### 2. Point & Harm (Nouns) ➡️ Use "NO"
+Because "point" and "harm" are nouns, you must use **no**. They are usually used with the structure "There is...".
+*   ✅ There is **no point** (in) worrying about the exam.
+*   ✅ There is **no harm** in asking for help.
+*   ❌ *There is not point (in) worrying...*
+
+### 3. Use & Good (Nouns in these phrases) ➡️ Use "NO"
+Expressions with "use" and "good" act as nouns in these specific phrases, so they also take **no**:
+*   ✅ It is **no use** complaining about the weather.
+*   ✅ It is **no good** trying to convince him.
+
+### Summary Quick Reference (Followed by -ing):
+*   `It is` + **NOT** + `worth` + `-ing`
+*   `There is` + **NO** + `point / harm` + (in) + `-ing`
+*   `It is` + **NO** + `use / good` + `-ing`
