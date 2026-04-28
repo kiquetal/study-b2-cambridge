@@ -34,3 +34,20 @@
    *Answer: That's the student who/whom I was telling you about.*
 
 ---
+
+## Exercise 3: "No" vs "Not" with Worth, Point, Harm, Use, Good
+
+**Instructions:** Fill in the blanks with either **no** or **not**.
+
+1. It is _____ worth buying a new phone when this one still works perfectly.
+   *Answer: not*
+2. There is _____ point in arguing with him; he has already made up his mind.
+   *Answer: no*
+3. It's _____ good pretending you didn't see the email.
+   *Answer: no*
+4. There is _____ harm in asking for a discount.
+   *Answer: no*
+5. I'm afraid it is _____ worth fixing this old computer.
+   *Answer: not*
+6. It is _____ use complaining about the weather; we can't change it.
+   *Answer: no*
