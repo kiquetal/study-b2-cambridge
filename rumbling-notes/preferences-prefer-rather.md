@@ -4,9 +4,10 @@ At a B2 level, it is important to know how to express preferences correctly usin
 
 ## 1. "I prefer" (General Preference)
 We use "prefer" to talk about general likes or preferences.
-*   **Structure:** `prefer + noun` or `prefer + -ing`
+*   **Structure:** `prefer + noun` or `prefer + -ing` OR `prefer + to + infinitive`
 *   **Example:** "I **prefer coffee** to tea."
 *   **Example:** "I **prefer working** from home."
+*   **Example:** "I **prefer to cycle** to work."
 
 ---
 
