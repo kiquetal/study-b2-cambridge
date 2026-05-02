@@ -75,6 +75,83 @@ Choose the correct option to complete each sentence.
 
 ---
 
+
+---
+
+## Tips & Exercise: Mixed Conditional (Past to Present)
+
+### Identifying Past to Present Mixed Conditionals: Quick Tips
+
+*   **Look for a Time Clash:** This is the most important clue! The 'if' clause will refer to the past, and the main clause will refer to the present.
+    *   **Past Perfect** (`had + P.P.`) in the `if`-clause = focus on a past condition.
+    *   **Would/could/might + base verb** in the main clause = focus on a present result.
+*   **Implied vs. Explicit Time Markers:** Sometimes, the time is implied. For instance, "If I had listened to my parents..." (in the past) "...I wouldn't have these problems now." (in the present).
+*   **Ask Yourself:** "Would the *present* situation be different if a *past* event had been different?"
+
+### Exercise: Past to Present Mixed Conditionals
+Combine the ideas into a single past-to-present mixed conditional sentence.
+
+1.  He didn't save money. Now he can't afford a holiday.
+    *   If he _______________ money, he _______________ a holiday now.
+
+2.  She didn't study hard for her degree. She isn't a doctor today.
+    *   If she _______________ hard for her degree, she _______________ a doctor today.
+
+3.  I ate too much chocolate last night. I feel sick now.
+    *   If I _______________ too much chocolate last night, I _______________ sick now.
+
+4.  They missed their flight. They are not in Paris for the conference.
+    *   If they _______________ their flight, they _______________ in Paris for the conference.
+
+5.  You didn't tell me about the party. I'm not there enjoying myself.
+    *   If you _______________ me about the party, I _______________ myself there.
+
+---
+
+
+---
+
+## Exercise: Present to Past Mixed Conditionals
+Combine the ideas into a single present-to-past mixed conditional sentence.
+
+1.  He is not very disciplined. He didn't finish his project on time.
+    *   If he _______________ more disciplined, he _______________ his project on time.
+
+2.  I don't speak Spanish. I couldn't help them when they needed a translator last week.
+    *   If I _______________ Spanish, I _______________ them when they needed a translator last week.
+
+3.  She is afraid of heights. She didn't go on the roller coaster with us yesterday.
+    *   If she _______________ afraid of heights, she _______________ on the roller coaster with us yesterday.
+
+4.  You are not a good swimmer. You didn't jump into the pool to save the ball.
+    *   If you _______________ a good swimmer, you _______________ into the pool to save the ball.
+
+5.  They aren't interested in history. They didn't visit the museum when they were in Rome.
+    *   If they _______________ in history, they _______________ the museum when they were in Rome.
+
+---
+
+## Answer Key (Hidden - Try first!)
+<details>
+<summary>Click to see answers</summary>
+
+### Exercise: Past to Present Mixed Conditionals
+1.  If he **had saved** money, he **would be able to afford** a holiday now. (or **could afford**)
+2.  If she **had studied** hard for her degree, she **would be** a doctor today.
+3.  If I **hadn't eaten** too much chocolate last night, I **wouldn't feel** sick now.
+4.  If they **hadn't missed** their flight, they **would be** in Paris for the conference.
+5.  If you **had told** me about the party, I **would be enjoying** myself there. (or **could be enjoying**)
+
+### Exercise: Present to Past Mixed Conditionals
+1.  If he **were** more disciplined, he **would have finished** his project on time.
+2.  If I **spoke** Spanish, I **could have helped** them when they needed a translator last week.
+3.  If she **weren't** afraid of heights, she **would have gone** on the roller coaster with us yesterday.
+4.  If you **were** a good swimmer, you **would have jumped** into the pool to save the ball.
+5.  If they **were** interested in history, they **would have visited** the museum when they were in Rome.
+
+</details>
+
+
 ## 💡 Nice to Know (B2 Tips)
 *   **Wish and If only:** These are very similar to second and third conditionals.
     *   `I wish I had...` (Present regret -> 2nd)
