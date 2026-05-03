@@ -18,3 +18,16 @@
     *   Avoiding redundancy (e.g., not using "more" with "prefer...to...").
     *   Minor attention to spelling (e.g., "tennis").
 *   **Recommendations:** Practice sentence construction specifically focusing on comparing two actions with `would rather... than...` and ensuring `prefer... to...` is concise. Review subject-verb agreement for all tenses.
+
+## Assessment - Order of Adjectives (Exercises 1-2) - 2026-05-02
+
+*   **Strengths:**
+    *   Excellent understanding and application of the OSASCOMP mnemonic for ordering adjectives directly before a noun (Exercise 1: 100% accurate).
+    *   Strong ability to correctly identify adjective categories (Opinion, Size, Age, Color, Origin, Material, Purpose).
+*   **Areas for Improvement:**
+    *   Ensuring all provided adjectives are included when constructing sentences.
+    *   Consistent application of articles ("a" vs. "an") with vowel sounds (e.g., "an elegant").
+    *   Forming complete sentences when required, including a subject and verb.
+    *   Minor attention to spelling (e.g., "spacious").
+    *   Revisiting the relative order of adjectives within the same category (e.g., "new" vs. "modern" both being Age) to develop a more natural feel.
+*   **Recommendations:** Practice constructing full sentences using multiple adjectives. Pay close attention to detail, including articles and ensuring all given words are used. Continue describing objects with various adjectives to solidify natural word order, especially with adjectives from the same category.
