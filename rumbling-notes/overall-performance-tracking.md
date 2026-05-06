@@ -31,3 +31,14 @@
     *   Minor attention to spelling (e.g., "spacious").
     *   Revisiting the relative order of adjectives within the same category (e.g., "new" vs. "modern" both being Age) to develop a more natural feel.
 *   **Recommendations:** Practice constructing full sentences using multiple adjectives. Pay close attention to detail, including articles and ensuring all given words are used. Continue describing objects with various adjectives to solidify natural word order, especially with adjectives from the same category.
+
+## Assessment - Although, Though, Even Though (Exercise 1) - 2026-05-06
+
+*   **Strengths:**
+    *   Good understanding of `Even though` for strong emphasis.
+    *   Correctly identified `though` as an adverb at the end of a sentence.
+    *   Generally good grasp of `although` and `though` for contrast.
+*   **Areas for Improvement:**
+    *   **Spelling:** Needs careful attention to spelling (e.g., "althought" instead of "although").
+    *   **Nuance with `though` (conjunction):** While `although` is often interchangeable, `though` can sometimes be a more natural choice for a milder, slightly less formal contrast or an afterthought (e.g., in sentence 7).
+*   **Recommendations:** Focus on proofreading for spelling errors. Continue practicing sentence construction with these conjunctions, paying attention to the subtle nuances of emphasis and formality to choose the most natural-sounding option.
