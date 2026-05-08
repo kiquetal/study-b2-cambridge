@@ -119,6 +119,45 @@
     *   **Conditional Type Distinction:** In one instance, a Type 1 conditional was provided instead of a mixed conditional (sentence 7).
 *   **Recommendations:** Continue to practice identifying the time frame of both the condition and the result to select the appropriate tenses. Implement a final proofreading step for all written exercises, specifically focusing on verb forms and common spelling errors.
 
+## Assessment - Mixed Conditionals (Exercise 2, Sentence 1) - 2026-05-08
+
+*   **Strengths:** Excellent application of the Type 3 + Type 2 mixed conditional structure, correctly forming the past condition (`had saved`) and the present result (`could afford`).
+*   **Areas for Improvement:** Minor attention to punctuation (comma after the 'if' clause) and optimal placement of adverbs like "now."
+*   **Recommendations:** Practice sentence construction with proper punctuation for introductory clauses and natural adverb placement.
+
+## Assessment - Mixed Conditionals (Exercise 2, Sentence 2) - 2026-05-08
+
+*   **Strengths:** Flawless application of the Type 2 + Type 3 mixed conditional structure, correctly forming the present hypothetical condition (`were good`) and the hypothetical past result (`would not have failed`).
+*   **Areas for Improvement:** Minor attention to capitalization at the beginning of the 'if' clause and punctuation (comma after the 'if' clause).
+*   **Recommendations:** Focus on consistent capitalization and punctuation for clarity in sentence structure.
+
+## Assessment - Mixed Conditionals (Exercise 2, Sentence 3) - 2026-05-08
+
+*   **Strengths:** Excellent application of the Type 3 + Type 2 mixed conditional structure, correctly forming the past condition (`had listened`) and the present result (`would not be`).
+*   **Areas for Improvement:** Minor attention to capitalization at the beginning of the 'if' clause, punctuation (comma after the 'if' clause), and spelling (e.g., "trobule" instead of "trouble").
+*   **Recommendations:** Continue to focus on overall sentence mechanics: capitalization, punctuation, and diligent proofreading for spelling errors.
+
+## Assessment - Mixed Conditionals (Exercise 2, Sentence 4) - 2026-05-08
+
+*   **Strengths:** Excellent application of the Type 2 + Type 3 mixed conditional structure, correctly forming the present hypothetical condition (`were interested`) and the hypothetical past result (`would have visited`).
+*   **Areas for Improvement:** Recurring minor spelling errors (e.g., "interesed" to "interested," "musem" to "museum") and punctuation (comma after the 'if' clause).
+*   **Recommendations:** Reinforce diligent proofreading for spelling and ensure correct punctuation for complex sentences, especially with introductory clauses.
+
+## Assessment - Mixed Conditionals (Exercise 2, Sentence 5) - 2026-05-08
+
+*   **Strengths:** Flawless application of the Type 3 + Type 2 mixed conditional structure, correctly forming the past condition (`had got`) and the present result (`wouldn't feel`).
+*   **Areas for Improvement:** Minor spelling error (e.g., "demoitived" instead of "demotivated").
+*   **Recommendations:** Continue focused proofreading for spelling, particularly with longer or less common vocabulary.
+
+## Assessment - Mixed Conditionals (Exercise 2) - 2026-05-08
+
+*   **Strengths:** Demonstrated strong and consistent application of both Type 3 + Type 2 (past condition, present result) and Type 2 + Type 3 (present condition, past result) mixed conditional structures. Accurately identified implied timeframes and applied correct verb forms for conditions (`had + past participle`, `were`) and results (`would + base verb`, `would have + past participle`).
+*   **Areas for Improvement:**
+    *   **Spelling:** Recurring minor spelling errors (e.g., "interesed," "musem," "trobule," "demoitived").
+    *   **Punctuation:** Consistent use of a comma after introductory 'if' clauses.
+    *   **Capitalization:** Ensuring proper capitalization at the beginning of sentences.
+*   **Recommendations:** Reinforce diligent proofreading as a final step for all written work, specifically targeting spelling, capitalization, and punctuation for clarity and grammatical correctness. Continue practicing these complex structures to solidify natural usage.
+
 *   **Strengths:**
     *   Excellent understanding of the different functions of "though" as both a conjunction and an adverb. Successfully identified the correct usage in all sentences.
 *   **Areas for Improvement:**
