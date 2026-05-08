@@ -55,6 +55,70 @@
 
 ## Assessment - Although, Though, Even Though (Exercise 3) - 2026-05-06
 
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 1) - 2026-05-08
+
+*   **Area for Improvement:** Consistently applying `had + past participle` for the past condition in the 'if' clause (Type 3) and ensuring the correct past participle form of the main verb after `would have` (e.g., `leave` vs. `left`).
+*   **Strengths:** Correctly identified the present result clause (`would be here by now`).
+*   **Recommendations:** Focus on the correct tense formation for the past perfect in the conditional clause and the past participle after modal perfects (`would have`, `could have`, `might have`).
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 2) - 2026-05-08
+
+*   **Area for Improvement:** Consistently applying `would have + past participle` for hypothetical past results in the main clause of Type 3 conditionals.
+*   **Strengths:** Correctly identified the past perfect for the 'if' clause (`had been`).
+*   **Recommendations:** Review the structure of Type 3 conditional main clauses (would have + past participle).
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 3) - 2026-05-08
+
+*   **Area for Improvement:** Continued attention to spelling (e.g., "accepeted" instead of "accepted").
+*   **Strengths:** Excellent application of the Type 3 + Type 2 mixed conditional structure (past condition, present result).
+*   **Recommendations:** Implement a final proofreading step for all written exercises, specifically focusing on common spelling errors, especially in verb forms.
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 4) - 2026-05-08
+
+*   **Area for Improvement:** Distinguishing between past conditions (Type 3: `had + past participle`) and present/general conditions (Type 2: `simple past` or `were` for 'to be') in the 'if' clause of mixed conditionals.
+*   **Strengths:** Correctly applied `would have + past participle` for the hypothetical past result in the main clause.
+*   **Recommendations:** Review the time frames implied by the 'if' clause to correctly choose between Type 2 and Type 3 structures for the condition.
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 5) - 2026-05-08
+
+*   **Strengths:** Excellent and accurate application of the Type 3 + Type 2 mixed conditional structure, correctly forming both the past condition (`had saved`) and the present/future result (`could buy`).
+*   **Areas for Improvement:** None identified in this sentence.
+*   **Recommendations:** Continue to apply this precise understanding in subsequent exercises.
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 6) - 2026-05-08
+
+*   **Area for Improvement:** While "were to speak" is grammatically valid for a hypothetical condition, the more common and direct B2-level usage for a hypothetical present ability is the simple past (`spoke`).
+*   **Strengths:** Flawless application of `would have + past participle` for the hypothetical past result in the main clause.
+*   **Recommendations:** Focus on the most direct and common conditional forms for present hypothetical conditions (simple past).
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 7) - 2026-05-08
+
+*   **Area for Improvement:** Differentiating between Type 1 (real/probable) conditionals and mixed conditionals (hypothetical/unreal with different timeframes). Also, minor spelling correction (e.g., "proble" to "problem").
+*   **Strengths:** Correctly formed a Type 1 conditional sentence, demonstrating understanding of that structure.
+*   **Recommendations:** Re-focus on identifying the hypothetical nature and different timeframes required for mixed conditionals. Implement a final proofreading step for spelling.
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 8) - 2026-05-08
+
+*   **Strengths:** Flawless application of the Type 3 + Type 2 mixed conditional structure, correctly forming both the past condition (`had finished`) and the present result (`would not work`).
+*   **Areas for Improvement:** None identified in this sentence.
+*   **Recommendations:** Maintain this precise application of mixed conditional structures.
+
+## Assessment - Mixed Conditionals (Exercise 1, Sentence 9) - 2026-05-08
+
+*   **Area for Improvement:** Spelling of comparative adjectives (e.g., "breave" instead of "braver").
+*   **Strengths:** Correctly applied the Type 2 structure (`were braver`) for the present hypothetical condition and the Type 3 main clause (`would have asked`) for the past result.
+*   **Recommendations:** Reinforce attention to spelling, especially with common adjectives and their comparative forms.
+
+## Assessment - Mixed Conditionals (Exercise 1) - 2026-05-08
+
+*   **Strengths:** Strong grasp of the overall Type 3 + Type 2 mixed conditional structure (past condition, present result), consistently applying `would + base verb` for present outcomes and often `would have + past participle` for past outcomes in the main clause. Successfully applied the structure in sentences 3, 5, 8, and largely in 9 and 10.
+*   **Areas for Improvement:**
+    *   **'If' Clause Timeframes:** Occasional confusion in distinguishing between past conditions (Type 3: `had + past participle`) and present/general conditions (Type 2: `simple past` or `were` for 'to be') in the conditional clause (e.g., sentences 1, 4, 6).
+    *   **Precise Verb Forms:** Minor errors with past participles after `would have` (e.g., `leave` instead of `left`) and using the base form after `would` (e.g., `fell` instead of `feel`).
+    *   **Spelling:** Recurring minor spelling errors (e.g., "accepeted", "breave", "proble").
+    *   **Conditional Type Distinction:** In one instance, a Type 1 conditional was provided instead of a mixed conditional (sentence 7).
+*   **Recommendations:** Continue to practice identifying the time frame of both the condition and the result to select the appropriate tenses. Implement a final proofreading step for all written exercises, specifically focusing on verb forms and common spelling errors.
+
 *   **Strengths:**
     *   Excellent understanding of the different functions of "though" as both a conjunction and an adverb. Successfully identified the correct usage in all sentences.
 *   **Areas for Improvement:**
