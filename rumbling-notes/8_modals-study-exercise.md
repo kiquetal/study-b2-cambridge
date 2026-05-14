@@ -46,6 +46,40 @@ Find and correct the mistake in each sentence.
 
 ---**Answer Key (Coming Soon)**---
 
+**Your Personal Gotchas & Key Reminders (from practice!)**
+
+Here are some specific tricky points we've identified during our exercises, along with reminders to help you master them:
+
+*   **Gotcha 1: Regrets about the Past with "I wish"**
+    *   **The Rule:** When expressing regret about a past action or situation with "I wish," you **must use the Past Perfect tense** (`had + past participle`).
+    *   **Think:** "I wish I *had done* X," not "I wish I *did* X."
+    *   *Example of your correction:* You thought "I wish I studied" was correct, but it should be "I wish I **had studied** harder for the test last week."
+
+*   **Gotcha 2: Tense Shift in Reported Speech (Future)**
+    *   **The Rule:** When reporting what someone said in the past (e.g., "She said..."), if their original statement involved "will," it often **changes to "would"** in reported speech.
+    *   **Think:** Direct: "I *will* go." Reported: "She said she *would* go."
+    *   *Example of your correction:* You thought "won't be able to" was correct, but it should be "She said she **would be able to** join us..."
+
+*   **Gotcha 3: Past Deduction/Possibility vs. Conditionals (Modal + Have + Past Participle)**
+    *   **The Rule:** To express a **deduction** (what you think is true) or **possibility** about a **past event**, use **`modal (must, might, could, can't) + have + past participle`**.
+    *   **Think:** `Must have done` (strong certainty about past), `Might have done` (possibility about past), `Can't have done` (strong certainty about past impossibility).
+    *   *Example of your correction:* You thought "would have" was correct for deduction, but it should be "He **might have fainted**."
+
+*   **Gotcha 4: Present vs. Past Deduction with "Have" (Possession/State)**
+    *   **The Rule:** When making a **present deduction** about someone's possession or state (using the verb "have"), use **`must + have (base form)`**. If the deduction is about a past possession/state, then use `must + have + had`.
+    *   **Think:** "He *must have* money now" (present deduction). "He *must have had* money back then" (past deduction).
+    *   *Example of your correction:* You thought "must have had" was correct for a present deduction, but it should be "He **must have** a lot of money."
+
+---
+
+*   **Gotcha 5: Past Regret/Obligation with "Ought to"**
+    *   **The Rule:** When expressing a past obligation or a strong recommendation that was **not fulfilled** (i.e., something *should have happened* but didn't), use **`ought to + have + past participle`**.
+    *   **Think:** "They *ought to have done* X," not "They *ought to do* X" (for past).
+    *   **Why it's tricky:** "Ought to" often feels like present advice, but combined with a past consequence, it shifts to a past regret or unfulfilled expectation.
+    *   *Example of your correction:* You thought "they ought to help" was correct, but it should be "They **ought to have helped** us with the move, but they never showed up."
+
+---
+
 **Nice to Know:**
 *   'Ought to' is less common than 'should' and is mainly used for advice or to express what is morally right.
 *   When using modals for past events, remember the structure: modal + have + past participle.
