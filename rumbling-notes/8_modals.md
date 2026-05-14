@@ -103,18 +103,34 @@ Used to talk about past possibilities, obligations, advice, etc., that did not h
 
 Be aware of these common areas where B2 learners sometimes make mistakes in exams:
 
+---
+
 *   **'Must' vs. 'Have to'**: While often interchangeable, 'must' implies a personal obligation or strong inner feeling, whereas 'have to' suggests an external rule or necessity.
     *   *Exam Tip:* Pay attention to the context. If the obligation comes from the speaker, 'must' is often better. If it's an external rule or law, 'have to' is preferred. For example, "You must be quiet in the library" (rule) vs. "I must call my mother" (personal).
+
+---
+
 *   **'Could' vs. 'Would' in Conditionals**: A very common error in B2 is using 'If I would have...' instead of 'If I had...'. Remember that 'would' typically follows 'if' in *second* and *third* conditional *results*, not the 'if' clause itself in the third conditional.
     *   *Incorrect:* If I would have known, I would have come.
     *   *Correct:* If I had known, I would have come.
+
+---
+
 *   **Degree of Certainty with 'May', 'Might', 'Could'**: While these can overlap, 'may' often suggests a slightly higher possibility than 'might' or 'could'. 'Could' can also imply ability.
     *   *Exam Tip:* In multiple-choice questions, select the option that best reflects the degree of certainty or possibility implied by the context.
+
+---
+
 *   **Past Modals - 'Should have' vs. 'Could have'**:
     *   'Should have + past participle' implies something was advisable but didn't happen (often with regret or criticism).
     *   'Could have + past participle' implies something was possible but didn't happen (opportunity missed, or a different action was possible).
     *   *Exam Tip:* Understand the difference between missed opportunities/abilities ('could have') and missed obligations/regrets ('should have').
+
+---
+
 *   **Formality**: 'May' is generally more formal than 'can' for permission. 'Ought to' is less common and slightly more formal than 'should'.
+
+---
 
 **Gotcha Table: Modals - Common Confusion Points**
 
