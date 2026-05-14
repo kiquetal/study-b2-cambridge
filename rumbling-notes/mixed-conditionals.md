@@ -31,3 +31,29 @@ This type describes a hypothetical situation in the present that had a result in
     (Meaning: He doesn't speak French now, so he didn't understand yesterday.)
 *   **If she were more organized (present condition), she wouldn't have lost her keys so many times (past result).**
     (Meaning: She isn't organized now, so she lost her keys many times.)
+
+---
+
+## Quick Reminders for Mixed Conditionals
+
+To master mixed conditionals, always ask yourself two key questions:
+
+1.  ***When did the condition happen (or not happen)?***
+    *   **Past Condition:** Use `If + Past Perfect` (e.g., `If I had known...`). This refers to a specific, unchangeable event in the past.
+    *   **Present/General Condition:** Use `If + Simple Past` (e.g., `If I knew...` or `If I were...`). This refers to a general truth, a current habit, or a present hypothetical situation.
+
+2.  ***When is the result happening (or not happening)?***
+    *   **Present Result:** Use `would/could/might + base verb` (e.g., `...I would be happy now.`). This refers to a consequence in the present.
+    *   **Past Result:** Use `would/could/might + have + past participle` (e.g., `...I would have told you yesterday.`). This refers to a consequence that would have happened (or didn't happen) in the past.
+
+***
+
+### Common Pitfalls & Tips:
+
+*   **Spelling & Punctuation:** Always proofread your sentences carefully. Remember to use a comma after the 'if' clause when it comes first.
+    *   _Incorrect:_ "If i had studied i would pass the exam" (missing comma, capitalization, incorrect verb form)
+    *   _Correct:_ "If I had studied, I would pass the exam." (assuming past condition, present result for a current exam)
+*   **Verb Forms:** Pay close attention to `past perfect (had + P.P.)` and `past participle (P.P.)` after `would have`.
+    *   _Incorrect:_ "If she had saw him, she would tell him."
+    *   _Correct:_ "If she had **seen** him, she would **have told** him." (If past condition, past result - this is a Type 3. For mixed, it would be "If she had seen him, she would tell him now.")
+*   **Time Indicators:** Look for words like `now`, `today`, `yesterday`, `last year`, `currently` – they often reveal the time frame of the condition or result and help you choose the correct conditional type.

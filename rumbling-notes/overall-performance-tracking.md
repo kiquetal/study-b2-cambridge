@@ -151,15 +151,39 @@
 
 ## Assessment - Mixed Conditionals (Exercise 2) - 2026-05-08
 
-*   **Strengths:** Demonstrated strong and consistent application of both Type 3 + Type 2 (past condition, present result) and Type 2 + Type 3 (present condition, past result) mixed conditional structures. Accurately identified implied timeframes and applied correct verb forms for conditions (`had + past participle`, `were`) and results (`would + base verb`, `would have + past participle`).
-*   **Areas for Improvement:**
-    *   **Spelling:** Recurring minor spelling errors (e.g., "interesed," "musem," "trobule," "demoitived").
-    *   **Punctuation:** Consistent use of a comma after introductory 'if' clauses.
-    *   **Capitalization:** Ensuring proper capitalization at the beginning of sentences.
-*   **Recommendations:** Reinforce diligent proofreading as a final step for all written work, specifically targeting spelling, capitalization, and punctuation for clarity and grammatical correctness. Continue practicing these complex structures to solidify natural usage.
+## Assessment - Mixed Conditionals (Exercise 2) - 2026-05-13
 
 *   **Strengths:**
-    *   Excellent understanding of the different functions of "though" as both a conjunction and an adverb. Successfully identified the correct usage in all sentences.
+    *   Consistently recognized the need for mixed conditional structures and largely identified the timeframes for conditions and results.
+    *   Strong application of the `had + past participle` for past conditions (Type 3 'if' clause).
+    *   Correctly used `would not be + verb-ing` for continuous present results in sentence 3.
+
 *   **Areas for Improvement:**
-    *   None identified in this exercise.
-*   **Recommendations:** Continue to apply this understanding in writing and speaking to solidify the natural usage of "though" in various contexts.
+    *   **Verb Forms in Main Clause (Type 2 + Type 3):** This remains a key area for improvement. Struggles with the correct modal perfect (`would have + past participle` or `could have + past participle`) for past results when the condition is present (e.g., sentences 2 and 4).
+    *   **Base Verb after Modals:** Needs continued attention to ensure the correct base form after `would/could/might` (e.g., "feel" not "fee" in sentence 1).
+    *   **Spelling:** Recurring minor spelling errors ("speak" instead of "speaker", "presentatin" instead of "presentation", "gainint" instead of "gaining").
+    *   **Punctuation:** Consistent use of a comma after introductory 'if' clauses, and avoiding unnecessary full stops mid-sentence (e.g., sentence 5).
+    *   **Passive Voice in Main Clause:** Needs to remember `be` before the past participle for a passive present state (e.g., "would not be stuck" in sentence 5).
+
+*   **Recommendations:**
+    *   **Dedicated Practice on Type 2 + Type 3:** Focus specifically on exercises involving present conditions and past results, ensuring mastery of the `would have + past participle` structure in the main clause.
+    *   **Rigorous Proofreading:** Implement a final, systematic proofreading step for every sentence to catch all spelling errors, ensure correct verb forms, and apply proper punctuation.
+    *   Review passive voice structures in conditional sentences.
+
+## Assessment - Mixed Conditionals (Exercise 1) - 2026-05-13
+
+*   **Strengths:**
+    *   Good understanding of the core structure of Type 3 + Type 2 mixed conditionals (past condition, present result), demonstrated accurately in sentences 1 and 3.
+    *   Correctly identified the appropriate tense for the 'if' clause in most instances.
+
+*   **Areas for Improvement:**
+    *   **Verb Forms in Main Clause (Type 2 + Type 3):** Consistently used `had + past participle` in the main clause where `would have + past participle` is required for past results (e.g., sentences 2 and 4). This highlights a need to reinforce the structure for Type 2 + Type 3 mixed conditionals.
+    *   **Past Participles:** Needs attention to correct past participle forms (e.g., "gotten/got" instead of "go" in sentence 5).
+    *   **Base Verb after Modals:** Forgot to use the base form of the verb after `would not` (e.g., "feel" not "fell" in sentence 5).
+    *   **Spelling:** Recurring minor spelling errors ("accepeted", "moe", "interest", "musem", "niwhe", "demoivated").
+    *   **Punctuation & Capitalization:** Needs attention to capitalization at the start of sentences and consistent use of a comma after introductory 'if' clauses.
+
+*   **Recommendations:**
+    *   Review the structure for Type 2 + Type 3 mixed conditionals, specifically focusing on `would have + past participle` for the main clause.
+    *   Practice common irregular past participles and ensure the base form of the verb is used after `would/could/might`.
+    *   Implement a rigorous proofreading step for every written sentence, specifically targeting spelling mistakes, correct verb forms, capitalization, and punctuation.
