@@ -4,16 +4,21 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 
 ---**Summary of Strengths and Weaknesses**---
 
-*   **Current Weakest Areas:** (To be updated after exercises)
-*   **Identified Strengths:** (To be updated after exercises)
+*   **Current Weakest Areas:** Distinction between 'didn\'t need to' and 'needn\'t have + past participle' for past necessity.
+*   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing.
 
 ---**Topic-wise Performance Log**---
 
 **Date:** 2026-05-14
 
-**Topic: Modals**
-*   **Status:** Introduced. Exercises created.
-*   **User Performance:** (Will be updated after user completes exercises.)
+**Topic: Modals - Necessity (8.2)**
+*   **Status:** In progress. Exercise 1 completed.
+*   **User Performance:**
+    *   Correctly identified 'needn\'t' for present/future lack of necessity.
+    *   Correctly identified 'needs repairing / needs to be repaired' for necessity of repair.
+    *   Initially struggled with 'needn\'t have + past participle' vs. 'didn\'t need to' due to ambiguous exercise phrasing, but demonstrated strong critical thinking by identifying the error.
+    *   Correctly identified 'no need' for general lack of necessity.
+    *   (Performance for Q5 pending)
 
 ---
 

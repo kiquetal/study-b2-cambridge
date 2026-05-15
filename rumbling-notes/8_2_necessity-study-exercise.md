@@ -18,7 +18,7 @@ Choose the most appropriate word or phrase to complete each sentence.
     b) need to be
     c) either a or b
 
-3.  We _____ have bought so many snacks; nobody ate them.
+3.  We _____ bought so many snacks; nobody ate them.
     a) didn't need to
     b) needn't
     c) needn't have
