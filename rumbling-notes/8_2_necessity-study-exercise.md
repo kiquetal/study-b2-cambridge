@@ -101,7 +101,35 @@ Find and correct the grammatical error in each sentence.
 
 #### Your Personal Gotchas & Key Reminders (from practice!)
 
-**Distinction: 'Didn't need to' vs. 'Needn't have + Past Participle'**
+**Grammar Gotcha: 'Need' - When to use `base verb` vs. `-ing` (Summary)**
+
+This is a common point of confusion for B2 learners! The form depends on whether 'need' is a modal verb, a main verb, and if the meaning is active or passive.
+
+1.  **`Need` as a MODAL Verb (`needn't`, `Need I?`)**
+    *   **Structure:** `needn't + base verb (infinitive without 'to')`
+    *   **Meaning:** Expresses lack of necessity (present or future). More formal.
+    *   *Example:* "You **needn't worry** about the exam."
+    *   *Past Form:* `needn't have + past participle` (action done, but unnecessary)
+        *   *Example:* "We **needn't have brought** umbrellas."
+
+2.  **`Need` as a MAIN Verb (most common)**
+    *   **A) Active Meaning: Subject *performs* the action.**
+        *   **Structure:** `need + to + base verb`
+        *   **Meaning:** Subject has an obligation/requirement to do something.
+        *   *Example:* "I **need to study** for the exam."
+    *   **B) Passive Meaning: Subject *receives* the action (something needs to be done *to* it).**
+        *   **Structure 1:** `need + -ing` (gerund)
+            *   *Example:* "My phone **needs recharging**."
+        *   **Structure 2:** `need + to be + past participle` (passive infinitive)
+            *   *Example:* "My phone **needs to be recharged**."
+
+3.  **`There is no need...` (Impersonal expression)**
+    *   **Structure:** `There is no need + to + base verb`
+    *   **Meaning:** States a particular action is generally unnecessary.
+    *   *Example:* "There is no need **to worry** about the results." (This is the one we're working on!)
+    *   *Optional:* Can include 'for + object' (e.g., "There is no need **for you to worry**.")
+
+**Distinction: 'Didn't need to' vs. 'Needn't have + Past Participle'****
 
 *   **`Didn't need to + base verb`**: It was not necessary, so **the action was NOT done.**
     *   *Example:* "I didn't need to buy bread, so I didn't."
@@ -109,4 +137,16 @@ Find and correct the grammatical error in each sentence.
 *   **`Needn't have + past participle`**: The action **WAS done**, but it turned out to be unnecessary/a wasted effort.
     *   *Example:* "I needn't have bought bread; we already had some."
 
-(This section will be updated with specific points based on your performance in exercises.)
+**Grammar Gotcha: Third Conditional Structure**
+
+*   The correct structure for the Third Conditional (hypothetical past situations) is:
+    *   `If + past perfect (had + past participle), ... would have + past participle`
+    *   *Example:* "If you **had known**, you **would have told** me."
+    *   *Incorrect:* "If you would have known..."
+
+**Grammar Gotcha: 'Need' with Passive Meaning (Object as Subject)**
+
+*   When the subject of 'need' is an object (e.g., 'My phone', 'These windows') and it requires an action to be done *to* it, use:
+    *   `need + -ing` (e.g., "My phone **needs recharging**.")
+    *   OR `need + to be + past participle` (e.g., "My phone **needs to be recharged**.")
+    *   *Incorrect:* "My phone needs to recharge." (This implies the phone recharges itself actively.)
