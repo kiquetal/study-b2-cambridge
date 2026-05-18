@@ -4,8 +4,8 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 
 ---**Summary of Strengths and Weaknesses**---
 
-*   **Current Weakest Areas:** Continued practice with 'didn't need to' vs. 'needn't have + past participle', and natural phrasing with past perfect conjunctions ('before' vs. 'until' with negatives).
-*   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing; strong grasp of Third Conditional structures; correct application of modal 'needn't' and passive 'need + -ing / to be + past participle'; correct usage of 'consider + -ing'; effective use of 'no need to' and 'don't need to' for expressing lack of necessity.
+*   **Current Weakest Areas:** Natural phrasing with past perfect conjunctions ('before' vs. 'until' with negatives).
+*   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing; strong grasp of Third Conditional structures; correct application of modal 'needn't' and passive 'need + -ing / to be + past participle'; correct usage of 'consider + -ing'; effective use of 'no need to' and 'don't need to' for expressing lack of necessity; improved mastery of 'didn't need to' vs. 'needn't have + past participle'.
 
 ---**Topic-wise Performance Log**---
 
@@ -39,8 +39,14 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 *   **User Performance:** Identified issue with natural phrasing when using 'before' with negative past perfect constructions; demonstrated understanding of Past Perfect tense for sequencing.
 
 
-**Instructions for Updating:**
+**Date:** 2026-05-18
 
+**Topic: Modals of Necessity: 'didn't need to' vs. 'needn't have + past participle'**
+*   **Status:** Reinforced and improved; good understanding shown.
+*   **User Performance:** Initially made one error (Q6) confusing 'didn't need to' with 'needn't have', but quickly understood the distinction (action performed vs. not performed) after guidance. Demonstrated consistent accuracy in subsequent questions. Minor past participle spelling error in Q9 ('bough' instead of 'bought') noted as a vocabulary/spelling point rather than a grammatical 'gotcha'. Overall, a strong grasp of the concept was achieved.
+
+
+**Instructions for Updating:**
 *   After evaluating user responses on exercises, update the 'User Performance' section for the relevant topic.
 *   Synthesize insights into 'Current Weakest Areas' and 'Identified Strengths' periodically.
 *   Add new topics as they are introduced, logging the date and initial status.
