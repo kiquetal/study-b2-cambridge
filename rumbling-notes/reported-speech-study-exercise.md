@@ -1,62 +1,79 @@
-# Exercises: Reported Speech & Reporting Verbs
+# Reported Speech - Study Exercises
 
-## Exercise 1: Reporting Verb Patterns
-Complete the sentences using the correct form of the verb in brackets.
+## Explanation Review
 
-1.  "I didn't break the window!"
-    He denied ______________________ the window. (break)
-2.  "You should buy the blue shirt."
-    The shop assistant recommended ______________________ the blue shirt. (buy)
-3.  "I'm sorry I forgot your birthday."
-    He apologized for ______________________ my birthday. (forget)
-4.  "Don't forget to post the letter, Mark."
-    She reminded Mark ______________________ the letter. (post)
-5.  "You stole my idea!"
-    He accused her of ______________________ his idea. (steal)
+Reported speech (or indirect speech) is used to convey what someone else said without using their exact words. Key changes involve:
 
----
+1.  **Backshift of Tenses:**
+    *   Present Simple → Past Simple
+    *   Present Continuous → Past Continuous
+    *   Present Perfect → Past Perfect
+    *   Past Simple → Past Perfect
+    *   *Modals:* will → would, can → could, may → might, must/have to → had to
 
-## Exercise 2: Key Word Transformation (B2 First Style)
-Complete the second sentence so it has a similar meaning. Use the **bold** word.
+2.  **Pronouns:** Change to match the new context (e.g., "I" → "he/she," "my" → "his/her").
 
-1.  **"Why don't we go for a walk?" suggested Sarah.**
-    **GOING**
-    Sarah ________________________________________________ for a walk.
+3.  **Time and Place Expressions:**
+    *   now → then
+    *   today → that day
+    *   yesterday → the day before / the previous day
+    *   tomorrow → the next day / the following day
+    *   here → there
+    *   this → that, these → those
 
-2.  **"I'm sorry I'm late," said Peter.**
-    **APOLOGIZED**
-    Peter ________________________________________________ late.
+### Types of Reported Speech:
 
-3.  **"You should apply for the job," my boss said to me.**
-    **ENCOURAGED**
-    My boss ________________________________________________ for the job.
+*   **Reporting Statements:** Use verbs like *said*, *told* (with object), *stated*, *remarked*. 'That' is optional.
+    *   *Direct:* "I am tired."
+    *   *Reported:* He said (that) he was tired.
 
-4.  **"Where did you buy that dress?" she asked me.**
-    **I**
-    She asked me ________________________________________________ that dress.
+*   **Reporting Questions:** Use verbs like *asked*, *wondered*, *enquired*. Do **not** use 'that'. Use 'if' or 'whether' for yes/no questions, and the original question word for wh-questions. The word order changes to statement form.
+    *   *Direct:* "Are you coming?"
+    *   *Reported:* She asked me if I was coming.
+    *   *Direct:* "Where do you live?"
+    *   *Reported:* He asked me where I lived.
 
-5.  **People believe that the criminal is hiding in the woods.**
-    **THOUGHT**
-    The criminal ________________________________________________ hiding in the woods.
+*   **Reporting Commands/Requests:** Use verbs like *ordered*, *told* (with object), *asked*, *advised*. Use an infinitive structure (to + verb).
+    *   *Direct:* "Sit down!"
+    *   *Reported:* He told me to sit down.
+    *   *Direct:* "Don't open the door!"
+    *   *Reported:* She told me not to open the door.
 
----
+## Exercises - Answer Key
 
-## Answer Key
-(Try the exercises first!)
-<details>
-<summary>Click to see answers</summary>
+**Instructions:** Rewrite the following sentences in reported speech. Pay attention to tense changes, pronouns, and time/place expressions.
 
-### Exercise 1
-1. breaking / having broken
-2. buying
-3. forgetting / having forgotten
-4. to post
-5. stealing / having stolen
+1.  **Direct Speech:** "I am going to the cinema now," she said.
+    **Reported Speech:** She said she was going to the cinema then.
 
-### Exercise 2
-1. suggested going
-2. apologized for being
-3. encouraged me to apply
-4. where I had bought
-5. is thought to be
-</details>
+2.  **Direct Speech:** "Did you finish your homework yesterday?" he asked me.
+    **Reported Speech:** He asked if I had finished my homework the day before.
+
+3.  **Direct Speech:** "Please help me with this box," she asked him.
+    **Reported Speech:** She asked him to help her with that box.
+
+4.  **Direct Speech:** "I have never been to London before," he remarked.
+    **Reported Speech:** He remarked that he had never been to London before.
+
+5.  **Direct Speech:** "Where is your brother living?" they asked.
+    **Reported Speech:** They asked where my brother was living.
+
+6.  **Direct Speech:** "Don't be late for the meeting tomorrow," the manager told us.
+    **Reported Speech:** The manager told us not to be late for the meeting the next day.
+
+7.  **Direct Speech:** "We will visit our grandparents next week," they announced.
+    **Reported Speech:** They announced that they would visit their grandparents the following week.
+
+8.  **Direct Speech:** "What did you do last night?" she enquired.
+    **Reported Speech:** She enquired what I had done the night before.
+
+9.  **Direct Speech:** "I can help you with your project," he said to me.
+    **Reported Speech:** He said to me that he could help me with my project.
+
+10. **Direct Speech:** "Don't touch that wire!" the electrician warned the child.
+    **Reported Speech:** The electrician warned the child not to touch that wire.
+
+## Your Personal Gotchas & Key Reminders (from practice!)
+
+*   **Reported Questions - Pronouns & Time Expressions:** In reported questions, ensure you change pronouns (e.g., 'your' -> 'my') and time expressions (e.g., 'yesterday' -> 'the day before') to reflect the new context of reporting.
+*   **Reported Commands/Requests:** For commands and requests, use `reporting verb + object + (not) to + infinitive`. Avoid using 'that' or direct speech forms (e.g., 'don't') in reported commands. Also, ensure time expressions are backshifted (e.g., 'tomorrow' -> 'the next day').

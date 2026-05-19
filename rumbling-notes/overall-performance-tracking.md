@@ -4,8 +4,8 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 
 ---**Summary of Strengths and Weaknesses**---
 
-*   **Current Weakest Areas:** Natural phrasing with past perfect conjunctions ('before' vs. 'until' with negatives).
-*   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing; strong grasp of Third Conditional structures; correct application of modal 'needn't' and passive 'need + -ing / to be + past participle'; correct usage of 'consider + -ing'; effective use of 'no need to' and 'don't need to' for expressing lack of necessity; improved mastery of 'didn't need to' vs. 'needn't have + past participle'.
+*   **Current Weakest Areas:** Consistent application of backshifted time/place expressions in reported speech, and correct usage of `(not) to + infinitive` for reported commands/requests.
+*   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing; strong grasp of Third Conditional structures; correct application of modal 'needn't' and passive 'need + -ing / to be + past participle'; correct usage of 'consider + -ing'; effective use of 'no need to' and 'don't need to' for expressing lack of necessity; improved mastery of 'didn't need to' vs. 'needn't have + past participle'; greatly improved natural phrasing with past perfect conjunctions ('before' vs. 'until' with negatives'); strong grasp of tense backshifting and pronoun changes in reported statements.
 
 ---**Topic-wise Performance Log**---
 
@@ -35,8 +35,8 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 ---
 
 **Topic: Past Perfect with Conjunctions ('before' vs. 'until')**
-*   **Status:** Introduced.
-*   **User Performance:** Identified issue with natural phrasing when using 'before' with negative past perfect constructions; demonstrated understanding of Past Perfect tense for sequencing.
+*   **Status:** Reinforced and improved; strong understanding shown.
+*   **User Performance:** Initially made one error (Q1) using 'before' instead of 'until', but quickly understood the nuance (change of state vs. simple sequence) after guidance. Demonstrated consistent accuracy in subsequent questions. Overall, a strong grasp of natural phrasing with these conjunctions was achieved.
 
 
 **Date:** 2026-05-18
@@ -44,6 +44,15 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 **Topic: Modals of Necessity: 'didn't need to' vs. 'needn't have + past participle'**
 *   **Status:** Reinforced and improved; good understanding shown.
 *   **User Performance:** Initially made one error (Q6) confusing 'didn't need to' with 'needn't have', but quickly understood the distinction (action performed vs. not performed) after guidance. Demonstrated consistent accuracy in subsequent questions. Minor past participle spelling error in Q9 ('bough' instead of 'bought') noted as a vocabulary/spelling point rather than a grammatical 'gotcha'. Overall, a strong grasp of the concept was achieved.
+
+
+---
+
+**Date:** 2026-05-18
+
+**Topic: Reported Speech**
+*   **Status:** Introduced; good initial understanding with areas for reinforcement.
+*   **User Performance:** Demonstrated strong understanding of tense backshifting and pronoun changes for reported statements. Main challenges were consistently backshifting time/place expressions (e.g., 'yesterday' -> 'the day before') and correctly applying the `(not) to + infinitive` structure for reported commands/requests (Q6, Q10), as well as avoiding 'that' with commands/questions (Q7).
 
 
 **Instructions for Updating:**
