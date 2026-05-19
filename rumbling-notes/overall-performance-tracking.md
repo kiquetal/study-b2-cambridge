@@ -4,7 +4,7 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 
 ---**Summary of Strengths and Weaknesses**---
 
-*   **Current Weakest Areas:** Minor spelling consistency, and precise pronoun/plural agreement in complex reported commands/questions.
+*   **Current Weakest Areas:** Minor spelling consistency, capitalization, and precise pronoun/plural agreement in complex reported commands/questions, and punctuation for non-defining relative clauses.
 *   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing; strong grasp of Third Conditional structures; correct application of modal 'needn't' and passive 'need + -ing / to be + past participle'; correct usage of 'consider + -ing'; effective use of 'no need to' and 'don't need to' for expressing lack of necessity; improved mastery of 'didn't need to' vs. 'needn't have + past participle'; greatly improved natural phrasing with past perfect conjunctions ('before' vs. 'until' with negatives'); strong grasp of tense backshifting and pronoun changes in reported statements; greatly improved consistent application of backshifted time/place expressions and `(not) to + infinitive` for reported commands/requests.
 
 ---**Topic-wise Performance Log**---
@@ -58,7 +58,13 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 
 ---
 
-**Certification and Professional Development Plan**
+**Date:** 2026-05-19
+
+**Topic: Relative Clauses**
+*   **Status:** In progress; good initial understanding.
+*   **User Performance:** Strong grasp of relative pronoun selection for people, places, and possession. Correctly identified defining vs. non-defining clauses for pronoun choice and omission. Needs reinforcement on punctuation (commas) for non-defining relative clauses and capitalization in specific contexts (names, proper nouns).
+
+---
 
 *   **Overall Goal:** Ace B2 Certification by July 2026, gain confidence, and apply for remote work as a senior professional.
 *   **Target Date:** Certification in July 2026.
