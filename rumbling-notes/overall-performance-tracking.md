@@ -55,6 +55,19 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 *   **User Performance:** Demonstrated strong understanding of tense backshifting, pronoun changes, time/place expressions, and the `(not) to + infinitive` structure for commands. Initial minor errors included spelling ('studens', 'rigth', 'assitant', 'musem', 'suggeded', 'valuable'), some pronoun/plural agreement (e.g., 'your books' to 'their books'), and precise time expression backshifts ('today' to 'that day', 'next Tuesday' to 'the following Tuesday'). These were quickly corrected with guidance, showing excellent adaptability and learning. Overall, a comprehensive grasp of B2 Reported Speech nuances achieved.
 
 
+
+---
+
+**Certification and Professional Development Plan**
+
+*   **Overall Goal:** Ace B2 Certification by July 2026, gain confidence, and apply for remote work as a senior professional.
+*   **Target Date:** Certification in July 2026.
+*   **Phased Approach:**
+    1.  **B2 Certification Mastery:** Systematic review of B2 grammar, advanced vocabulary (collocations, phrasal verbs, idioms), and extensive practice in exam-specific reading, listening, and writing tasks.
+    2.  **Professional Communication:** Development of skills for business emails, cover letters, formal reports, and effective spoken communication tailored for remote professional environments. Focus on tone, register, clarity, and conciseness.
+    3.  **Confidence & Fluency:** Continuous practice to build natural expression and self-assurance in all English communication contexts.
+
+
 **Instructions for Updating:**
 *   After evaluating user responses on exercises, update the 'User Performance' section for the relevant topic.
 *   Synthesize insights into 'Current Weakest Areas' and 'Identified Strengths' periodically.
