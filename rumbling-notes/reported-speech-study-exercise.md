@@ -11,7 +11,16 @@ Reported speech (or indirect speech) is used to convey what someone else said wi
     *   Past Simple → Past Perfect
     *   *Modals:* will → would, can → could, may → might, must/have to → had to
 
-2.  **Pronouns:** Change to match the new context (e.g., "I" → "he/she," "my" → "his/her").
+2.  **Pronouns:** Change to match the new context. Here's a breakdown for common pronoun changes:
+
+    | Direct Speech Pronoun | Reported Speech Pronoun (if reported by someone else) | Example                                              |
+    | :-------------------- | :---------------------------------------------------- | :----------------------------------------------------- |
+    | I                     | he / she                                            | "I like coffee." → He said he liked coffee.            |
+    | you                   | I / we / he / she / they (depends on context)       | "You are late." → He told me I was late.               |
+    | we                    | **they**                                            | "We will go." → They said they would go.               |
+    | my                    | his / her                                           | "This is my book." → She said it was her book.         |
+    | your                  | my / his / her / their (depends on context)         | "Is this your car?" → He asked if it was my car.       |
+    | our                   | their                                               | "This is our house." → They said it was their house.   |
 
 3.  **Time and Place Expressions:**
     *   now → then
