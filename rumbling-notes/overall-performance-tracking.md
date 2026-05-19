@@ -4,8 +4,8 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 
 ---**Summary of Strengths and Weaknesses**---
 
-*   **Current Weakest Areas:** Consistent application of backshifted time/place expressions in reported speech, and correct usage of `(not) to + infinitive` for reported commands/requests.
-*   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing; strong grasp of Third Conditional structures; correct application of modal 'needn't' and passive 'need + -ing / to be + past participle'; correct usage of 'consider + -ing'; effective use of 'no need to' and 'don't need to' for expressing lack of necessity; improved mastery of 'didn't need to' vs. 'needn't have + past participle'; greatly improved natural phrasing with past perfect conjunctions ('before' vs. 'until' with negatives'); strong grasp of tense backshifting and pronoun changes in reported statements.
+*   **Current Weakest Areas:** Minor spelling consistency, and precise pronoun/plural agreement in complex reported commands/questions.
+*   **Identified Strengths:** Excellent attention to detail in identifying ambiguous exercise phrasing; strong grasp of Third Conditional structures; correct application of modal 'needn't' and passive 'need + -ing / to be + past participle'; correct usage of 'consider + -ing'; effective use of 'no need to' and 'don't need to' for expressing lack of necessity; improved mastery of 'didn't need to' vs. 'needn't have + past participle'; greatly improved natural phrasing with past perfect conjunctions ('before' vs. 'until' with negatives'); strong grasp of tense backshifting and pronoun changes in reported statements; greatly improved consistent application of backshifted time/place expressions and `(not) to + infinitive` for reported commands/requests.
 
 ---**Topic-wise Performance Log**---
 
@@ -51,8 +51,8 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 **Date:** 2026-05-18
 
 **Topic: Reported Speech**
-*   **Status:** Introduced; good initial understanding with areas for reinforcement.
-*   **User Performance:** Demonstrated strong understanding of tense backshifting and pronoun changes for reported statements. Main challenges were consistently backshifting time/place expressions (e.g., 'yesterday' -> 'the day before') and correctly applying the `(not) to + infinitive` structure for reported commands/requests (Q6, Q10), as well as avoiding 'that' with commands/questions (Q7).
+*   **Status:** Reinforced and strong understanding achieved.
+*   **User Performance:** Demonstrated strong understanding of tense backshifting, pronoun changes, time/place expressions, and the `(not) to + infinitive` structure for commands. Initial minor errors included spelling ('studens', 'rigth', 'assitant', 'musem', 'suggeded', 'valuable'), some pronoun/plural agreement (e.g., 'your books' to 'their books'), and precise time expression backshifts ('today' to 'that day', 'next Tuesday' to 'the following Tuesday'). These were quickly corrected with guidance, showing excellent adaptability and learning. Overall, a comprehensive grasp of B2 Reported Speech nuances achieved.
 
 
 **Instructions for Updating:**

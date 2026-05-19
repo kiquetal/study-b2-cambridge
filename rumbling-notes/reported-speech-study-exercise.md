@@ -86,3 +86,35 @@ Reported speech (or indirect speech) is used to convey what someone else said wi
 
 *   **Reported Questions - Pronouns & Time Expressions:** In reported questions, ensure you change pronouns (e.g., 'your' -> 'my') and time expressions (e.g., 'yesterday' -> 'the day before') to reflect the new context of reporting.
 *   **Reported Commands/Requests:** For commands and requests, use `reporting verb + object + (not) to + infinitive`. Avoid using 'that' or direct speech forms (e.g., 'don't') in reported commands. Also, ensure time expressions are backshifted (e.g., 'tomorrow' -> 'the next day').
+
+## Set 2 Exercises - Answer Key (Targeted Practice)
+
+1.  **Direct Speech:** "Come here right now!" the teacher ordered the students.
+    **Reported Speech:** The teacher ordered the students to come there right then.
+
+2.  **Direct Speech:** "Don't touch these documents until tomorrow," he warned his secretary.
+    **Reported Speech:** He warned his secretary not to touch those documents until the next day.
+
+3.  **Direct Speech:** "I finished my project last week," she explained.
+    **Reported Speech:** She explained that she had finished her project the previous week.
+
+4.  **Direct Speech:** "We can meet at your office tomorrow afternoon," they suggested.
+    **Reported Speech:** They suggested that they could meet at my office the next afternoon.
+
+5.  **Direct Speech:** "Don't open your books until I tell you to," the examiner instructed the students.
+    **Reported Speech:** The examiner instructed the students not to open their books until he told them to.
+
+6.  **Direct Speech:** "I haven't visited this museum before," he mentioned.
+    **Reported Speech:** He mentioned he hadn't visited that museum before.
+
+7.  **Direct Speech:** "We will be here until next Tuesday," they confirmed.
+    **Reported Speech:** They confirmed that they would be there until the following Tuesday.
+
+8.  **Direct Speech:** "Don't leave your valuables unattended," the announcement advised the passengers.
+    **Reported Speech:** The announcement advised the passengers not to leave their valuables unattended.
+
+9.  **Direct Speech:** "I can't meet you here today," he texted me.
+    **Reported Speech:** He texted me that he couldn't meet me there that day.
+
+10. **Direct Speech:** "We will revise this chapter next week," the teacher told the class.
+    **Reported Speech:** The teacher told the class that they would revise that chapter the following week.
