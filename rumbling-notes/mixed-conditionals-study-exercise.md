@@ -1,32 +1,46 @@
-# Mixed Conditionals - Practice Exercise
+# Mixed Conditionals - Study Exercise
 
-## Exercise 1: Completing Mixed Conditional Sentences
+## Exercise 1: Identifying Mixed Conditionals
 
-Complete the following sentences using the correct form of the verbs in parentheses. Pay close attention to the implied timeframes.
+Read the following sentences and determine if they are mixed conditionals. If they are, identify the type (Past Condition, Present Result OR Present Condition, Past Result).
 
-1.  If I ____________ (to save) more money last year, I ____________ (to be able) to travel now.
-2.  If she ____________ (not be) so shy, she ____________ (to accept) the invitation to the party yesterday.
-3.  If he ____________ (to listen) to my advice, he ____________ (not be) in trouble today.
-4.  If they ____________ (to be) more interested in art, they ____________ (to visit) the new museum last weekend.
-5.  If we ____________ (to get) a good night's sleep last night, we ____________ (not feel) so demotivated this morning.
+1.  If I had known you were coming, I would have baked a cake.
+2.  If she lived closer, she would visit us more often.
+3.  If they had trained harder, they would be champions now.
+4.  If he wasn't so shy, he would have asked her out last night.
+5.  If you listened to my advice, you wouldn't be in trouble now.
 
----
+## Exercise 2: Complete the Mixed Conditionals
 
-## Exercise 2: Rewriting Sentences
+Complete the following sentences using the correct form of the verbs in parentheses to create mixed conditionals.
 
-Rewrite the following sentences as mixed conditionals, combining the ideas logically. Be careful with capitalization and punctuation.
+1.  If I (not miss) ________ the flight, I (be) ________ in Paris now.
+2.  If she (be) ________ more organized, she (not forget) ________ her passport yesterday.
+3.  If we (not have) ________ to work today, we (join) ________ you at the party last night.
+4.  If he (save) ________ his money, he (not be) ________ broke now.
+5.  If they (speak) ________ English, they (understand) ________ the instructions during their trip.
 
-1.  I didn't study for the test yesterday, so I feel stressed now.
-    (If...)
+## Exercise 3: Create Your Own Mixed Conditional Sentences
 
-2.  She isn't a confident speaker, so she didn't give the presentation last week.
-    (If...)
+Write two sentences for each type of mixed conditional based on the prompts given. (Focus on realistic scenarios).
 
-3.  He ate too much junk food, so he's gaining weight.
-    (If...)
+### Type 1: Past Condition, Present Result
 
-4.  We don't have a car, so we couldn't drive to the concert.
-    (If...)
+1.  (You didn't study for the exam, so you're failing the course now.)
+    If ____________________________________________________________________
+2.  (She didn't take the job in London, so she isn't living there now.)
+    If ____________________________________________________________________
 
-5.  They missed their flight because they woke up late. They are stuck at the airport now.
-    (If...)
+### Type 2: Present Condition, Past Result
+
+1.  (I don't have a car, so I couldn't drive you to the airport yesterday.)
+    If ____________________________________________________________________
+2.  (He isn't a good swimmer, so he didn't save the drowning child last week.)
+    If ____________________________________________________________________
+
+***
+
+## Your Personal Gotchas & Key Reminders (from practice!)
+
+*   **Mixed Conditional Type 1 (Past Condition, Present Result):** `If + Past Perfect, ... would + base verb`. The past action (or lack thereof) has a direct, different result in the present.
+*   **Mixed Conditional Type 2 (Present Condition, Past Result):** `If + Simple Past, ... would have + V3`. A present characteristic or situation would have changed a past outcome.
