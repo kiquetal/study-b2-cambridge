@@ -44,3 +44,4 @@ Write two sentences for each type of mixed conditional based on the prompts give
 
 *   **Mixed Conditional Type 1 (Past Condition, Present Result):** `If + Past Perfect, ... would + base verb`. The past action (or lack thereof) has a direct, different result in the present.
 *   **Mixed Conditional Type 2 (Present Condition, Past Result):** `If + Simple Past, ... would have + V3`. A present characteristic or situation would have changed a past outcome.
+*   **Common error in Perfect Conditional:** Remember to use the **past participle (V3)** after 'would have' (e.g., *driven*, not *drove*; *forgotten*, not *forgot*).
