@@ -66,6 +66,17 @@ This file centralizes performance data, identified weaknesses, and strengths acr
 
 ---
 
+
+**Date:** 2026-05-20
+
+**Topic: Indefinite Pronouns (Someone, Anyone, No one, etc.)**
+*   **Status:** Strong understanding with minor nuance refinement needed.
+*   **User Performance:**
+    *   **Strengths:** Correctly used `EVERY-`, `SOME-` (in positive statements/offers), and `NO-` series (avoiding double negatives). Accurately used `ANY-` in negative sentences and `if` clauses.
+    *   **Areas for Refinement:** Distinguishing between `SOME-` and `ANY-` in general questions (preferring `ANY-` when not expecting a specific positive answer).
+
+---
+
 *   **Overall Goal:** Ace B2 Certification by July 2026, gain confidence, and apply for remote work as a senior professional.
 *   **Target Date:** Certification in July 2026.
 *   **Phased Approach:**
